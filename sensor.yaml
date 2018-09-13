@@ -1,0 +1,60 @@
+# Weather prediction
+  - platform: yr
+
+  - platform: mqtt
+    name: "SPA"
+    state_topic: "temp/spa"
+    unit_of_measurement: "°C"
+
+  - platform: mqtt
+    name: "Ute temp"
+    state_topic: "temp/ute"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    name: "Ute tryck"
+    state_topic: "nodeit/status/pressure"
+    unit_of_measurement: 'hPa'
+
+  - platform: mqtt
+    name: "Annex humid"
+    state_topic: "nodeit/status/humidity"
+    unit_of_measurement: '%'
+
+  - platform: mqtt
+    name: "Annex ljus"
+    state_topic: "nodeit/status/light"
+    unit_of_measurement: 'lux'
+
+  - platform: mqtt
+    name: "Garaget"
+    state_topic: "temp/garage"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    name: "Vinkällaren"
+    state_topic: "temp/vin"
+    value_template: "{{  value | round(1) }}"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    name: "Vinkylen"
+    state_topic: "tele/the_bar/SENSOR"
+    value_template: "{{ value_json.DS18x20.DS1.Temperature }}"
+    unit_of_measurement: "°C"
+
+  - platform: mqtt
+    name: "Garage dörren"
+    state_topic: "fromGarage/status"
+
+  - platform: mqtt
+    name: "Uterum temp"
+    state_topic: "tele/outroom/SENSOR"
+    value_template: "{{ value_json.AM2301.Temperature }}"
+    unit_of_measurement: "°C"
+
+  - platform: mqtt
+    name: "Uterum humid"
+    state_topic: "tele/outroom/SENSOR"
+    value_template: "{{ value_json.AM2301.Humidity }}"
+    unit_of_measurement: '%'

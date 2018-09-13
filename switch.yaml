@@ -1,0 +1,26 @@
+  - platform: mqtt
+    name: "Dammpump"
+    command_topic: "cmnd/outroom/power1"
+    state_topic: "stat/outroom/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "SPA (över)"
+    command_topic: "cmnd/garden/power2"
+    state_topic: "stat/garden/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "SPA (under)"
+    command_topic: "cmnd/garden/power3"
+    state_topic: "stat/garden/POWER3"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true

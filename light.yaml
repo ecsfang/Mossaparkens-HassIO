@@ -1,0 +1,35 @@
+  - platform: mqtt
+    name: "Dammbelysning"
+    command_topic: "cmnd/outroom/power2"
+    state_topic: "stat/outroom/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Fönsterlampa"
+    command_topic: "cmnd/sonoff2/power"
+    state_topic: "stat/sonoff2/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Staket belysning"
+    command_topic: "cmnd/garden/power1"
+    state_topic: "stat/garden/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Köksfönstret"
+    command_topic: "cmnd/sonoff5/power"
+    state_topic: "stat/sonoff5/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
