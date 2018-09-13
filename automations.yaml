@@ -53,7 +53,7 @@
      platform: sun
      event: sunset
    action:
-     service: switch.turn_on
+     service: light.turn_on
      entity_id: light.staket_belysning
 
  - alias: Trädgårdsbelysningen av
@@ -61,7 +61,7 @@
      platform: time
      at: '01:00:00'
    action:
-     service: switch.turn_off
+     service: light.turn_off
      entity_id: light.staket_belysning
 
  - alias: Dammbelysningen på vid solnedgång
@@ -70,13 +70,13 @@
      event: sunset
      offset: "-00:30:00"
    action:
-     service: switch.turn_on
+     service: light.turn_on
      entity_id: light.dammbelysning
 
  - alias: Dammbelysningen av
    trigger:
      platform: time
-     at: '22:50:00'
+     at: '23:08:00'
    action:
-     service: switch.turn_off
+     service: light.turn_off
      entity_id: light.dammbelysning
