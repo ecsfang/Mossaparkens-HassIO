@@ -15,68 +15,68 @@
 #    service: homeassistant.turn_on
 #    entity_id: light.koksfonstret
 
- - alias: 'Vardagsrumslampan på'
-   trigger:
-     platform: sun
-     event: sunset
-     offset: "-00:45:00"
-   action:
-     service: light.turn_on
-     entity_id: light.fonsterlampa
+  - alias: 'Vardagsrumslampan på'
+    trigger:
+      platform: sun
+      event: sunset
+      offset: "-00:45:00"
+    action:
+      service: light.turn_on
+      entity_id: light.fonsterlampa
 
- - alias: 'Vardagsrumslampan av'
-   trigger:
-     platform: time
-     at: '23:00:00'
-   action:
-     service: light.turn_off
-     entity_id: light.fonsterlampa
+  - alias: 'Vardagsrumslampan av'
+    trigger:
+      platform: time
+      at: '23:00:00'
+    action:
+      service: light.turn_off
+      entity_id: light.fonsterlampa
 
- - alias: 'Kökslampan på'
-   trigger:
-     platform: time
-     at: '05:30:00'
-   action:
-     service: light.turn_on
-     entity_id: light.koksfonstret
+  - alias: 'Kökslampan på'
+    trigger:
+      platform: time
+      at: '05:30:00'
+    action:
+      service: light.turn_on
+      entity_id: light.koksfonstret
 
- - alias: 'Kökslampan av'
-   trigger:
-     platform: time
-     at: '07:00:00'
-   action:
-     service: light.turn_off
-     entity_id: light.koksfonstret
+  - alias: 'Kökslampan av'
+    trigger:
+      platform: time
+      at: '07:00:00'
+    action:
+      service: light.turn_off
+      entity_id: light.koksfonstret
 
- - alias: Trädgårdsbelysningen på vid solnedgång
-   trigger:
-     platform: sun
-     event: sunset
-   action:
-     service: light.turn_on
-     entity_id: light.staket_belysning
+  - alias: Trädgårdsbelysningen på vid solnedgång
+    trigger:
+      platform: sun
+      event: sunset
+    action:
+      service: light.turn_on
+      entity_id: light.staket_belysning
 
- - alias: Trädgårdsbelysningen av
-   trigger:
-     platform: time
-     at: '01:00:00'
-   action:
-     service: light.turn_off
-     entity_id: light.staket_belysning
+  - alias: Trädgårdsbelysningen av
+    trigger:
+      platform: time
+      at: '01:00:00'
+    action:
+      service: light.turn_off
+      entity_id: light.staket_belysning
 
- - alias: Dammbelysningen på vid solnedgång
-   trigger:
-     platform: sun
-     event: sunset
-     offset: "-00:30:00"
-   action:
-     service: light.turn_on
-     entity_id: light.dammbelysning
+  - alias: Dammbelysningen på vid solnedgång
+    trigger:
+      platform: sun
+      event: sunset
+      offset: "-00:30:00"
+    action:
+      service: light.turn_on
+      entity_id: light.dammbelysning
 
- - alias: Dammbelysningen av
-   trigger:
-     platform: time
-     at: '23:08:00'
-   action:
-     service: light.turn_off
-     entity_id: light.dammbelysning
+  - alias: Dammbelysningen av
+    trigger:
+      platform: time
+      at: '23:08:00'
+    action:
+      service: light.turn_off
+      entity_id: light.dammbelysning

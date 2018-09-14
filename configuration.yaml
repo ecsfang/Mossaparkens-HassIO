@@ -88,8 +88,6 @@ map:
 # Track the sun
 sun:
 
-sensor: !include sensor.yaml
-
 # Text to speech
 tts:
   - platform: google
@@ -98,9 +96,11 @@ tts:
 cloud:
 
 group: !include groups.yaml
-automation: !include automations.yaml
 script: !include scripts.yaml
 
+sensor: !include sensor.yaml
 switch: !include switch.yaml
 light: !include light.yaml
+
+automation: !include automations.yaml
 

@@ -24,3 +24,14 @@
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
+
+  - platform: mqtt
+    name: "Vitrinskåp (extra)"
+    command_topic: "cmnd/sonoff3/power2"
+    state_topic: "stat/sonoff3/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+

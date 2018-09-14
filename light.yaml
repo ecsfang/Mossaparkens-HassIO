@@ -8,7 +8,7 @@
     retain: true
 
   - platform: mqtt
-    name: "Fönsterlampa"
+    name: "Fönsterlampa V-rum"
     command_topic: "cmnd/sonoff2/power"
     state_topic: "stat/sonoff2/POWER"
     qos: 1
@@ -17,7 +17,25 @@
     retain: true
 
   - platform: mqtt
-    name: "Staket belysning"
+    name: "Fönsterlampa trappan"
+    command_topic: "cmnd/sonoff1/power"
+    state_topic: "stat/sonoff1/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Vitrinskåp"
+    command_topic: "cmnd/sonoff3/power1"
+    state_topic: "stat/sonoff3/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Staketbelysning"
     command_topic: "cmnd/garden/power1"
     state_topic: "stat/garden/POWER1"
     qos: 1
