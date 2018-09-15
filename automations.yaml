@@ -80,3 +80,41 @@
     action:
       service: light.turn_off
       entity_id: light.dammbelysning
+
+  - alias: 'Vitrinskåpet på'
+    trigger:
+      platform: sun
+      event: sunset
+      offset: "-00:20:00"
+    action:
+      service: light.turn_on
+      entity_id: light.vitrinskapet
+
+  - alias: 'Vitrinskåpet av'
+    trigger:
+      platform: time
+      at: '23:55:00'
+    condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    action:
+      service: light.turn_off
+      entity_id: light.vitrinskapet
+
+  - alias: 'Vitrinskåpet av'
+    trigger:
+      platform: time
+      at: '01:00:00'
+    condition:
+    - condition: time
+      weekday:
+        - sun
+        - mon
+    action:
+      service: light.turn_off
+      entity_id: light.vitrinskapet
