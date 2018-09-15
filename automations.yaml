@@ -106,7 +106,7 @@
       service: light.turn_off
       entity_id: light.fonsterlampa_trappan
 
-  - alias: 'Vitrinskåpet av'
+  - alias: 'Vitrinskåpet av (vardag)'
     trigger:
       platform: time
       at: '23:55:00'
@@ -122,7 +122,7 @@
       service: light.turn_off
       entity_id: light.vitrinskapet
 
-  - alias: 'Vitrinskåpet av'
+  - alias: 'Vitrinskåpet av (helg)'
     trigger:
       platform: time
       at: '01:00:00'
