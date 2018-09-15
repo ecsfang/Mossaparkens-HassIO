@@ -80,3 +80,20 @@
     action:
       service: light.turn_off
       entity_id: light.dammbelysning
+      
+  - alias: 'Trapplampan på'
+    trigger:
+      platform: time
+      at: '05:30:00'
+    action:
+      service: light.turn_on
+      entity_id: light.fonsterlampa_trappan
+
+  - alias: 'Trapplampan av'
+    trigger:
+      platform: time
+      at: '07:00:00'
+    action:
+      service: light.turn_off
+      entity_id: light.fonsterlampa_trappan
+
