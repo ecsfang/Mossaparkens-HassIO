@@ -52,3 +52,13 @@
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
+
+  - platform: mqtt
+    name: "Citrusbelysning"
+    command_topic: "cmnd/citruslight/power"
+    state_topic: "stat/citruslight/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    
