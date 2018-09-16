@@ -170,3 +170,21 @@
     action:
       service: light.turn_off
       entity_id: light.vitrinskapet
+
+  - alias: Citrusbelysning på
+    trigger:
+      platform: sun
+      event: sunrise
+      offset: "-00:30:00"
+    action:
+      service: light.turn_on
+      entity_id: light.citrusbelysning
+
+  - alias: Citrusbelysningen av
+    trigger:
+      platform: sun
+      event: sunset
+      offset: "-01:00:00"
+    action:
+      service: light.turn_off
+      entity_id: light.citrusbelysning
