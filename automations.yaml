@@ -171,20 +171,33 @@
       service: light.turn_off
       entity_id: light.vitrinskapet
 
-  - alias: Citrusbelysning på
+#  - alias: Citrusbelysning på
+#    trigger:
+#      platform: sun
+#      event: sunrise
+#      offset: "-00:30:00"
+#    action:
+#      service: light.turn_on
+#      entity_id: light.citrusbelysning
+
+#  - alias: Citrusbelysningen av
+#    trigger:
+#      platform: sun
+#      event: sunset
+#      offset: "-01:00:00"
+#    action:
+#      service: light.turn_off
+#      entity_id: light.citrusbelysning
+
+  - alias: 'Citrusbelysning'
     trigger:
-      platform: sun
-      event: sunrise
-      offset: "-00:30:00"
+      platform: numeric_state
+      entity_id: sensor.annex_ljus
+      below: 50
+    condition:
+    - condition: time
+      after: '06:00'
+      before: '20:00'
     action:
       service: light.turn_on
-      entity_id: light.citrusbelysning
-
-  - alias: Citrusbelysningen av
-    trigger:
-      platform: sun
-      event: sunset
-      offset: "-01:00:00"
-    action:
-      service: light.turn_off
       entity_id: light.citrusbelysning
