@@ -189,15 +189,45 @@
 #      service: light.turn_off
 #      entity_id: light.citrusbelysning
 
-  - alias: 'Citrusbelysning'
+## Tänd belysningen om dag och ljuset är svagt
+  - alias: 'Citrusbelysning på'
     trigger:
-      platform: numeric_state
-      entity_id: sensor.annex_ljus
-      below: 50
-    condition:
-    - condition: time
-      after: '06:00'
-      before: '20:00'
+      - platform: numeric_state
+        entity_id: sensor.annex_ljus
+        below: 50
+      - platform: time
+        at: '06:00'
+      - platform: homeassistant
+        event: start
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.annex_ljus
+        below: 50
+      - condition: time
+        after: '06:00'
+        before: '20:00'
     action:
       service: light.turn_on
+      entity_id: light.citrusbelysning
+
+  - alias: 'Citrusbelysning av'
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.annex_ljus
+        above: 50
+      - platform: time
+        at: '20:00'
+      - platform: homeassistant
+        event: start
+    condition: or
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.annex_ljus
+        above: 50
+      - condition: time
+        after: '20:00'
+        before: '06:00'
+    action:
+      service: light.turn_off
       entity_id: light.citrusbelysning
