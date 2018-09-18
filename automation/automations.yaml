@@ -1,0 +1,163 @@
+#- alias: Turn on kitchen light when TERASS door is opened
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.terass
+#    to: 'on'
+#  action:
+#    service: homeassistant.turn_on
+#    entity_id: light.koksfonstret
+#- alias: Turn off kitchen light when TERASS door is closed
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.terass
+#    to: 'on'
+#  action:
+#    service: homeassistant.turn_on
+#    entity_id: light.koksfonstret
+
+###################################################
+##                                               ##
+## Köket                                         ##
+##                                               ##
+###################################################
+  - alias: 'Kökslampan på'
+    trigger:
+      platform: time
+      at: '05:30:00'
+    action:
+      service: light.turn_on
+      entity_id: light.koksfonstret
+
+  - alias: 'Kökslampan av'
+    trigger:
+      platform: sun
+      event: sunrise
+      offset: "+00:20:00"
+    action:
+      service: light.turn_off
+      entity_id: light.koksfonstret
+
+  - alias: 'Kökslampan på kväll'
+    trigger:
+      platform: sun
+      event: sunset
+      offset: "-00:30:00"
+    action:
+      service: light.turn_on
+      entity_id: light.koksfonstret
+
+  - alias: 'Kökslampan av kväll'
+    trigger:
+      platform: time
+      at: '23:58:00'
+    action:
+      service: light.turn_off
+      entity_id: light.koksfonstret
+
+###################################################
+##                                               ##
+## Vardagsrum                                    ##
+##                                               ##
+###################################################
+
+## Lampan i fönstret
+  - alias: 'Vardagsrumslampan på'
+    trigger:
+      platform: sun
+      event: sunset
+      offset: "-00:45:00"
+    action:
+      service: light.turn_on
+      entity_id: light.fonsterlampa_vrum
+
+  - alias: 'Vardagsrumslampan av'
+    trigger:
+      platform: time
+      at: '23:40:00'
+    action:
+      service: light.turn_off
+      entity_id: light.fonsterlampa_vrum
+
+## Vitrinskåpet
+  - alias: 'Vitrinskåpet på'
+    trigger:
+      platform: sun
+      event: sunset
+      offset: "-00:20:00"
+    action:
+      service: light.turn_on
+      entity_id: light.vitrinskapet
+
+## Släck lampan vid sängdags
+  - alias: 'Vitrinskåpet av (vardag)'
+    trigger:
+      platform: time
+      at: '23:00:00'
+    condition:
+      condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+    action:
+      service: light.turn_off
+      entity_id: light.vitrinskapet
+
+## ... men tänt lite längre fre-sön!
+  - alias: 'Vitrinskåpet av (helg)'
+    trigger:
+      platform: time
+      at: '01:00:00'
+    condition:
+      condition: time
+      weekday:
+        - sat
+        - sun
+        - mon
+    action:
+      service: light.turn_off
+      entity_id: light.vitrinskapet
+
+###################################################
+##                                               ##
+## Trappan - övervåningen                        ##
+##                                               ##
+###################################################
+  - alias: 'Trapplampan på'
+    trigger:
+      platform: time
+      at: '05:30:00'
+    condition:
+      condition: state
+      entity_id: 'binary_sensor.workday_sensor'
+      state: 'on'
+    action:
+      service: light.turn_on
+      entity_id: light.fonsterlampa_trappan
+
+  - alias: 'Trapplampan av'
+    trigger:
+      platform: sun
+      event: sunrise
+      offset: "+00:30:00"
+    action:
+      service: light.turn_off
+      entity_id: light.fonsterlampa_trappan
+
+  - alias: 'Trapplampan på kväll'
+    trigger:
+      platform: sun
+      event: sunset
+      offset: "-00:45:00"
+    action:
+      service: light.turn_on
+      entity_id: light.fonsterlampa_trappan
+
+  - alias: 'Trapplampan av kväll'
+    trigger:
+      platform: time
+      at: '23:59:00'
+    action:
+      service: light.turn_off
+      entity_id: light.fonsterlampa_trappan

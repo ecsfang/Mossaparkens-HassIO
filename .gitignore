@@ -1,6 +1,7 @@
 # Example .gitignore file for your config dir
 *
 !*.yaml
+!/automation
 !.gitignore
 secrets.yaml
 known_devices.yaml

@@ -1,0 +1,77 @@
+##
+## Automationer för trädgården/utomhus
+##
+
+## Ljuset på/av längs staketet
+  - alias: Trädgårdsbelysningen på vid solnedgång
+    trigger:
+      platform: sun
+      event: sunset
+    action:
+      service: light.turn_on
+      entity_id: light.staketbelysning
+
+  - alias: Trädgårdsbelysningen av (vardag)
+    trigger:
+      platform: time
+      at: '23:00:00'
+    condition:
+      condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+    action:
+      service: light.turn_off
+      entity_id: light.staketbelysning
+
+  - alias: Trädgårdsbelysningen av (helgen)
+    trigger:
+      platform: time
+      at: '01:00:00'
+    condition:
+      condition: time
+      weekday:
+        - sat
+        - sun
+        - mon
+    action:
+      service: light.turn_off
+      entity_id: light.staketbelysning
+
+## Ljuset på/av vid dammen
+  - alias: Dammbelysningen på vid solnedgång
+    trigger:
+      platform: sun
+      event: sunset
+      offset: "-00:30:00"
+    action:
+      service: light.turn_on
+      entity_id: light.dammbelysning
+
+  - alias: Dammbelysningen av
+    trigger:
+      platform: time
+      at: '23:40:00'
+    action:
+      service: light.turn_off
+      entity_id: light.dammbelysning
+
+## Dammpumpen på/av
+  - alias: Dammpumpen på på eftermiddagen
+    trigger:
+      platform: time
+      at: '16:00:00'
+    action:
+      service: switch.turn_on
+      entity_id: switch.dammpump
+
+  - alias: Dammpumpen av
+    trigger:
+      platform: time
+      at: '19:00:00'
+    action:
+      service: switch.turn_off
+      entity_id: switch.dammpump
+

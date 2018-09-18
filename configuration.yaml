@@ -95,6 +95,10 @@ tts:
 # Cloud
 cloud:
 
+binary_sensor:
+  - platform: workday
+    country: SE
+
 group: !include groups.yaml
 script: !include scripts.yaml
 
@@ -102,5 +106,4 @@ sensor: !include sensor.yaml
 switch: !include switch.yaml
 light: !include light.yaml
 
-automation: !include automations.yaml
-
+automation: !include_dir_merge_list automation/

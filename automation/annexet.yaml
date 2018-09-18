@@ -1,0 +1,49 @@
+##
+## Automationer för annexet
+##
+
+## Tänd belysningen om dag och ljuset är svagt
+  - alias: 'Citrusbelysning på'
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.annex_ljus
+        below: 50
+      - platform: time
+        at: '06:00'
+      - platform: homeassistant
+        event: start
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.annex_ljus
+          below: 50
+        - condition: time
+          after: '05:59'
+          before: '20:00'
+    action:
+      service: light.turn_on
+      entity_id: light.citrusbelysning
+
+## Släck belysningen på kvällen eller om ljuset är starkt nog
+  - alias: 'Citrusbelysning av'
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.annex_ljus
+        above: 50
+      - platform: time
+        at: '20:00'
+      - platform: homeassistant
+        event: start
+    condition:
+      condition: or
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.annex_ljus
+          above: 50
+        - condition: time
+          after: '19:59'
+          before: '06:00'
+    action:
+      service: light.turn_off
+      entity_id: light.citrusbelysning
