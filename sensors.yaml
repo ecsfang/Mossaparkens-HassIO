@@ -73,8 +73,10 @@
     end: '{{ now() }}'
 
   - platform: darksky
-    api_key: 4b729a7db6683830e50efc69da249166
+    api_key: !secret darksky_api
     language: sv
     monitored_conditions:
       - summary
       - icon
+      - temperature
+      - humidity
