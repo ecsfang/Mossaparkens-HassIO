@@ -75,8 +75,10 @@
   - platform: darksky
     api_key: !secret darksky_api
     language: sv
+    update_interval: "00:15"
     monitored_conditions:
       - summary
       - icon
       - temperature
       - humidity
+      - precip_probability
