@@ -55,6 +55,8 @@ http:
     - ::1
     - !secret duck_network
 
+api:
+
 verisure:
   username: !secret vsure_user
   password: !secret vsure_pass
