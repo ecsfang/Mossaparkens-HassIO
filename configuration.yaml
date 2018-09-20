@@ -50,6 +50,10 @@ http:
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
   api_password: !secret ha_dash_pw
+  trusted_networks:
+    - 127.0.0.1
+    - ::1
+    - !secret duck_network
 
 verisure:
   username: !secret vsure_user
@@ -62,7 +66,7 @@ device_tracker:
     host: !secret my_thomson_ip
     username: !secret my_thomson_user
     password: !secret my_thomson_passw
-    
+
 #notify:
 #  - name: Pushover
 #    platform: pushover
