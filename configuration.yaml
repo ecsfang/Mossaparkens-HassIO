@@ -58,7 +58,11 @@ verisure:
 device_tracker:
   - platform: gpslogger
     password: !secret gpslogger_password
-
+  - platform: thomson
+    host: !secret my_thomson_ip
+    username: !secret my_thomson_user
+    password: !secret my_thomson_passw
+    
 #notify:
 #  - name: Pushover
 #    platform: pushover
