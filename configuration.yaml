@@ -61,8 +61,8 @@ verisure:
 
 device_tracker:
   - platform: gpslogger
+    password: !secret ha_dash_pw
 
-#    password: !secret gpslogger_password
 #  - platform: thomson
 #    host: !secret my_thomson_ip
 #    username: !secret my_thomson_user
