@@ -55,19 +55,18 @@ http:
     - ::1
     - !secret duck_network
 
-api:
-
 verisure:
   username: !secret vsure_user
   password: !secret vsure_pass
 
 device_tracker:
   - platform: gpslogger
-    password: !secret gpslogger_password
-  - platform: thomson
-    host: !secret my_thomson_ip
-    username: !secret my_thomson_user
-    password: !secret my_thomson_passw
+
+#    password: !secret gpslogger_password
+#  - platform: thomson
+#    host: !secret my_thomson_ip
+#    username: !secret my_thomson_user
+#    password: !secret my_thomson_passw
 
 #notify:
 #  - name: Pushover
