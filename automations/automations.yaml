@@ -20,15 +20,18 @@
 ## Köket                                         ##
 ##                                               ##
 ###################################################
-  - alias: 'Kökslampan på'
+  - alias: 'Kökslampan på (morgon)'
     trigger:
       platform: time
       at: '05:30:00'
+    condition:
+      condition: sun
+      before: sunrise
     action:
       service: light.turn_on
       entity_id: light.koksfonstret
 
-  - alias: 'Kökslampan av'
+  - alias: 'Kökslampan av (morgon)'
     trigger:
       platform: sun
       event: sunrise
@@ -37,7 +40,7 @@
       service: light.turn_off
       entity_id: light.koksfonstret
 
-  - alias: 'Kökslampan på kväll'
+  - alias: 'Kökslampan på (kväll)'
     trigger:
       platform: sun
       event: sunset
@@ -46,7 +49,7 @@
       service: light.turn_on
       entity_id: light.koksfonstret
 
-  - alias: 'Kökslampan av kväll'
+  - alias: 'Kökslampan av (kväll)'
     trigger:
       platform: time
       at: '23:58:00'
@@ -119,19 +122,23 @@
 ## Trappan - övervåningen                        ##
 ##                                               ##
 ###################################################
-  - alias: 'Trapplampan på'
+  - alias: 'Trapplampan på (morgon)'
     trigger:
       platform: time
       at: '05:30:00'
     condition:
-      condition: state
-      entity_id: 'binary_sensor.workday_today'
-      state: 'on'
+      condition: and
+      conditions:
+        - condition: sun
+          before: sunrise
+        - condition: state
+          entity_id: 'binary_sensor.workday_today'
+          state: 'on'
     action:
       service: light.turn_on
       entity_id: light.fonsterlampa_trappan
 
-  - alias: 'Trapplampan av'
+  - alias: 'Trapplampan av (morgon)'
     trigger:
       platform: sun
       event: sunrise
@@ -140,7 +147,7 @@
       service: light.turn_off
       entity_id: light.fonsterlampa_trappan
 
-  - alias: 'Trapplampan på kväll'
+  - alias: 'Trapplampan på (kväll)'
     trigger:
       platform: sun
       event: sunset
@@ -149,7 +156,7 @@
       service: light.turn_on
       entity_id: light.fonsterlampa_trappan
 
-  - alias: 'Trapplampan av kväll'
+  - alias: 'Trapplampan av (kväll)'
     trigger:
       platform: time
       at: '23:59:00'
