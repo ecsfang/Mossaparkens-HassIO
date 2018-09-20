@@ -88,7 +88,7 @@
       service: light.turn_on
       entity_id: light.vitrinskapet
 
-## Släck lampan vid sängdags
+## Släck lampan vid sängdags (om arbetsdag imorgon)
   - alias: 'Vitrinskåpet av (vardag)'
     trigger:
       platform: time
@@ -101,14 +101,14 @@
       service: light.turn_off
       entity_id: light.vitrinskapet
 
-## ... men tänt lite längre fre-sön!
+## ... men kl 01 skall det vara släckt även på helgen!
   - alias: 'Vitrinskåpet av (helg)'
     trigger:
       platform: time
       at: '01:00:00'
     condition:
       condition: state
-      entity_id: 'binary_sensor.workday_tomorrow'
+      entity_id: 'binary_sensor.workday_today'
       state: 'off'
     action:
       service: light.turn_off
