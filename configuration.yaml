@@ -68,11 +68,11 @@ device_tracker:
 #    username: !secret my_thomson_user
 #    password: !secret my_thomson_passw
 
-#notify:
-#  - name: Pushover
-#    platform: pushover
-#    api_key: ABCDEFGHJKLMNOPQRSTUVXYZ
-#    user_key: ABCDEFGHJKLMNOPQRSTUVXYZ
+notify:
+  - name: Pushover
+    platform: pushover
+    api_key: !secret push_api_key
+    user_key: !secret push_user_key
 
 # Checks for available updates
 # Note: This component will send some information about your system to
