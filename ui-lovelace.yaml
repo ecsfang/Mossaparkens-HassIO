@@ -25,8 +25,7 @@ views:
         # The filter card will filter entities for their state
       - type: entity-filter
         entities:
-          - device_tracker.paulus
-          - device_tracker.anne_there
+          - device_tracker.bh9000mba2
         state_filter:
           - 'home'
         card:
@@ -50,11 +49,11 @@ views:
         # The entities here will be shown in the same order as specified.
         # Each entry is an entity ID or a map with extra options.
         entities:
-          - light.kitchen
-          - switch.ac
-          - entity: light.living_room
+          - light.koksfonstret
+          - switch.dammpump
+          - entity: light.vitrinskapet
             # Override the name to use
-            name: LR Lights
+            name: Vitrinskåpet
 
         # The markdown card will render markdown text.
       - type: markdown
