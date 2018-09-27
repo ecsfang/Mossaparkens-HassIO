@@ -121,3 +121,25 @@ light: !include lights.yaml
 binary_sensor: !include binary_sensors.yaml
 
 automation: !include_dir_merge_list automations/
+
+history_graph:
+  gr1:
+    name: Lampor
+    entities:
+      - light.koksfonstret
+      - light.fonsterlampa_trappan
+      - light.fonsterlampa_vrum
+      - light.vitrinskapet
+      - light.staketbelysning
+      - light.dammbelysning
+      - light.citrusbelysning
+    hours_to_show: 168
+    refresh: 60
+  gr2:
+    name: Temperature
+    entities:
+      - sensor.ute_temp
+      - sensor.uterum_temp
+      - sensor.garaget
+      - sensor.vinkallaren
+    hours_to_show: 168
