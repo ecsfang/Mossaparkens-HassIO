@@ -2,6 +2,9 @@
 *
 !*.yaml
 !/automations
+!*.dash
+!/appdaemon
+!/appdaemon/dashboards
 !.gitignore
 secrets.yaml
 known_devices.yaml

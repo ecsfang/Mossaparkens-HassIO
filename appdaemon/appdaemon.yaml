@@ -1,0 +1,20 @@
+secrets: /config/secrets.yaml
+log:
+  logfile: STDOUT
+  errorfile: STDERR
+appdaemon:
+  cert_verify: False
+  threads: 10
+  app_dir: /config/appdaemon/apps
+  plugins:
+    HASS:
+      type: hass
+      ha_url: https://mossaio.duckdns.org:8123
+      ha_key: !secret ha_dash_pw
+      ssl_certificate: /ssl/fullchain.pem
+      ssl_key: /ssl/privkey.pem
+#      ha_url: http://192.168.1.171:8123
+#      ha_key: 3f66867f491b4d7595188b99e0b6b718
+hadashboard:
+  dash_url: http://hassio.local:5050
+  dash_dir: /config/appdaemon/dashboards
