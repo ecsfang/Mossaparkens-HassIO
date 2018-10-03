@@ -1,0 +1,17 @@
+#-------------------------------------------
+# Multisensor
+#-------------------------------------------
+sensor.aeotec_zw100_multisensor_6_luminance_2:
+  friendly_name: Garden Lux
+
+sensor.aeotec_zw100_multisensor_6_burglar_2:
+  friendly_name: Garden Alarm
+
+sensor.aeotec_zw100_multisensor_6_relative_humidity_2:
+  friendly_name: Garden Humidity
+
+sensor.aeotec_zw100_multisensor_6_temperature_2:
+  friendly_name: Garden Temp
+
+sensor.aeotec_zw100_multisensor_6_ultraviolet_2:
+  friendly_name: Garden UV
