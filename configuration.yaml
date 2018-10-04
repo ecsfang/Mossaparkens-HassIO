@@ -108,6 +108,8 @@ map:
 # Track the sun
 sun:
 
+zone: !include zones.yaml
+
 # Text to speech
 tts:
   - platform: google
