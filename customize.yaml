@@ -24,7 +24,13 @@ sensor.aeotec_zw100_multisensor_6_ultraviolet_3:
   friendly_name: Garden UV
   icon: mdi:white-balance-sunny
 
-#NODE 0, Fibaro - Dimmer 2 - Trädgårdsbelysningen
+zwave.aeotec_zw100_multisensor_6:
+  hidden: yes
+
+
+#-------------------------------------------
+# NODE 0, Fibaro - Dimmer 2 - Trädgårdsbelysningen
+#-------------------------------------------
 light.fibaro_system_fgd212_dimmer_2_level_2:
   friendly_name: Trädgårdbelysning
   icon: mdi:lightbulb
@@ -56,7 +62,7 @@ zwave.fibaro_system_fgd212_dimmer_2:
   hidden: yes
 
 
-light.fibaro_system_fgd212_dimmer_2_step_size_XYZ_6:
-  hidden: yes
-light.fibaro_system_fgd212_dimmer_2_step_size_XYZ_6_2:
-  hidden: yes
+#light.fibaro_system_fgd212_dimmer_2_step_size_XYZ_6:
+#  hidden: yes
+#light.fibaro_system_fgd212_dimmer_2_step_size_XYZ_6_2:
+#  hidden: yes
