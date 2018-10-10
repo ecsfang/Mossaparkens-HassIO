@@ -117,7 +117,7 @@ script: !include scripts.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 light: !include lights.yaml
-notify: !include notification.yaml
+notify: !include notifications.yaml
 
 binary_sensor: !include binary_sensors.yaml
 
