@@ -1,0 +1,14 @@
+  - name: Pushover
+    platform: pushover
+    api_key: !secret push_api_key
+    user_key: !secret push_user_key
+
+#  - name: Home_Assistant
+#    platform: smtp
+#    server: smtp.gmail.com
+#    port: 587
+#    sender: !secret notification_sender
+#    starttls: true
+#    username: !secret notification_username
+#    password: !secret notification_password
+#    recipient: !secret notification_recipient

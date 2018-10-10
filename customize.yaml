@@ -66,3 +66,6 @@ zwave.fibaro_system_fgd212_dimmer_2:
 #  hidden: yes
 #light.fibaro_system_fgd212_dimmer_2_step_size_XYZ_6_2:
 #  hidden: yes
+
+binary_sensor.eddieserver:
+  icon: mdi:desktop-tower

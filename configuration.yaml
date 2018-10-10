@@ -75,12 +75,6 @@ device_tracker:
 #    username: !secret my_thomson_user
 #    password: !secret my_thomson_passw
 
-notify:
-  - name: Pushover
-    platform: pushover
-    api_key: !secret push_api_key
-    user_key: !secret push_user_key
-
 # Checks for available updates
 # Note: This component will send some information about your system to
 # the developers to assist with development of Home Assistant.
@@ -123,6 +117,7 @@ script: !include scripts.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 light: !include lights.yaml
+notify: !include notification.yaml
 
 binary_sensor: !include binary_sensors.yaml
 
@@ -132,14 +127,10 @@ history_graph:
   gr1:
     name: Lampor
     entities:
-      - light.koksfonstret
-      - light.fonsterlampa_trappan
-      - light.fonsterlampa_vrum
-      - light.vitrinskapet
       - light.staketbelysning
       - light.dammbelysning
       - light.citrusbelysning
-    hours_to_show: 168
+    hours_to_show: 96
     refresh: 60
   gr2:
     name: Temperature
