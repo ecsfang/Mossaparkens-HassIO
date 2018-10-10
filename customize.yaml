@@ -1,13 +1,6 @@
 #-------------------------------------------
 # Multisensor, node 3 - Garaget
 #-------------------------------------------
-sensor.aeotec_zw100_multisensor_6_alarm_level_3:
-  hidden: yes
-sensor.aeotec_zw100_multisensor_6_alarm_type_3:
-  hidden: yes
-sensor.aeotec_zw100_multisensor_6_sourcenodeid_3:
-  hidden: yes
-
 sensor.aeotec_zw100_multisensor_6_luminance_3:
   friendly_name: Garden Lux
 
@@ -17,6 +10,7 @@ sensor.aeotec_zw100_multisensor_6_burglar_3:
 sensor.aeotec_zw100_multisensor_6_relative_humidity_3:
   friendly_name: Garden Humidity
   icon: mdi:water-percent
+
 sensor.aeotec_zw100_multisensor_6_temperature_3:
   friendly_name: Garden Temp
 
@@ -24,7 +18,14 @@ sensor.aeotec_zw100_multisensor_6_ultraviolet_3:
   friendly_name: Garden UV
   icon: mdi:white-balance-sunny
 
-zwave.aeotec_zw100_multisensor_6:
+# Hidden devices ...
+sensor.aeotec_zw100_multisensor_6_alarm_level_3:
+  hidden: yes
+sensor.aeotec_zw100_multisensor_6_alarm_type_3:
+  hidden: yes
+sensor.aeotec_zw100_multisensor_6_sourcenodeid_3:
+  hidden: yes
+zwave.aeotec_zw100_multisensor_6_3:
   hidden: yes
 
 
@@ -34,22 +35,26 @@ zwave.aeotec_zw100_multisensor_6:
 light.fibaro_system_fgd212_dimmer_2_level_2:
   friendly_name: Trädgårdbelysning
   icon: mdi:lightbulb
+
+sensor.fibaro_system_fgd212_dimmer_2_energy:
+  friendly_name: Trädgårdbelysning (kWh)
+  icon: mdi:flash
+
+sensor.fibaro_system_fgd212_dimmer_2_power_2:
+  friendly_name: Trädgårdbelysning (W)
+  icon: mdi:flash
+
+# Hidden devices ...
 light.fibaro_system_fgd212_dimmer_2_level:
   hidden: yes
 sensor.fibaro_system_fgd212_dimmer_2_alarm_level:
   hidden: yes
 sensor.fibaro_system_fgd212_dimmer_2_alarm_type:
   hidden: yes
-sensor.fibaro_system_fgd212_dimmer_2_energy:
-  friendly_name: Trädgårdbelysning (kWh)
-  icon: mdi:flash
 sensor.fibaro_system_fgd212_dimmer_2_exporting:
   hidden: yes
 sensor.fibaro_system_fgd212_dimmer_2_heat:
   hidden: yes
-sensor.fibaro_system_fgd212_dimmer_2_power_2:
-  friendly_name: Trädgårdbelysning (W)
-  icon: mdi:flash
 sensor.fibaro_system_fgd212_dimmer_2_power:
   hidden: yes
 sensor.fibaro_system_fgd212_dimmer_2_power_management:
