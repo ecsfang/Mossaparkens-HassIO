@@ -27,6 +27,8 @@ sensor.aeotec_zw100_multisensor_6_sourcenodeid_3:
   hidden: yes
 zwave.aeotec_zw100_multisensor_6_3:
   hidden: yes
+binary_sensor.aeotec_zw100_multisensor_6_sensor_3:
+  hidden: yes
 
 
 #-------------------------------------------
