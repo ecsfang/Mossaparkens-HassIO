@@ -4,19 +4,24 @@
   - platform: mqtt
     name: "SPA"
     state_topic: "tele/garden/SENSOR"
-    value_template: "{{ value_json.DS18x20.DS1.Temperature }}"
+    value_template: "{{ value_json.DS18x20.DS1.Temperature | float + 1.6 | round(1) }}"
 #    state_topic: "temp/spa"
 #    value_template: "{{  value | round(1) }}"
     unit_of_measurement: "°C"
 
   - platform: mqtt
-    name: "Ute temp"
+    name: "NodeIT temp"
     state_topic: "nodeit/status/temp1"
     unit_of_measurement: '°C'
 
   - platform: mqtt
-    name: "Annex temp"
+    name: "Ute temp"
     state_topic: "nodeit/status/temp2"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    name: "Annex temp"
+    state_topic: "nodeit/status/temp3"
     unit_of_measurement: '°C'
 
   - platform: mqtt
