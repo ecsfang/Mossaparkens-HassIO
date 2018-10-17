@@ -109,3 +109,38 @@
         unit_of_measurement: "m"
         entity_id:
          - device_tracker.bh9000mba2
+
+#
+# Diskmaskinen
+#
+  - platform: mqtt
+    name: "Diskmaskin idag"
+    state_topic: "tele/dishwasher/SENSOR"
+    value_template: '{{ value_json.ENERGY.Today }}'
+    unit_of_measurement: "kWh"
+  - platform: mqtt
+    name: "Diskmaskin igår"
+    state_topic: "tele/dishwasher/SENSOR"
+    value_template: '{{ value_json.ENERGY.Yesterday }}'
+    unit_of_measurement: "kWh"
+  - platform: mqtt
+    name: "Diskmaskin totalt"
+    state_topic: "tele/dishwasher/SENSOR"
+    value_template: '{{ value_json.ENERGY.Total }}'
+    unit_of_measurement: "kWh"
+
+  - platform: mqtt
+    name: "Diskmaskin effekt"
+    state_topic: "tele/dishwasher/SENSOR"
+    value_template: '{{ value_json.ENERGY.Power }}'
+    unit_of_measurement: "W"
+  - platform: mqtt
+    name: "Diskmaskin spänning"
+    state_topic: "tele/dishwasher/SENSOR"
+    value_template: '{{ value_json.ENERGY.Voltage }}'
+    unit_of_measurement: "V"
+  - platform: mqtt
+    name: "Diskmaskin ström"
+    state_topic: "tele/dishwasher/SENSOR"
+    value_template: '{{ value_json.ENERGY.Current }}'
+    unit_of_measurement: "A"

@@ -1,0 +1,11 @@
+  dishwasher:  # < Place holder
+    name: Diskmaskin  #< Its display name and its ID
+    control: hidden # < hide the group switch ( so you can trun the hole group on off
+    entities:   # < a list of thing you want to show in the group 
+      - sensor.washing_power
+      - sensor.diskmaskin_idag"
+      - sensor.diskmaskin_igar"
+      - sensor.diskmaskin_totalt"
+      - sensor.diskmaskin_effekt"
+      - sensor.diskmaskin_spanning"
+      - sensor.diskmaskin_strom"
