@@ -99,13 +99,13 @@
     sensors:
       phone_battery:
         friendly_name: 'Telefon batteri'
-        value_template: '{{ states.device_tracker.bh9000mba2.attributes.battery | int }}'
+        value_template: '{{ states.device_tracker.bh9000mba2.attributes.battery }}'
         unit_of_measurement: "%"
         entity_id:
          - device_tracker.bh9000mba2
       phone_altitude:
         friendly_name: 'Telefon altitud'
-        value_template: '{{ states.device_tracker.bh9000mba2.attributes.altitude | int }}'
+        value_template: '{{ states.device_tracker.bh9000mba2.attributes.altitude | round(0) }}'
         unit_of_measurement: "m"
         entity_id:
          - device_tracker.bh9000mba2

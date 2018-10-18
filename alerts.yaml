@@ -1,0 +1,27 @@
+  spa_temp:
+    name: SPA temp är låg!
+    done_message: SPA temp ok
+    entity_id: sensor.spa
+    below: '37'
+    repeat: 30
+    can_acknowledge: True
+#    skip_first: True
+    notifiers: pushover
+  vin_temp:
+    name: Vinkällaren varm!
+    done_message: Vinkällaren ok
+    entity_id: sensor.vinkallaren
+    above: '18'
+    repeat: 30
+    can_acknowledge: True
+#    skip_first: True
+    notifiers: pushover
+  vinkyl_temp:
+    name: Vinkylen varm!
+    done_message: Vinkylen ok
+    entity_id: sensor.vinkylen
+    above: '12'
+    repeat: 30
+    can_acknowledge: True
+#    skip_first: True
+    notifiers: pushover
