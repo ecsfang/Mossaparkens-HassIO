@@ -1,0 +1,32 @@
+  - alias: SpaTemp
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.spa
+      below: 37
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Kontrollera SPA!"
+        message: "Temperaturen är låg - {{ states.sensor.spa.state }} grader!"
+
+  - alias: VinTemp
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.vinkallaren
+      below: 37
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Kontrollera vinkällaren!"
+        message: "Temperaturen är hög - {{ states.sensor.vinkallaren.state }} grader!"
+
+  - alias: VinKylTemp
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.vinkylen
+      above: 12
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Kontrollera vinkylen!"
+        message: "Temperaturen är hög - {{ states.sensor.vinkylen.state }} grader!"

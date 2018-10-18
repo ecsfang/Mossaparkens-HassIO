@@ -124,7 +124,7 @@ binary_sensor: !include binary_sensors.yaml
 
 automation: !include_dir_merge_list automations/
 
-alert: !include alerts.yaml
+#alert: !include alerts.yaml
 
 history_graph:
   gr1:
