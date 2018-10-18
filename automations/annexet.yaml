@@ -26,8 +26,8 @@
         entity_id: light.citrusbelysning
       - service: notify.pushover
         data_template:
-          title: "Light is low"
-          message: "Turning on light becuase only {{ states.sensor.annex_ljus }} lux"
+          title: "Lågt ljus"
+          message: "Tänder belysningen eftersom endast {{ states.sensor.annex_ljus.state }} lux"
 
 ## Släck belysningen på kvällen eller om ljuset är starkt nog
   - alias: 'Citrusbelysning av'
