@@ -99,7 +99,7 @@
     sensors:
       phone_battery:
         friendly_name: 'Telefon batteri'
-        value_template: '{{ states.device_tracker.bh9000mba2.attributes.battery }}'
+        value_template: '{{ states.device_tracker.bh9000mba2.attributes.battery | round(0) }}'
         unit_of_measurement: "%"
         entity_id:
          - device_tracker.bh9000mba2
