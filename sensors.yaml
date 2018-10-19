@@ -66,11 +66,11 @@
     value_template: "{{ value_json.AM2301.Temperature }}"
     unit_of_measurement: "°C"
 
-  - platform: mqtt
-    name: "Uterum humid"
-    state_topic: "tele/outroom/SENSOR"
-    value_template: "{{ value_json.AM2301.Humidity }}"
-    unit_of_measurement: '%'
+#  - platform: mqtt
+#    name: "Uterum humid"
+#    state_topic: "tele/outroom/SENSOR"
+#    value_template: "{{ value_json.AM2301.Humidity }}"
+#    unit_of_measurement: '%'
 
   - platform: uptime
     name: Online
