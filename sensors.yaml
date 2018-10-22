@@ -57,7 +57,7 @@
     unit_of_measurement: "°C"
 
   - platform: mqtt
-    name: "Garage dörren"
+    name: "Garageport norr"
     state_topic: "fromGarage/status"
 
   - platform: mqtt
