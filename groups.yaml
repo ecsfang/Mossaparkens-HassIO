@@ -8,3 +8,6 @@
       - sensor.diskmaskin_effekt
       - sensor.diskmaskin_spanning
       - sensor.diskmaskin_strom
+  Garage:
+    entities:
+      - sensor.garage_door_state

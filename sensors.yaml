@@ -144,3 +144,20 @@
     state_topic: "tele/dishwasher/SENSOR"
     value_template: '{{ value_json.ENERGY.Current }}'
     unit_of_measurement: "A"
+
+  - platform: template
+    sensors:
+      garage_door_state:
+        value_template: >- 
+          {% if is_state('sensor.garageport_norr', 'open') %}
+            Öppen
+          {% else %}
+            Stängd
+          {% endif %}
+        icon_template: >-
+          {% if is_state('sensor.garageport_norr', 'open') %}
+            mdi:garage-open
+          {% else %}
+            mdi:garage
+          {% endif %}
+        friendly_name: 'Garageport'
