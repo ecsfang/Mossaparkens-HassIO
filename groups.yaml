@@ -17,11 +17,11 @@
   weather_sensors:
     name: Väder
     entities:
+      - sensor.dark_sky_summary
       - sensor.ute_temp
+      - sensor.dark_sky_temperature
       - sensor.annex_temp
       - sensor.uterum_temp
       - sensor.ute_tryck
       - sensor.annex_humid
-      - sensor.dark_sky_temperature
-      - sensor.dark_sky_summary
       - sensor.dark_sky_humidity

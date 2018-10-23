@@ -76,3 +76,13 @@ zwave.fibaro_system_fgd212_dimmer_2:
 
 binary_sensor.eddieserver:
   icon: mdi:desktop-tower
+
+sensor.annex_humid:
+  icon: mdi:water-percent
+
+sensor.dark_sky_temperature:
+  friendly_name: Ute temp (prognos)
+sensor.dark_sky_humidity:
+  friendly_name: Ute humid (prognos)
+sensor.dark_sky_summary:
+  friendly_name: Väderprognos
