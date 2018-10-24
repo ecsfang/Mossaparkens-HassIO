@@ -1,10 +1,13 @@
 # Example .gitignore file for your config dir
 *
 !*.yaml
-!/automations
 !*.dash
+!*.py
+!/automations
 !/appdaemon
 !/appdaemon/dashboards
+!/packages
+!/python_scripts
 !.gitignore
 secrets.yaml
 known_devices.yaml
