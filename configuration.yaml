@@ -13,6 +13,9 @@ homeassistant:
   time_zone: Europe/Stockholm
   # Customization file
   customize: !include customize.yaml
+  customize_glob:
+    "sensor.dark_sky_*":
+      hidden: true
 
   packages: !include_dir_named packages
 
