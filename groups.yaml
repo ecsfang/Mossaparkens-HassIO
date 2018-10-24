@@ -9,6 +9,17 @@
       - sensor.diskmaskin_spanning
       - sensor.diskmaskin_strom
 
+  citrusheater:
+    name: Citruselementen
+    control: hidden # < hide the group switch ( so you can trun the hole group on off
+    entities:   # < a list of thing you want to show in the group 
+      - sensor.effekt_idag
+      - sensor.effekt_igar
+      - sensor.effekt_totalt
+      - sensor.effekt_nu
+      - sensor.element_spanning
+      - sensor.element_strom
+
   garage:
     name: Garaget
     entities:

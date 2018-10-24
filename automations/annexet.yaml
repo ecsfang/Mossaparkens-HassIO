@@ -7,7 +7,7 @@
     trigger:
       - platform: numeric_state
         entity_id: sensor.annex_ljus
-        below: 50
+        below: 300
       - platform: time
         at: '06:00'
       - platform: homeassistant
@@ -17,7 +17,7 @@
       conditions:
         - condition: numeric_state
           entity_id: sensor.annex_ljus
-          below: 50
+          below: 300
         - condition: time
           after: '05:59'
           before: '20:00'
@@ -34,7 +34,7 @@
     trigger:
       - platform: numeric_state
         entity_id: sensor.annex_ljus
-        above: 50
+        above: 300
       - platform: time
         at: '20:00'
       - platform: homeassistant
@@ -44,7 +44,70 @@
       conditions:
         - condition: numeric_state
           entity_id: sensor.annex_ljus
-          above: 50
+          above: 300
+        - condition: time
+          after: '19:59'
+          before: '06:00'
+    action:
+      service: light.turn_off
+      entity_id: light.citrusbelysning
+
+## Starta elementet om temperaturen är låg
+  - alias: 'Citruselement på'
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.annex_temp
+        below: 8
+      - platform: homeassistant
+        event: start
+    condition:
+      - condition: numeric_state
+        entity_id: sensor.annex_temp
+        below: 8
+    action:
+      - service: switch.turn_on
+        entity_id: switch.citruselementet
+      - service: notify.pushover
+        data_template:
+          title: "Låg temperatur"
+          message: "Startar elementet eftersom endast {{ states.sensor.annex_temp.state }} grader"
+
+## Stäng av elementet om temperaturen är hög
+  - alias: 'Citruselement av'
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.annex_temp
+        above: 10
+      - platform: homeassistant
+        event: start
+    condition:
+      - condition: numeric_state
+        entity_id: sensor.annex_temp
+        above: 10
+    action:
+      - service: switch.turn_off
+        entity_id: switch.citruselementet
+      - service: notify.pushover
+        data_template:
+          title: "Hög temperatur"
+          message: "Stänger av elementet eftersom {{ states.sensor.annex_temp.state }} grader"
+
+## Släck belysningen på kvällen eller om ljuset är starkt nog
+  - alias: 'Citrusbelysning av'
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.annex_ljus
+        above: 300
+      - platform: time
+        at: '20:00'
+      - platform: homeassistant
+        event: start
+    condition:
+      condition: or
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.annex_ljus
+          above: 300
         - condition: time
           after: '19:59'
           before: '06:00'
