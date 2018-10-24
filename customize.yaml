@@ -86,3 +86,54 @@ sensor.dark_sky_humidity:
   friendly_name: Ute humid (prognos)
 sensor.dark_sky_summary:
   friendly_name: Väderprognos
+
+sensor.dark_sky_cloud_coverage:
+  hidden: yes
+sensor.dark_sky_cloud_coverage_1:
+  hidden: yes
+sensor.dark_sky_cloud_coverage_2:
+  hidden: yes
+sensor.dark_sky_cloud_coverage_3:
+  hidden: yes
+sensor.dark_sky_cloud_coverage_4:
+  hidden: yes
+sensor.dark_sky_cloud_coverage_5:
+  hidden: yes
+sensor.dark_sky_cloud_coverage_6:
+  hidden: yes
+sensor.dark_sky_cloud_coverage_7:
+  hidden: yes
+
+sensor.dark_sky_daytime_high_temperature:
+  hidden: yes
+sensor.dark_sky_daytime_high_temperature_1:
+  hidden: yes
+sensor.dark_sky_daytime_high_temperature_2:
+  hidden: yes
+sensor.dark_sky_daytime_high_temperature_3:
+  hidden: yes
+sensor.dark_sky_daytime_high_temperature_4:
+  hidden: yes
+sensor.dark_sky_daytime_high_temperature_5:
+  hidden: yes
+sensor.dark_sky_daytime_high_temperature_6:
+  hidden: yes
+sensor.dark_sky_daytime_high_temperature_7:
+  hidden: yes
+
+sensor.dark_sky_daytime_humidity:
+  hidden: yes
+sensor.dark_sky_daytime_humidity_1:
+  hidden: yes
+sensor.dark_sky_daytime_humidity_2:
+  hidden: yes
+sensor.dark_sky_daytime_humidity_3:
+  hidden: yes
+sensor.dark_sky_daytime_humidity_4:
+  hidden: yes
+sensor.dark_sky_daytime_humidity_5:
+  hidden: yes
+sensor.dark_sky_daytime_humidity_6:
+  hidden: yes
+sensor.dark_sky_daytime_humidity_7:
+  hidden: yes
