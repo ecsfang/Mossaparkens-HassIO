@@ -22,7 +22,6 @@ sensor:
       - temperature_high
       - daily_summary
       - hourly_summary
-      # - Added for weather card
       - humidity
       - temperature
       - wind_bearing
