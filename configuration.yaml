@@ -14,7 +14,6 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
-  python_script:
   packages: !include_dir_named packages
 
 # Show links to resources in log and frontend
@@ -23,7 +22,8 @@ homeassistant:
 # Enables the frontend
 frontend:
 
-    
+python_script:
+
 panel_iframe:
   configurator:
     title: Configurator
