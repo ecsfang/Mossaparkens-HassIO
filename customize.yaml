@@ -83,6 +83,9 @@ sensor.annex_humid:
 sensor.moon:
   icon: mdi:weather-night
 
+sensor.season:
+  icon: theme-light-dark
+
 sensor.dark_sky_temperature:
   friendly_name: Ute temp (prognos)
 sensor.dark_sky_humidity:
