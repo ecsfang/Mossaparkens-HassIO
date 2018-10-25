@@ -80,6 +80,9 @@ binary_sensor.eddieserver:
 sensor.annex_humid:
   icon: mdi:water-percent
 
+sensor.moon:
+  icon: mdi:weather-night
+
 sensor.dark_sky_temperature:
   friendly_name: Ute temp (prognos)
 sensor.dark_sky_humidity:

@@ -29,6 +29,7 @@ sensor:
 #    monitored_conditions:
 #      - us
   - platform: season
+  - platform: moon
   - platform: template
     sensors:
       weekday:
@@ -289,7 +290,7 @@ group:
     - group.weather_forecast
 #    - group.air_quality
   weather_info:
-    name: Weather
+    name: Vädret nu
     view: no
     entities:
       - sun.sun
@@ -307,7 +308,7 @@ group:
       - sensor.dark_sky_cloud_cover
       - sensor.dark_sky_humidity
   weather_forecast:
-    name: Forecast
+    name: Prognos
     view: no
     icon: mdi:sun
     entities:
