@@ -35,15 +35,15 @@ binary_sensor.aeotec_zw100_multisensor_6_sensor_3:
 # NODE 0, Fibaro - Dimmer 2 - Trädgårdsbelysningen
 #-------------------------------------------
 light.fibaro_system_fgd212_dimmer_2_level_2:
-  friendly_name: Trädgårdbelysning
+  friendly_name: Trädgårdsbelysning
   icon: mdi:lightbulb
 
 sensor.fibaro_system_fgd212_dimmer_2_energy:
-  friendly_name: Trädgårdbelysning (kWh)
+  friendly_name: Trädgårdsbelysning (kWh)
   icon: mdi:flash
 
 sensor.fibaro_system_fgd212_dimmer_2_power_2:
-  friendly_name: Trädgårdbelysning (W)
+  friendly_name: Trädgårdsbelysning (W)
   icon: mdi:flash
 
 # Hidden devices ...
