@@ -73,6 +73,11 @@ verisure:
   username: !secret vsure_user
   password: !secret vsure_pass
 
+maxcube:
+  gateways:
+    - host: 192.168.1.183
+      port: 62910
+
 device_tracker:
   - platform: gpslogger
     password: !secret ha_dash_pw
@@ -118,11 +123,11 @@ sun:
 zone: !include zones.yaml
 
 # Text to speech
-tts:
-  - platform: google
+#tts:
+#  - platform: google
 
 # Cloud
-cloud:
+#cloud:
 
 group: !include groups.yaml
 script: !include scripts.yaml
@@ -148,11 +153,16 @@ history_graph:
     hours_to_show: 96
     refresh: 60
   gr2:
-    name: Temperature
+    name: Temperatur ute
     entities:
       - sensor.ute_temp
       - sensor.uterum_temp
       - sensor.annex_temp
       - sensor.garaget
+    hours_to_show: 168
+  gr3:
+    name: Temperatur inne
+    entities:
       - sensor.vinkallaren
+      - sensor.vinkylen
     hours_to_show: 168

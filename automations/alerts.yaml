@@ -2,7 +2,7 @@
     trigger:
       platform: numeric_state
       entity_id: sensor.spa
-      below: 35
+      below: 34
     action:
       service: notify.pushover
       data_template:
@@ -41,3 +41,27 @@
       data_template:
         title: "Kontrollera vinkylen!"
         message: "Temperaturen är hög - {{ states.sensor.vinkylen.state }}°C!"
+
+## Varna om temperaturen blir för låg i annexet!
+  - alias: 'Låg temp i annexet'
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.annex_temp
+        below: 6
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Kontrollera annexet!"
+        message: "Temperaturen är låg - {{ states.sensor.vinkylen.state }}°C!"
+
+## Varna om temperaturen blir för låg i garaget!
+  - alias: 'Låg temp i garaget'
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.annex_temp
+        below: 4
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Kontrollera garaget!"
+        message: "Temperaturen är låg - {{ states.sensor.vinkylen.state }}°C!"

@@ -24,10 +24,10 @@
     action:
       - service: light.turn_on
         entity_id: light.citrusbelysning
-      - service: notify.pushover
-        data_template:
-          title: "Lågt ljus"
-          message: "Tänder belysningen eftersom endast {{ states.sensor.annex_ljus.state }} lux"
+ #     - service: notify.pushover
+ #       data_template:
+ #         title: "Lågt ljus"
+ #         message: "Tänder belysningen eftersom endast {{ states.sensor.annex_ljus.state }} lux"
 
 ## Släck belysningen på kvällen eller om ljuset är starkt nog
   - alias: 'Citrusbelysning av'
@@ -67,10 +67,10 @@
     action:
       - service: switch.turn_on
         entity_id: switch.citruselementet
-      - service: notify.pushover
-        data_template:
-          title: "Låg temperatur"
-          message: "Startar elementet eftersom endast {{ states.sensor.annex_temp.state }} grader"
+#      - service: notify.pushover
+#        data_template:
+#          title: "Låg temperatur"
+#          message: "Startar elementet eftersom endast {{ states.sensor.annex_temp.state }} grader"
 
 ## Stäng av elementet om temperaturen är hög
   - alias: 'Citruselement av'
@@ -87,10 +87,10 @@
     action:
       - service: switch.turn_off
         entity_id: switch.citruselementet
-      - service: notify.pushover
-        data_template:
-          title: "Hög temperatur"
-          message: "Stänger av elementet eftersom {{ states.sensor.annex_temp.state }} grader"
+#      - service: notify.pushover
+#        data_template:
+#          title: "Hög temperatur"
+#          message: "Stänger av elementet eftersom {{ states.sensor.annex_temp.state }} grader"
 
 ## Släck belysningen på kvällen eller om ljuset är starkt nog
   - alias: 'Citrusbelysning av'
