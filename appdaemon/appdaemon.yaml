@@ -16,5 +16,5 @@ appdaemon:
 #      ha_url: http://192.168.1.171:8123
 #      ha_key: 3f66867f491b4d7595188b99e0b6b718
 hadashboard:
-  dash_url: http://hassio.local:5050
+  dash_url: http://mossaio.duckdns.org:5050
   dash_dir: /config/appdaemon/dashboards
