@@ -2,7 +2,7 @@
 ## Main arguments, all optional
 ##
 title: Main Panel
-widget_dimensions: [150, 150]
+widget_dimensions: [120, 120]
 widget_size: [1, 1]
 widget_margins: [5, 5]
 columns: 5
@@ -46,8 +46,8 @@ forecast_6:
 layout:
    - sensor.ute_temp, sensor.annex_temp, sensor.aeotec_zw100_multisensor_6_temperature_3
    - sensor.vinkallaren, sensor.vinkylen, sensor.spa
-   - light.koksfonstret, light.fonsterlampa_vrum, light.staketbelysning
-   - light.dammbelysning, light.fibaro_system_fgd212_dimmer_2_level_2
-   - forecast_0,  forecast_1, forecast_2
+   - light.koksfonstret, light.fonsterlampa_vrum, light.vitrinskapet
+   - light.staketbelysning, light.dammbelysning, light.fibaro_system_fgd212_dimmer_2_level_2
+   - forecast_0, forecast_1, forecast_2
    - forecast_3, forecast_4, forecast_5
    - forecast_6
