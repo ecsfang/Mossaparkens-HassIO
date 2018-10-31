@@ -15,6 +15,34 @@ global_parameters:
       media_player:
         step: 5
 
+forecast_0:
+    widget_type: day_forecast
+    entity: sensor.forecast_0
+
+forecast_1:
+    widget_type: day_forecast
+    entity: sensor.forecast_1
+
+forecast_2:
+    widget_type: day_forecast
+    entity: sensor.forecast_2
+
+forecast_3:
+    widget_type: day_forecast
+    entity: sensor.forecast_3
+
+forecast_4:
+    widget_type: day_forecast
+    entity: sensor.forecast_4
+
+forecast_5:
+    widget_type: day_forecast
+    entity: sensor.forecast_5
+
+forecast_6:
+    widget_type: day_forecast
+    entity: sensor.forecast_6
+
 layout:
    - sensor.ute_temp, sensor.annex_temp, sensor.vinkallaren, sensor.vinkylen, sensor.spa
    - light.koksfonstret, light.fonsterlampa_vrum, light.staketbelysning, light.dammbelysning, light.fibaro_system_fgd212_dimmer_2_level_2

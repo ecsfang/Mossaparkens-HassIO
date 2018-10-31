@@ -3,9 +3,14 @@
 !*.yaml
 !*.dash
 !*.py
+!*.js
+!*.html
+!*.css
 !/automations
 !/appdaemon
 !/appdaemon/dashboards
+!/appdaemon/custom_widgets
+!/appdaemon/custom_widgets/base_day_forecast
 !/packages
 !/python_scripts
 !.gitignore
