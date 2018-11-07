@@ -66,6 +66,18 @@
     value_template: "{{ value_json.AM2301.Temperature }}"
     unit_of_measurement: "°C"
 
+  - platform: mqtt
+    name: "Temp1"
+    state_topic: "tele/tempsens/SENSOR"
+    value_template: "{{ value_json.DS18x20.DS1.Temperature }}"
+    unit_of_measurement: "°C"
+
+  - platform: mqtt
+    name: "Temp2"
+    state_topic: "tele/tempsens/SENSOR"
+    value_template: "{{ value_json.DS18x20.DS2.Temperature }}"
+    unit_of_measurement: "°C"
+
 #  - platform: mqtt     ## Sensor doesn't work! :(
 #    name: "Uterum humid"
 #    state_topic: "tele/outroom/SENSOR"

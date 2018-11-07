@@ -166,3 +166,10 @@ history_graph:
       - sensor.vinkallaren
       - sensor.vinkylen
     hours_to_show: 168
+  gr4:
+    name: Temp sensorer
+    entities:
+      - sensor.temp1
+      - sensor.temp2
+      - sensor.spa
+    hours_to_show: 168
