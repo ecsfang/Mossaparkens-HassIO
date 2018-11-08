@@ -37,8 +37,10 @@ panel_iframe:
 
 mqtt:
   broker: core-mosquitto
-  username: !secret mqttUser
+#  username: !secret mqttUser
   password: !secret mqttPass
+  discovery: true
+  discovery_prefix: homeassistant
   birth_message:
     topic: "tele/hass1/LWT"
     payload: "Online"
@@ -167,9 +169,10 @@ history_graph:
       - sensor.vinkylen
     hours_to_show: 168
   gr4:
-    name: Temp sensorer
+    name: Säkrings temp
     entities:
       - sensor.temp1
       - sensor.temp2
       - sensor.spa
-    hours_to_show: 168
+      - sensor.ute_temp
+    hours_to_show: 96

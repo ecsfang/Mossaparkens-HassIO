@@ -93,6 +93,9 @@ sensor.dark_sky_humidity:
 sensor.dark_sky_summary:
   friendly_name: Väderprognos
 
+sensor.spaoffset:
+  hidden: yes
+
 sensor.dark_sky_cloud_coverage:
   hidden: yes
 sensor.dark_sky_cloud_coverage_1:
