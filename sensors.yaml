@@ -9,6 +9,15 @@
 #    value_template: "{{  value | round(1) }}"
     unit_of_measurement: "°C"
 
+  - platform: template
+    sensors:
+      spa_offset:
+      entity_id:
+      - sensor.spa
+      unit_of_measurement: '°C'
+      value_template: >
+        {{ ((float(states(‘sensor.spa’)) - 30) * 2) | round(1) }}
+
   - platform: mqtt
     name: "NodeIT temp"
     state_topic: "nodeit/status/temp1"

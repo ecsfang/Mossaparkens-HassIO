@@ -65,3 +65,15 @@
       data_template:
         title: "Kontrollera garaget!"
         message: "Temperaturen är låg - {{ states.sensor.vinkylen.state }}°C!"
+
+## Varna om säkringen blir för varm!
+  - alias: 'Säkringen varm!'
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.temp1
+        above: 20
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Kontrollera strömmen!"
+        message: "Säkringen är varm - {{ states.sensor.vinkylen.state }}°C!"

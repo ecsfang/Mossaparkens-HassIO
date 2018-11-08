@@ -173,6 +173,6 @@ history_graph:
     entities:
       - sensor.temp1
       - sensor.temp2
-      - sensor.spa
+      - sensor.spa_offset
       - sensor.ute_temp
     hours_to_show: 96

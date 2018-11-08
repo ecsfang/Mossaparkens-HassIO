@@ -52,6 +52,7 @@
       service: light.turn_off
       entity_id: light.citrusbelysning
 
+
 ## Starta elementet om temperaturen är låg
   - alias: 'Citruselement på'
     trigger:
@@ -91,26 +92,3 @@
 #        data_template:
 #          title: "Hög temperatur"
 #          message: "Stänger av elementet eftersom {{ states.sensor.annex_temp.state }} grader"
-
-## Släck belysningen på kvällen eller om ljuset är starkt nog
-  - alias: 'Citrusbelysning av'
-    trigger:
-      - platform: numeric_state
-        entity_id: sensor.annex_ljus
-        above: 300
-      - platform: time
-        at: '20:00'
-      - platform: homeassistant
-        event: start
-    condition:
-      condition: or
-      conditions:
-        - condition: numeric_state
-          entity_id: sensor.annex_ljus
-          above: 300
-        - condition: time
-          after: '19:59'
-          before: '06:00'
-    action:
-      service: light.turn_off
-      entity_id: light.citrusbelysning
