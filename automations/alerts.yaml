@@ -52,7 +52,7 @@
       service: notify.pushover
       data_template:
         title: "Kontrollera annexet!"
-        message: "Temperaturen är låg - {{ states.sensor.vinkylen.state }}°C!"
+        message: "Temperaturen är låg - {{ states.sensor.annex_temp.state }}°C!"
 
 ## Varna om temperaturen blir för låg i garaget!
   - alias: 'Låg temp i garaget'
@@ -64,7 +64,7 @@
       service: notify.pushover
       data_template:
         title: "Kontrollera garaget!"
-        message: "Temperaturen är låg - {{ states.sensor.vinkylen.state }}°C!"
+        message: "Temperaturen är låg - {{ states.sensor.annex_temp.state }}°C!"
 
 ## Varna om säkringen blir för varm!
   - alias: 'Säkringen varm!'
@@ -76,4 +76,4 @@
       service: notify.pushover
       data_template:
         title: "Kontrollera strömmen!"
-        message: "Säkringen är varm - {{ states.sensor.vinkylen.state }}°C!"
+        message: "Säkringen är varm - {{ states.sensor.temp1.state }}°C!"
