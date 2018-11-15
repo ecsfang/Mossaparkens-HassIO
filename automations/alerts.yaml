@@ -83,7 +83,7 @@
     trigger:
       - platform: numeric_state
         entity_id: sensor.fas_1
-        above: 10
+        above: 15
     action:
       service: notify.pushover
       data_template:
@@ -97,7 +97,7 @@
     trigger:
       - platform: numeric_state
         entity_id: sensor.fas_2
-        above: 10
+        above: 15
     action:
       service: notify.pushover
       data_template:
@@ -111,7 +111,7 @@
     trigger:
       - platform: numeric_state
         entity_id: sensor.fas_3
-        above: 10
+        above: 15
     action:
       service: notify.pushover
       data_template:
