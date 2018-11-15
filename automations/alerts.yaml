@@ -89,8 +89,6 @@
       data_template:
         title: "Kontrollera strömmen!"
         message: "Fas 1 använder {{ states.sensor.fas_1.state }}A!"
-        data:
-          sound: space alarm
 
   - alias: 'Strömförbrukning!'
     trigger:
@@ -102,8 +100,6 @@
       data_template:
         title: "Kontrollera strömmen!"
         message: "Fas 2 använder {{ states.sensor.fas_2.state }}A!"
-        data:
-          sound: intermission
 
   - alias: 'Strömförbrukning!'
     trigger:
