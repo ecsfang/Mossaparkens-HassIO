@@ -3,15 +3,21 @@ log:
   logfile: STDOUT
   errorfile: STDERR
 appdaemon:
-  cert_verify: false
   threads: 10
   app_dir: /config/appdaemon/apps
+  api_key: mossaparken18
+  api_ssl_certificate: /ssl/fullchain.pem
+  api_ssl_key: /ssl/privkey.pem
   plugins:
     HASS:
       type: hass
       ha_url: https://mossaio.duckdns.org:8123
-      ssl_certificate: /ssl/fullchain.pem
-      ssl_key: /ssl/privkey.pem
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI3M2FlZDg5MzlmYjk0Nzk5OTIwMzk0MDVjZGI5MDNmMyIsImlhdCI6MTU0MTk1NTMwNSwiZXhwIjoxODU3MzE1MzA1fQ.kCMKDZQMM9xNlwq2N4015A3sf5Hm3rSnyl7lgjI0kuA
+      cert_path: /ssl/fullchain.pem
+      cert_verify: false
 hadashboard:
   dash_url: http://mossaio.duckdns.org:5050
   dash_dir: /config/appdaemon/dashboards
+  dash_ssl_certificate: /ssl/fullchain.pem
+  dash_ssl_key: /ssl/privkey.pem
+  dash_password: mossaparken18

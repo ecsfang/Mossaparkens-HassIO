@@ -24,7 +24,7 @@
     trigger:
       platform: numeric_state
       entity_id: sensor.vinkallaren
-      above: 17
+      above: 18
     action:
       service: notify.pushover
       data_template:
@@ -77,3 +77,56 @@
       data_template:
         title: "Kontrollera strömmen!"
         message: "Säkringen är varm - {{ states.sensor.temp1.state }}°C!"
+
+## Varna om strömförbrukningen blir för hög!
+  - alias: 'Strömförbrukning!'
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.fas_1
+        above: 10
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Kontrollera strömmen!"
+        message: "Fas 1 använder {{ states.sensor.fas_1.state }}A!"
+        data:
+          sound: space alarm
+
+  - alias: 'Strömförbrukning!'
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.fas_2
+        above: 10
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Kontrollera strömmen!"
+        message: "Fas 2 använder {{ states.sensor.fas_2.state }}A!"
+        data:
+          sound: intermission
+
+  - alias: 'Strömförbrukning!'
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.fas_3
+        above: 10
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Kontrollera strömmen!"
+        message: "Fas 3 använder {{ states.sensor.fas_3.state }}A!"
+
+  - alias: "Notify if HA Device Offline"
+    trigger:
+      - platform: state
+        entity_id:
+          - binary_sensor.vaderstation
+        from: 'on'
+        to: 'off'
+        for:
+          seconds: 300
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Home Assistant Device is Offline"
+        message: "{{ trigger.to_state.attributes.friendly_name }} is offline"

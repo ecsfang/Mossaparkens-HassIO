@@ -19,6 +19,24 @@
 #        {{ ((float(states(‘sensor.spa’)) - 30) * 2) | round(1) }}
 
   - platform: mqtt
+    name: "Fas 1"
+    state_topic: "powermeter/phase1"
+    value_template: "{{  value | round(1) }}"
+    unit_of_measurement: 'A'
+
+  - platform: mqtt
+    name: "Fas 2"
+    state_topic: "powermeter/phase2"
+    value_template: "{{  value | round(1) }}"
+    unit_of_measurement: 'A'
+
+  - platform: mqtt
+    name: "Fas 3"
+    state_topic: "powermeter/phase3"
+    value_template: "{{  value | round(1) }}"
+    unit_of_measurement: 'A'
+
+  - platform: mqtt
     name: "NodeIT temp"
     state_topic: "nodeit/status/temp1"
     unit_of_measurement: '°C'

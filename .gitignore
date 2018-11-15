@@ -16,3 +16,4 @@
 !.gitignore
 secrets.yaml
 known_devices.yaml
+appdaemon/appdaemon.yaml

@@ -4,7 +4,11 @@ homeassistant:
   # Location required to calculate the time the sun rises and sets
   latitude: !secret home_lat
   longitude: !secret home_long
-  
+
+  auth_providers:
+   - type: homeassistant
+   - type: legacy_api_password
+
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 80
   # metric for Metric, imperial for Imperial
@@ -23,6 +27,9 @@ homeassistant:
 
 # Show links to resources in log and frontend
 # introduction:
+
+# Enable the auth component
+auth:
 
 # Enables the frontend
 frontend:
@@ -175,4 +182,11 @@ history_graph:
       - sensor.temp2
       - sensor.spa
       - sensor.ute_temp
+    hours_to_show: 96
+  gr5:
+    name: Strömförbrukning
+    entities:
+      - sensor.fas_1
+      - sensor.fas_2
+      - sensor.fas_3
     hours_to_show: 96
