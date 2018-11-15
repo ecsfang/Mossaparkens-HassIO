@@ -20,7 +20,7 @@
         title: "Kontrollera SPA!"
         message: "Temperaturen är hög - {{ states.sensor.spa.state }}°C!"
 
-  - alias: VinTemp
+  - alias: VinkällareTemp
     trigger:
       platform: numeric_state
       entity_id: sensor.vinkallaren
@@ -79,7 +79,7 @@
         message: "Säkringen är varm - {{ states.sensor.temp1.state }}°C!"
 
 ## Varna om strömförbrukningen blir för hög!
-  - alias: 'Strömförbrukning!'
+  - alias: 'Strömförbrukning Fas 1!'
     trigger:
       - platform: numeric_state
         entity_id: sensor.fas_1
@@ -90,7 +90,7 @@
         title: "Kontrollera strömmen!"
         message: "Fas 1 använder {{ states.sensor.fas_1.state }}A!"
 
-  - alias: 'Strömförbrukning!'
+  - alias: 'Strömförbrukning Fas 2!'
     trigger:
       - platform: numeric_state
         entity_id: sensor.fas_2
@@ -105,7 +105,7 @@
           sound: spacealarm
           device: Xperia_XZ3
 
-  - alias: 'Strömförbrukning!'
+  - alias: 'Strömförbrukning Fas 3!'
     trigger:
       - platform: numeric_state
         entity_id: sensor.fas_3
