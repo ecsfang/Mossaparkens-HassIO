@@ -87,14 +87,17 @@
     action:
       service: notify.pushover
       data_template:
-        title: "Kontrollera strömmen!"
         message: "Fas 1 använder {{ states.sensor.fas_1.state }}A!"
+      data:
+        title: "Kontrollera strömmen!"
+        data:
+          sound: spacealarm
 
   - alias: 'Strömförbrukning Fas 2!'
     trigger:
       - platform: numeric_state
         entity_id: sensor.fas_2
-        above: 5
+        above: 10
     action:
       service: notify.pushover
       data_template:
@@ -103,13 +106,12 @@
         title: "Kontrollera strömmen!"
         data:
           sound: spacealarm
-          device: Xperia_XZ3
 
   - alias: 'Strömförbrukning Fas 3!'
     trigger:
       - platform: numeric_state
         entity_id: sensor.fas_3
-        above: 5
+        above: 10
     action:
       service: notify.pushover
       data_template:
@@ -117,8 +119,7 @@
       data:
         title: "Kontrollera strömmen!"
         data:
-          sound: falling
-          device: xperiaxz2compact
+          sound: spacealarm
 
   - alias: "Notify if HA Device Offline"
     trigger:
