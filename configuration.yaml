@@ -182,11 +182,11 @@ history_graph:
       - sensor.temp2
       - sensor.spa
       - sensor.ute_temp
-    hours_to_show: 96
+    hours_to_show: 48
   gr5:
     name: Strömförbrukning
     entities:
       - sensor.fas_1
       - sensor.fas_2
       - sensor.fas_3
-    hours_to_show: 96
+    hours_to_show: 48
