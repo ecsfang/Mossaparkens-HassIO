@@ -24,10 +24,6 @@
         data:
           entity_id: input_select.dishwasher_status
           option: Running
-      - service: notify.pushover
-        data_template:
-          title: "Diskmaskinen"
-          message: "Diskmaskinen har startats!"
 
 # When the power level drops below 10, and the Dishwasher is set to
 # the 'Running' state, mark the Dishwasher as Finished
@@ -70,10 +66,6 @@
         data:
           entity_id: input_select.dishwasher_status
           option: Clean
-      - service: notify.pushover
-        data_template:
-          title: "Diskmaskinen"
-          message: "Diskmaskinen är klar!"
 
 # When the power drops and the dishwasher is Clean or Drying, someone has
 # turned the Dishwasher off and emptied it. We should do this when the state
@@ -104,3 +96,21 @@
         data:
           entity_id: input_select.dishwasher_status
           option: Dirty
+
+
+  - alias: Send alert when dishwasher is clean
+    trigger:
+      - platform: state
+        entity_id: input_select.dishwasher_status
+        to: Clean
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.dishwasher_status
+          state: Clean
+    action:
+      - service: notify.pushover
+        data_template:
+          title: "Diskmaskinen"
+          message: "Diskmaskinen är klar!"
