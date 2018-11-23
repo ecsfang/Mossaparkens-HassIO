@@ -184,6 +184,12 @@
     value_template: '{{ value_json.ENERGY.Current }}'
     unit_of_measurement: "A"
 
+  - platform: template
+    sensors:
+      dishwasher_status:
+        value_template: '{{ states.input_select.dishwasher_status.state}}'
+        friendly_name: 'Diskmaskin Status'
+
 #
 # Elementen i annext
 #

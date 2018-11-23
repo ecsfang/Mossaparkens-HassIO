@@ -147,5 +147,5 @@ sensor.dark_sky_daytime_humidity_6:
 sensor.dark_sky_daytime_humidity_7:
   hidden: yes
 
-sensor.dishwasher_status:
+sensor.diskmaskin_status:
   icon: mdi:washing-machine

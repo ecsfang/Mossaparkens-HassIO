@@ -2,7 +2,7 @@
     name: Diskmaskinen  #< Its display name and its ID
     control: hidden # < hide the group switch ( so you can trun the hole group on off
     entities:   # < a list of thing you want to show in the group 
-      - sensor.dishwasher_status
+      - sensor.dishmaskin_status
       - sensor.diskmaskin_idag
       - sensor.diskmaskin_igar
       - sensor.diskmaskin_totalt
