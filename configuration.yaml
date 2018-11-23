@@ -141,6 +141,16 @@ zone: !include zones.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
 
+input_select:
+  dishwasher_status:
+    name: Diskmaskin Status
+    options:
+      - Dirty
+      - Running
+      - Drying
+      - Clean
+    initial: Dirty
+
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 light: !include lights.yaml
