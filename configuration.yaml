@@ -186,11 +186,10 @@ history_graph:
       - sensor.vinkylen
     hours_to_show: 168
   gr4:
-    name: Säkrings temp
+    name: Kallvatten temp
     entities:
       - sensor.temp1
       - sensor.temp2
-      - sensor.spa
       - sensor.ute_temp
     hours_to_show: 48
   gr5:
