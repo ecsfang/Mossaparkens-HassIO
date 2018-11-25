@@ -37,6 +37,24 @@
     unit_of_measurement: 'A'
 
   - platform: mqtt
+    name: "Effekt 1"
+    state_topic: "powermeter/power1"
+    value_template: "{{  value | round(1) }}"
+    unit_of_measurement: 'W'
+
+  - platform: mqtt
+    name: "Effekt 2"
+    state_topic: "powermeter/power2"
+    value_template: "{{  value | round(1) }}"
+    unit_of_measurement: 'W'
+
+  - platform: mqtt
+    name: "Effekt 3"
+    state_topic: "powermeter/power3"
+    value_template: "{{  value | round(1) }}"
+    unit_of_measurement: 'W'
+
+  - platform: mqtt
     name: "NodeIT temp"
     state_topic: "nodeit/status/temp1"
     unit_of_measurement: '°C'
@@ -102,6 +120,18 @@
   - platform: mqtt
     name: "Temp2"
     state_topic: "tele/tempsens/SENSOR"
+    value_template: "{{ value_json.DS18x20.DS2.Temperature }}"
+    unit_of_measurement: "°C"
+
+  - platform: mqtt
+    name: "Temp3"
+    state_topic: "tele/tempsens2/SENSOR"
+    value_template: "{{ value_json.DS18x20.DS1.Temperature }}"
+    unit_of_measurement: "°C"
+
+  - platform: mqtt
+    name: "Temp4"
+    state_topic: "tele/tempsens2/SENSOR"
     value_template: "{{ value_json.DS18x20.DS2.Temperature }}"
     unit_of_measurement: "°C"
 

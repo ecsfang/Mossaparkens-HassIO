@@ -186,10 +186,12 @@ history_graph:
       - sensor.vinkylen
     hours_to_show: 168
   gr4:
-    name: Kallvatten temp
+    name: Vatten temp
     entities:
       - sensor.temp1
       - sensor.temp2
+      - sensor.temp3
+      - sensor.temp4
       - sensor.ute_temp
     hours_to_show: 48
   gr5:
