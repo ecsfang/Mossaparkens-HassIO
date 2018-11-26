@@ -13,7 +13,7 @@
       data_template:
         title: "Kontrollera SPA!"
         message: >
-          Temperaturen är för låg de senaste 5 minuterna ({{ states("sensor.spa") }}°C).
+          Temperaturen har varit för låg de senaste 5 minuterna ({{ states("sensor.spa") }}°C).
 
   - alias: SpaTempHigh
     trigger:
@@ -29,7 +29,61 @@
       data_template:
         title: "Kontrollera SPA!"
         message: >
-          Temperaturen är för hög de senaste 5 minuterna ({{ states("sensor.spa") }}°C).
+          Temperaturen har varit för hög de senaste 5 minuterna ({{ states("sensor.spa") }}°C).
+
+  - alias: Phase1High
+    trigger:
+      platform: state
+      entity_id: sensor.phase1_status
+      to: "Too High"
+      for:
+        hours: 0
+        minutes: 5
+        seconds: 0
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Kontrollera Fas 1!"
+        message: >
+          Strömmen har varit för hög de senaste 5 minuterna ({{ states("sensor.fas_1") }}A).
+        data:
+          sound: spacealarm
+
+  - alias: Phase2High
+    trigger:
+      platform: state
+      entity_id: sensor.phase2_status
+      to: "Too High"
+      for:
+        hours: 0
+        minutes: 5
+        seconds: 0
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Kontrollera Fas 2!"
+        message: >
+          Strömmen har varit för hög de senaste 5 minuterna ({{ states("sensor.fas_2") }}A).
+        data:
+          sound: spacealarm
+
+  - alias: Phase3High
+    trigger:
+      platform: state
+      entity_id: sensor.phase3_status
+      to: "Too High"
+      for:
+        hours: 0
+        minutes: 5
+        seconds: 0
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Kontrollera Fas 3!"
+        message: >
+          Strömmen har varit för hög de senaste 5 minuterna ({{ states("sensor.fas_3") }}A).
+        data:
+          sound: spacealarm
 
 #  - alias: SpaTempLow
 #    trigger:
@@ -94,66 +148,66 @@
         entity_id: sensor.annex_temp
         below: 4
     action:
-      service: notify.pushover
-      data_template:
-        title: "Kontrollera garaget!"
-        message: "Temperaturen är låg - {{ states.sensor.annex_temp.state }}°C!"
-
-## Varna om säkringen blir för varm!
-  - alias: 'Säkringen varm!'
-    trigger:
-      - platform: numeric_state
-        entity_id: sensor.temp1
-        above: 20
-    action:
-      service: notify.pushover
-      data_template:
-        title: "Kontrollera strömmen!"
-        message: "Säkringen är varm - {{ states.sensor.temp1.state }}°C!"
-
-## Varna om strömförbrukningen blir för hög!
-  - alias: 'Strömförbrukning Fas 1!'
-    trigger:
-      - platform: numeric_state
-        entity_id: sensor.fas_1
-        above: 20
-    action:
-      service: notify.pushover
-      data_template:
-        message: "Fas 1 använder {{ states.sensor.fas_1.state }}A!"
-      data:
-        title: "Kontrollera strömmen!"
-        data:
-          sound: spacealarm
-
-  - alias: 'Strömförbrukning Fas 2!'
-    trigger:
-      - platform: numeric_state
-        entity_id: sensor.fas_2
-        above: 20
-    action:
-      service: notify.pushover
-      data_template:
-        message: "Fas 2 använder {{ states.sensor.fas_2.state }}A!"
-      data:
-        title: "Kontrollera strömmen!"
-        data:
-          sound: spacealarm
-
-  - alias: 'Strömförbrukning Fas 3!'
-    trigger:
-      - platform: numeric_state
-        entity_id: sensor.fas_3
-        above: 20
-    action:
-      service: notify.pushover
-      data_template:
-        message: "Fas 3 använder {{ states.sensor.fas_3.state }}A!"
-      data:
-        title: "Kontrollera strömmen!"
-        data:
-          sound: spacealarm
-
+#      service: notify.pushover
+#      data_template:
+#        title: "Kontrollera garaget!"
+#        message: "Temperaturen är låg - {{ states.sensor.annex_temp.state }}°C!"
+#
+### Varna om säkringen blir för varm!
+#  - alias: 'Säkringen varm!'
+#    trigger:
+#      - platform: numeric_state
+#        entity_id: sensor.temp1
+#        above: 20
+#    action:
+#      service: notify.pushover
+#      data_template:
+#        title: "Kontrollera strömmen!"
+#        message: "Säkringen är varm - {{ states.sensor.temp1.state }}°C!"
+#
+### Varna om strömförbrukningen blir för hög!
+#  - alias: 'Strömförbrukning Fas 1!'
+#    trigger:
+#      - platform: numeric_state
+#        entity_id: sensor.fas_1
+#        above: 20
+#    action:
+#      service: notify.pushover
+#      data_template:
+#        message: "Fas 1 använder {{ states.sensor.fas_1.state }}A!"
+#      data:
+#        title: "Kontrollera strömmen!"
+#        data:
+#          sound: spacealarm
+#
+#  - alias: 'Strömförbrukning Fas 2!'
+#    trigger:
+#      - platform: numeric_state
+#        entity_id: sensor.fas_2
+#        above: 20
+#    action:
+#      service: notify.pushover
+#      data_template:
+#        message: "Fas 2 använder {{ states.sensor.fas_2.state }}A!"
+#      data:
+#        title: "Kontrollera strömmen!"
+#        data:
+#          sound: spacealarm
+#
+#  - alias: 'Strömförbrukning Fas 3!'
+#    trigger:
+#      - platform: numeric_state
+#        entity_id: sensor.fas_3
+#        above: 20
+#    action:
+#      service: notify.pushover
+#      data_template:
+#        message: "Fas 3 använder {{ states.sensor.fas_3.state }}A!"
+#      data:
+#        title: "Kontrollera strömmen!"
+#        data:
+#          sound: spacealarm
+#
   - alias: "Notify if HA Device Offline"
     trigger:
       - platform: state
