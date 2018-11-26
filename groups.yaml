@@ -37,3 +37,17 @@
       - sensor.ute_tryck
       - sensor.annex_humid
       - sensor.dark_sky_humidity
+
+  power_sensors:
+    name: Förbrukning huset
+    entities:
+      - sensor.phase_1
+      - sensor.phase_2
+      - sensor.phase_3
+      - sensor.effekt_1
+      - sensor.effekt_2
+      - sensor.effekt_3
+      - sensor.idag_kwh
+      - sensor.vecka_kwh
+      - sensor.manad_kwh
+      - sensor.ar_kwh
