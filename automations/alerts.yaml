@@ -1,24 +1,57 @@
+
   - alias: SpaTempLow
     trigger:
-      platform: numeric_state
-      entity_id: sensor.spa
-      below: 34
+      platform: state
+      entity_id: sensor.spa_tempstatus
+      to: "Too Cold"
+      for:
+        hours: 0
+        minutes: 5
+        seconds: 0
     action:
       service: notify.pushover
       data_template:
         title: "Kontrollera SPA!"
-        message: "Temperaturen är låg - {{ states.sensor.spa.state }}°C!"
+        message: >
+          Temperaturen är för låg de senaste 5 minuterna ({{ states("sensor.spa") }}°C).
 
   - alias: SpaTempHigh
     trigger:
-      platform: numeric_state
-      entity_id: sensor.spa
-      above: 40
+      platform: state
+      entity_id: sensor.spa_tempstatus
+      to: "Too Hot"
+      for:
+        hours: 0
+        minutes: 5
+        seconds: 0
     action:
       service: notify.pushover
       data_template:
         title: "Kontrollera SPA!"
-        message: "Temperaturen är hög - {{ states.sensor.spa.state }}°C!"
+        message: >
+          Temperaturen är för hög de senaste 5 minuterna ({{ states("sensor.spa") }}°C).
+
+#  - alias: SpaTempLow
+#    trigger:
+#      platform: numeric_state
+#      entity_id: sensor.spa
+#      below: 33
+#    action:
+#      service: notify.pushover
+#      data_template:
+#        title: "Kontrollera SPA!"
+#        message: "Temperaturen är låg - {{ states.sensor.spa.state }}°C!"
+#
+#  - alias: SpaTempHigh
+#    trigger:
+#      platform: numeric_state
+#      entity_id: sensor.spa
+#      above: 40
+#    action:
+#      service: notify.pushover
+#      data_template:
+#        title: "Kontrollera SPA!"
+#        message: "Temperaturen är hög - {{ states.sensor.spa.state }}°C!"
 
   - alias: VinkällareTemp
     trigger:

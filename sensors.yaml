@@ -9,6 +9,19 @@
 #    value_template: "{{  value | round(1) }}"
     unit_of_measurement: "°C"
 
+  - platform: template
+    spa_tempstatus:
+      value_template: >-
+        {% if states("sensor.spa") | float > 20 and states("sensor.spa") | float < 30 %}
+            OK
+        {%elif states("sensor.spa") | float < 20 %}
+            Too Cold
+        {%elif states("sensor.spa") | float > 30 %}
+            Too Hot
+        {%elif states("sensor.spa") | float < 1 %}
+            ERROR
+        {%- endif %}
+
 #  - platform: template
 #    sensors:
 #      spa_offset:
@@ -50,6 +63,16 @@
     name: "Effekt 3"
     state_topic: "powermeter/power3"
     unit_of_measurement: 'W'
+
+  - platform: template
+    sensors:
+      phone_battery:
+        friendly_name: 'Telefon batteri'
+        value_template: '{{ states.device_tracker.bh9000mba2.attributes.battery | round(0) }}'
+        unit_of_measurement: "%"
+        entity_id:
+         - device_tracker.bh9000mba2
+
 
   - platform: mqtt  
     state_topic: "powerconsumption/house/today"
