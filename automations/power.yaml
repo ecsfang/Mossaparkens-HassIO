@@ -7,22 +7,22 @@
       - service: mqtt.publish
         data_template:
           topic: "powerconsumption/house/today"
-          payload: '{{(states.sensor.today_kwh.state | float + (states.sensor.effekt_2.state | float /120000))|round(5)}}'
+          payload: '{{(states.sensor.idag_kwh.state | float + (states.sensor.effekt_2.state | float /120000))|round(5)}}'
           retain: true
       - service: mqtt.publish
         data_template:
           topic: "powerconsumption/house/wtd"
-          payload: '{{(states.sensor.week_kwh.state | float + (states.sensor.effekt_2.state | float /120000))|round(5)}}'
+          payload: '{{(states.sensor.vecka_kwh.state | float + (states.sensor.effekt_2.state | float /120000))|round(5)}}'
           retain: true
       - service: mqtt.publish
         data_template:
           topic: "powerconsumption/house/mtd"
-          payload: '{{(states.sensor.month_kwh.state | float + (states.sensor.effekt_2.state | float /120000))|round(5)}}'
+          payload: '{{(states.sensor.manad_kwh.state | float + (states.sensor.effekt_2.state | float /120000))|round(5)}}'
           retain: true
       - service: mqtt.publish
         data_template:
           topic: "powerconsumption/house/ytd"
-          payload: '{{(states.sensor.year_kwh.state | float + (states.sensor.effekt_2.state | float /120000))|round(5)}}'
+          payload: '{{(states.sensor.ar_kwh.state | float + (states.sensor.effekt_2.state | float /120000))|round(5)}}'
           retain: true
 
   - alias: house kwh new month
@@ -39,5 +39,5 @@
       - service: mqtt.publish
         data_template:
           topic: "powerconsumption/house/m{{now().month}}y2018"
-          payload: '{{(states.sensor.month_tv_kwh.state | float)}}'
+          payload: '{{(states.sensor.manad_kwh.state | float)}}'
           retain: true
