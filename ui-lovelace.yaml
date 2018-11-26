@@ -55,6 +55,33 @@ views:
             # Override the name to use
             name: Vitrinskåpet
 
+      - type: gauge
+        title: Fas 1
+        unit_of_measurement: 'A'
+        entity: sensor.fas_1
+        severity:
+          green: 0
+          yellow: 10
+          red: 20
+
+      - type: gauge
+        title: Fas 2
+        unit_of_measurement: 'A'
+        entity: sensor.fas_2
+        severity:
+          green: 0
+          yellow: 10
+          red: 20
+
+      - type: gauge
+        title: Fas 3
+        unit_of_measurement: 'A'
+        entity: sensor.fas_3
+        severity:
+          green: 0
+          yellow: 10
+          red: 20
+
         # The markdown card will render markdown text.
       - type: markdown
         title: Lovelace
