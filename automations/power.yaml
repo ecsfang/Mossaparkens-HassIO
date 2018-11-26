@@ -1,0 +1,43 @@
+  - alias: power house
+    initial_state: 'on'
+    trigger:
+      - platform: time
+        seconds: '/30'
+    action:
+      - service: mqtt.publish
+        data_template:
+          topic: "powerconsumption/house/today"
+          payload: '{{(states.sensor.today_kwh.state | float + (states.sensor.effekt_2.state | float /120000))|round(5)}}'
+          retain: true
+      - service: mqtt.publish
+        data_template:
+          topic: "powerconsumption/house/wtd"
+          payload: '{{(states.sensor.week_kwh.state | float + (states.sensor.effekt_2.state | float /120000))|round(5)}}'
+          retain: true
+      - service: mqtt.publish
+        data_template:
+          topic: "powerconsumption/house/mtd"
+          payload: '{{(states.sensor.month_kwh.state | float + (states.sensor.effekt_2.state | float /120000))|round(5)}}'
+          retain: true
+      - service: mqtt.publish
+        data_template:
+          topic: "powerconsumption/house/ytd"
+          payload: '{{(states.sensor.year_kwh.state | float + (states.sensor.effekt_2.state | float /120000))|round(5)}}'
+          retain: true
+
+  - alias: house kwh new month
+    initial_state: 'on'
+    trigger:
+      - platform: time
+        at: '00:00:24'
+    condition:
+      condition: and
+      conditions:
+        - condition: template
+          value_template: '{{ now().day == 1 }}'
+    action:
+      - service: mqtt.publish
+        data_template:
+          topic: "powerconsumption/house/m{{now().month}}y2018"
+          payload: '{{(states.sensor.month_tv_kwh.state | float)}}'
+          retain: true

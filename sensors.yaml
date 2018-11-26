@@ -39,20 +39,34 @@
   - platform: mqtt
     name: "Effekt 1"
     state_topic: "powermeter/power1"
-    value_template: "{{  value | round(1) }}"
     unit_of_measurement: 'W'
 
   - platform: mqtt
     name: "Effekt 2"
     state_topic: "powermeter/power2"
-    value_template: "{{  value | round(1) }}"
     unit_of_measurement: 'W'
 
   - platform: mqtt
     name: "Effekt 3"
     state_topic: "powermeter/power3"
-    value_template: "{{  value | round(1) }}"
     unit_of_measurement: 'W'
+
+  - platform: mqtt  
+    state_topic: "powerconsumption/house/today"
+    name: 'idag kwh'  
+    unit_of_measurement: 'kwh'
+  - platform: mqtt  
+    state_topic: "powerconsumption/house/wtd"
+    name: 'vecka kwh'  
+    unit_of_measurement: 'kwh'
+  - platform: mqtt  
+    state_topic: "powerconsumption/house/mtd"
+    name: 'månad kwh'  
+    unit_of_measurement: 'kwh'
+  - platform: mqtt  
+    state_topic: "powerconsumption/house/ytd"
+    name: 'år kwh'  
+    unit_of_measurement: 'kwh'
 
   - platform: mqtt
     name: "NodeIT temp"
