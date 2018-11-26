@@ -9,18 +9,6 @@
 #    value_template: "{{  value | round(1) }}"
     unit_of_measurement: "°C"
 
-  - platform: template
-    spa_tempstatus:
-      value_template: >-
-        {% if states("sensor.spa") | float > 20 and states("sensor.spa") | float < 30 %}
-            OK
-        {%elif states("sensor.spa") | float < 20 %}
-            Too Cold
-        {%elif states("sensor.spa") | float > 30 %}
-            Too Hot
-        {%elif states("sensor.spa") | float < 1 %}
-            ERROR
-        {%- endif %}
 
 #  - platform: template
 #    sensors:
@@ -48,6 +36,47 @@
     state_topic: "powermeter/phase3"
     value_template: "{{  value | round(1) }}"
     unit_of_measurement: 'A'
+
+  - platform: template
+    sensors:
+      spa_tempstatus:
+        value_template: >-
+          {% if states("sensor.spa") | float > 20 and states("sensor.spa") | float < 30 %}
+              OK
+          {%elif states("sensor.spa") | float < 20 %}
+              Too Cold
+          {%elif states("sensor.spa") | float > 30 %}
+              Too Hot
+          {%elif states("sensor.spa") | float < 1 %}
+              ERROR
+          {%- endif %}
+      phase1_status:
+        value_template: >-
+          {% if states("sensor.fas_1") | float >= 0 and states("sensor.fas_1") | float <= 20 %}
+              OK
+          {%elif states("sensor.fas_1") | float > 20 %}
+              Too High
+          {%elif states("sensor.fas_1") | float < 0 %}
+              ERROR
+          {%- endif %}
+      phase2_status:
+        value_template: >-
+          {% if states("sensor.fas_2") | float >= 0 and states("sensor.fas_2") | float <= 20 %}
+              OK
+          {%elif states("sensor.fas_2") | float > 20 %}
+              Too High
+          {%elif states("sensor.fas_2") | float < 0 %}
+              ERROR
+          {%- endif %}
+      phase3_status:
+        value_template: >-
+          {% if states("sensor.fas_3") | float >= 0 and states("sensor.fas_3") | float <= 20 %}
+              OK
+          {%elif states("sensor.fas_3") | float > 20 %}
+              Too High
+          {%elif states("sensor.fas_3") | float < 0 %}
+              ERROR
+          {%- endif %}
 
   - platform: mqtt
     name: "Effekt 1"
