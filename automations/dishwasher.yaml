@@ -4,13 +4,16 @@
 
   - alias: Set dishwasher active when power detected
     trigger:
-      platform: state
-      entity_id: sensor.dishw_status
-      to: "Running"
-      for:
-        hours: 0
-        minutes: 0
-        seconds: 30
+      - platform: state
+        entity_id: sensor.dishw_status
+        to: "Running"
+        for:
+          seconds: 10
+      - platform: state
+        entity_id: sensor.dishw_status
+        to: "Warming"
+        for:
+          seconds: 10
     condition:
       condition: or
       conditions:

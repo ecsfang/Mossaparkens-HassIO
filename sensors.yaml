@@ -41,9 +41,9 @@
     sensors:
       dishw_status:
         value_template: >-
-          {%if states("sensor.diskmaskin_strom") | float > 0.5 %}
+          {%if states("sensor.diskmaskin_strom") | float > 2 %}
               Warming
-          {%elif states("sensor.diskmaskin_strom") | float > 0.1 %}
+          {%elif states("sensor.diskmaskin_strom") | float > 0.2 %}
               Running
           {%elif states("sensor.diskmaskin_strom") | float > 0 %}
               Drying
