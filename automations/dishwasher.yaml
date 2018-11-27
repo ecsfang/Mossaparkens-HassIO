@@ -53,7 +53,7 @@
           entity_id: input_select.dishwasher_status
           option: Drying
 
-# Once the dishwasher status has been 'Drying' for 30 minutes, mark the
+# Once the dishwasher status has been 'Drying' for xx minutes, mark the
 # dishwasher as clean
 
   - alias: Set dishwasher clean
