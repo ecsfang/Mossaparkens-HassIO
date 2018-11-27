@@ -4,9 +4,13 @@
 
   - alias: Set dishwasher active when power detected
     trigger:
-      - platform: numeric_state
-        entity_id: sensor.diskmaskin_strom
-        above: 2
+      platform: state
+      entity_id: sensor.dishw_status
+      to: "Running"
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 30
     condition:
       condition: or
       conditions:
@@ -30,9 +34,13 @@
 
   - alias: Set dishwasher drying when power drops
     trigger:
-      - platform: numeric_state
-        entity_id: sensor.diskmaskin_strom
-        below: 2
+      platform: state
+      entity_id: sensor.dishw_status
+      to: "Drying"
+      for:
+        hours: 0
+        minutes: 1
+        seconds: 0
     condition:
       condition: and
       conditions:
@@ -54,7 +62,7 @@
         entity_id: input_select.dishwasher_status
         to: Drying
         for:
-          minutes: 15
+          minutes: 20
     condition:
       condition: and
       conditions:
@@ -74,23 +82,22 @@
 
   - alias: Set Dishwasher dirty when power off
     trigger:
-      - platform: numeric_state
-        entity_id: sensor.diskmaskin_strom
-        below: 1
+      platform: state
+      entity_id: sensor.dishw_status
+      to: "Ready"
+      for:
+        hours: 1
+        minutes: 0
+        seconds: 0
     condition:
-      condition: and
+      condition: or
       conditions:
-        - condition: numeric_state
-          entity_id: sensor.diskmaskin_strom
-          below: 1
-        - condition: or
-          conditions:
-          - condition: state
-            entity_id: input_select.dishwasher_status
-            state: Clean
-          - condition: state
-            entity_id: input_select.dishwasher_status
-            state: Drying
+        - condition: state
+          entity_id: input_select.dishwasher_status
+          state: Clean
+        - condition: state
+          entity_id: input_select.dishwasher_status
+          state: Drying
     action:
       - service: input_select.select_option
         data:

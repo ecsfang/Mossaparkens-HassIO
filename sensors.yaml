@@ -39,6 +39,17 @@
 
   - platform: template
     sensors:
+      dishw_status:
+        value_template: >-
+          {%if states("sensor.diskmaskin_strom") | float > 0.5 %}
+              Warming
+          {%elif states("sensor.diskmaskin_strom") | float > 0.1 %}
+              Running
+          {%elif states("sensor.diskmaskin_strom") | float > 0 %}
+              Drying
+          {%else %}
+              Ready
+          {%- endif %}
       spa_tempstatus:
         value_template: >-
           {% if states("sensor.spa") | float >= 33 and states("sensor.spa") | float <= 38 %}
