@@ -59,6 +59,7 @@ views:
         title: Fas 1
         unit_of_measurement: 'A'
         entity: sensor.fas_1
+        max: 30
         severity:
           green: 0
           yellow: 10
@@ -68,6 +69,7 @@ views:
         title: Fas 2
         unit_of_measurement: 'A'
         entity: sensor.fas_2
+        max: 30
         severity:
           green: 0
           yellow: 10
@@ -77,6 +79,7 @@ views:
         title: Fas 3
         unit_of_measurement: 'A'
         entity: sensor.fas_3
+        max: 30
         severity:
           green: 0
           yellow: 10

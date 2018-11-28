@@ -8,12 +8,12 @@
         entity_id: sensor.dishw_status
         to: "Running"
         for:
-          seconds: 10
+          minutes: 2
       - platform: state
         entity_id: sensor.dishw_status
         to: "Warming"
         for:
-          seconds: 10
+          minutes: 2
     condition:
       condition: or
       conditions:
@@ -42,7 +42,7 @@
       to: "Drying"
       for:
         hours: 0
-        minutes: 1
+        minutes: 2
         seconds: 0
     condition:
       condition: and
