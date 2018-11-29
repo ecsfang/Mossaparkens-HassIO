@@ -61,28 +61,34 @@
           {%- endif %}
       fas_1_status:
         value_template: >-
-          {%if states("sensor.fas_1") | float >= 0 and states("sensor.fas_1") | float <= 20 %}
+          {%if states("sensor.fas_1") | float >= 0 and states("sensor.fas_1") | float <= 10 %}
               OK
           {%elif states("sensor.fas_1") | float > 20 %}
               Too High
+          {%elif states("sensor.fas_1") | float > 10 %}
+              High
           {%elif states("sensor.fas_1") | float < 0 %}
               ERROR
           {%- endif %}
       fas_2_status:
         value_template: >-
-          {%if states("sensor.fas_2") | float >= 0 and states("sensor.fas_2") | float <= 20 %}
+          {%if states("sensor.fas_2") | float >= 0 and states("sensor.fas_2") | float <= 10 %}
               OK
           {%elif states("sensor.fas_2") | float > 20 %}
               Too High
+          {%elif states("sensor.fas_2") | float > 10 %}
+              High
           {%elif states("sensor.fas_2") | float < 0 %}
               ERROR
           {%- endif %}
       fas_3_status:
         value_template: >-
-          {%if states("sensor.fas_3") | float >= 0 and states("sensor.fas_3") | float <= 20 %}
+          {%if states("sensor.fas_3") | float >= 0 and states("sensor.fas_3") | float <= 10 %}
               OK
           {%elif states("sensor.fas_3") | float > 20 %}
               Too High
+          {%elif states("sensor.fas_3") | float > 10 %}
+              High
           {%elif states("sensor.fas_3") | float < 0 %}
               ERROR
           {%- endif %}
