@@ -34,23 +34,23 @@
     payload_on: "on"
     payload_off: "off"
 
-  - platform: threshold
-    name: "SPA temp"
-    entity_id: sensor.spa
-    lower: 35
-    upper: 37
-
-  - platform: threshold
-    name: "Fas 1 status"
-    entity_id: sensor.fas_1
-    upper: 20
-
-  - platform: threshold
-    name: "Fas 2 status"
-    entity_id: sensor.fas_2
-    upper: 20
-
-  - platform: threshold
-    name: "Fas 3 status"
-    entity_id: sensor.fas_3
-    upper: 20
+#  - platform: threshold
+#    name: "SPA temp"
+#    entity_id: sensor.spa
+#    lower: 35
+#    upper: 37
+#
+#  - platform: threshold
+#    name: "Fas 1 status"
+#    entity_id: sensor.fas_1
+#    upper: 20
+#
+#  - platform: threshold
+#    name: "Fas 2 status"
+#    entity_id: sensor.fas_2
+#    upper: 20
+#
+#  - platform: threshold
+#    name: "Fas 3 status"
+#    entity_id: sensor.fas_3
+#    upper: 20

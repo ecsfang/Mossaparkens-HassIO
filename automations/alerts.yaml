@@ -4,7 +4,7 @@
       platform: state
 #      entity_id: sensor.spa_tempstatus
       entity_id: sensor.spa_temp
-      to: 'below' # "Too cold"
+      to: "Too cold"
       for:
         hours: 0
         minutes: 5
@@ -20,7 +20,7 @@
     trigger:
       platform: state
       entity_id: sensor.spa_temp
-      to: 'above' #"Too Hot"
+      to: "Too Hot"
       for:
         hours: 0
         minutes: 5
@@ -36,7 +36,7 @@
     trigger:
       platform: state
       entity_id: sensor.fas_1_status
-      to: 'above' #"Too High"
+      to: "Too High"
       for:
         hours: 0
         minutes: 5
@@ -54,7 +54,7 @@
     trigger:
       platform: state
       entity_id: sensor.fas_2_status
-      to: 'above' #"Too High"
+      to: "Too High"
       for:
         hours: 0
         minutes: 5
@@ -72,7 +72,7 @@
     trigger:
       platform: state
       entity_id: sensor.fas_3_status
-      to: 'above' #"Too High"
+      to: "Too High"
       for:
         hours: 0
         minutes: 5
@@ -85,28 +85,6 @@
           Strömmen har varit för hög de senaste 5 minuterna ({{ states("sensor.fas_3") }}A).
         data:
           sound: spacealarm
-
-#  - alias: SpaTempLow
-#    trigger:
-#      platform: numeric_state
-#      entity_id: sensor.spa
-#      below: 33
-#    action:
-#      service: notify.pushover
-#      data_template:
-#        title: "Kontrollera SPA!"
-#        message: "Temperaturen är låg - {{ states.sensor.spa.state }}°C!"
-#
-#  - alias: SpaTempHigh
-#    trigger:
-#      platform: numeric_state
-#      entity_id: sensor.spa
-#      above: 40
-#    action:
-#      service: notify.pushover
-#      data_template:
-#        title: "Kontrollera SPA!"
-#        message: "Temperaturen är hög - {{ states.sensor.spa.state }}°C!"
 
   - alias: VinkällareTemp
     trigger:
