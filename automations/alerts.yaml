@@ -2,8 +2,9 @@
   - alias: SpaTempLow
     trigger:
       platform: state
-      entity_id: sensor.spa_tempstatus
-      to: "Too Cold"
+#      entity_id: sensor.spa_tempstatus
+      entity_id: sensor.spa_temp
+      to: below # "Too cold"
       for:
         hours: 0
         minutes: 5
@@ -18,8 +19,8 @@
   - alias: SpaTempHigh
     trigger:
       platform: state
-      entity_id: sensor.spa_tempstatus
-      to: "Too Hot"
+      entity_id: sensor.spa_temp
+      to: above #"Too Hot"
       for:
         hours: 0
         minutes: 5
@@ -34,8 +35,8 @@
   - alias: Phase1High
     trigger:
       platform: state
-      entity_id: sensor.phase1_status
-      to: "Too High"
+      entity_id: sensor.fas_1_status
+      to: above #"Too High"
       for:
         hours: 0
         minutes: 5
@@ -52,8 +53,8 @@
   - alias: Phase2High
     trigger:
       platform: state
-      entity_id: sensor.phase2_status
-      to: "Too High"
+      entity_id: sensor.fas_2_status
+      to: above #"Too High"
       for:
         hours: 0
         minutes: 5
@@ -70,8 +71,8 @@
   - alias: Phase3High
     trigger:
       platform: state
-      entity_id: sensor.phase3_status
-      to: "Too High"
+      entity_id: sensor.fas_3_status
+      to: above #"Too High"
       for:
         hours: 0
         minutes: 5
