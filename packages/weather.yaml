@@ -32,9 +32,9 @@ sensor:
   - platform: moon
   - platform: template
     sensors:
-      weekday:
-        friendly_name: 'Weekday'
-        value_template: '{{ now().strftime("%A") }}'
+#      weekday:
+#        friendly_name: 'Weekday'
+#        value_template: '{{ now().strftime("%A") }}'
       forecast_0:
         friendly_name: "Idag"
         value_template: >
