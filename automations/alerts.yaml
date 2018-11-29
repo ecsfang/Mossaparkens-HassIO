@@ -72,10 +72,10 @@
     trigger:
       platform: state
       entity_id: sensor.fas_3_status
-      to: "High"
+      to: "Too High"
       for:
         hours: 0
-        minutes: 1
+        minutes: 2
         seconds: 0
     action:
       service: notify.pushover
