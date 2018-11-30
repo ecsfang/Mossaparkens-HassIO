@@ -1,4 +1,28 @@
 #-------------------------------------------
+# Motionsensor ZW5, Garaget
+#-------------------------------------------
+sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
+  friendly_name: Garage Alarm
+sensor.fibaro_system_fgms001zw5_motion_sensor_general:
+  friendly_name: Garage Rörelse
+sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
+  friendly_name: Garage Lux
+sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity:
+  friendly_name: Garage Seismic
+sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
+  friendly_name: Garage Temp
+
+# Hidden devices ...
+binary_sensor.fibaro_system_fgms001_motion_sensor_sensor:
+  hidden: yes
+sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_level:
+  hidden: yes
+sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_type:
+  hidden: yes
+sensor.fibaro_system_fgms001zw5_motion_sensor_sourcenodeid:
+  hidden: yes
+
+#-------------------------------------------
 # Multisensor, node 3 - Garaget
 #-------------------------------------------
 sensor.aeotec_zw100_multisensor_6_luminance_3:
