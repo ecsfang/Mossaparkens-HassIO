@@ -11,10 +11,10 @@ sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity:
   friendly_name: Garage Seismic
 sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
   friendly_name: Garage Temp
+binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor:
+  friendly_name: Garage Sensor
 
 # Hidden devices ...
-binary_sensor.fibaro_system_fgms001_motion_sensor_sensor:
-  hidden: yes
 sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_level:
   hidden: yes
 sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_type:

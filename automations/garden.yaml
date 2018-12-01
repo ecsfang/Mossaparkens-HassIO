@@ -112,3 +112,66 @@
       service: switch.turn_off
       entity_id: switch.dammpump
 
+###################################################
+##                                               ##
+## Rörelse sensor i garaget                      ##
+##                                               ##
+###################################################
+
+  - alias: 'Rörelse i garaget?'
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_general
+        above: 0
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Rörelse i garaget?"
+        message: "Någon detekterades - {{ states.sensor.fibaro_system_fgms001zw5_motion_sensor_general.state }}!"
+
+  - alias: 'Någon i garaget? Tänd lampan'
+    trigger:
+      - platform: state
+        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+        to: '8'
+    action:
+      service: light.turn_on
+      data:
+        entity_id:  light.fibaro_system_fgd212_dimmer_2_level_2
+        transition: 10
+        brightness_pct: 100
+
+  - alias: 'Ingen i garaget - släck efter några minuter'
+    trigger:
+      - platform: state
+        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+        to: '0'
+        for:
+          minutes: 2
+    action:
+      service: light.turn_off
+      data:
+        entity_id:  light.fibaro_system_fgd212_dimmer_2_level_2
+        transition: 10
+
+  - alias: 'Alarm från garaget!'
+    trigger:
+      - platform: state
+        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+        to: 'on'
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Garagealarm!"
+        message: "Någon rör sig i garaget!!"
+
+  - alias: 'Alarm från garaget!'
+    trigger:
+      - platform: state
+        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+        to: '3'
+    action:
+      service: notify.pushover
+      data_template:
+        title: "Garagealarm!"
+        message: "Någon pillar på detektorn!!"
