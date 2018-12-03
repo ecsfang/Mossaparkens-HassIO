@@ -359,7 +359,7 @@
   - platform: template
     sensors:
       thomas63:
-        value_template: '{{ (( as_timestamp(now()) - as_timestamp(strptime("1963-08-13", "%Y-%m-%d")) ) / 86400 ) | round(2) }}'
+        value_template: '{{ (( as_timestamp(now()) - as_timestamp(strptime("1963-08-13", "%Y-%m-%d")) ) / 86400 ) | round(0) }}'
         entity_id: sensor.date
-        friendly_name: 'Thomas63'
+        friendly_name: 'Thomas'
         unit_of_measurement: "Dagar"
