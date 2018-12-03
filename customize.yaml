@@ -13,6 +13,8 @@ sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
   friendly_name: Garage Temp
 binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor:
   friendly_name: Garage Sensor
+  icon: mdi:run
+  device_class: motion
 
 # Hidden devices ...
 sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_level:
