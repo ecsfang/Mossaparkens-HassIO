@@ -6,9 +6,7 @@
       entity_id: sensor.spa_temp
       to: "Too cold"
       for:
-        hours: 0
         minutes: 5
-        seconds: 0
     action:
       service: notify.pushover
       data_template:
@@ -22,9 +20,7 @@
       entity_id: sensor.spa_temp
       to: "Too Hot"
       for:
-        hours: 0
         minutes: 5
-        seconds: 0
     action:
       service: notify.pushover
       data_template:
@@ -38,9 +34,7 @@
       entity_id: sensor.fas_1_status
       to: "Too High"
       for:
-        hours: 0
         minutes: 2
-        seconds: 0
     action:
       service: notify.pushover
       data_template:
@@ -56,9 +50,7 @@
       entity_id: sensor.fas_2_status
       to: "Too High"
       for:
-        hours: 0
         minutes: 2
-        seconds: 0
     action:
       service: notify.pushover
       data_template:
@@ -74,9 +66,7 @@
       entity_id: sensor.fas_3_status
       to: "Too High"
       for:
-        hours: 0
         minutes: 2
-        seconds: 0
     action:
       service: notify.pushover
       data_template:

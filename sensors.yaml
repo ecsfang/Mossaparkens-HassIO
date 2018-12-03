@@ -52,11 +52,11 @@
           {%- endif %}
       spa_temp:
         value_template: >-
-          {%if states("sensor.spa") | float >= 30 and states("sensor.spa") | float <= 38 %}
+          {%if states("sensor.spa") | float >= 30 and states("sensor.spa") | float <= 40 %}
               OK
           {%elif states("sensor.spa") | float < 30 %}
               Too Cold
-          {%elif states("sensor.spa") | float > 38 %}
+          {%elif states("sensor.spa") | float > 40 %}
               Too Hot
           {%- endif %}
       fas_1_status:
