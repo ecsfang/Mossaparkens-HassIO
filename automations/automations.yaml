@@ -127,19 +127,27 @@
       platform: time
       at: '05:30:00'
     condition:
-      condition: or
+    - condition: and
       conditions:
-        # Turn on all december ... :)
-        - condition: template
-          value_template: '{{ now().month == 12 }}'
-        - condition:
-          - condition: and
-            conditions:
-            - condition: sun
-              before: sunrise
-            - condition: state
-              entity_id: 'binary_sensor.workday_today'
-              state: 'on'
+      - condition: sun
+        before: sunrise
+      - condition: state
+        entity_id: 'binary_sensor.workday_today'
+        state: 'on'
+#    condition:
+#      condition: or
+#      conditions:
+#        # Turn on all december ... :)
+#        - condition: template
+#          value_template: '{{ now().month == 12 }}'
+#        - condition:
+#          - condition: and
+#            conditions:
+#            - condition: sun
+#              before: sunrise
+#            - condition: state
+#              entity_id: 'binary_sensor.workday_today'
+#              state: 'on'
     action:
       service: light.turn_on
       entity_id: light.fonsterlampa_trappan
@@ -152,7 +160,7 @@
     condition:
         # Keep  on all december ... :)
       condition: template
-      value_template: '{{ now().month != 12 }}'
+      value_template: '{{ now().month < 12 }}'
     action:
       service: light.turn_off
       entity_id: light.fonsterlampa_trappan
@@ -173,7 +181,7 @@
     condition:
         # Keep  on all december ... :)
       condition: template
-      value_template: '{{ now().month != 12 }}'
+      value_template: '{{ now().month < 12 }}'
     action:
       service: light.turn_off
       entity_id: light.fonsterlampa_trappan
