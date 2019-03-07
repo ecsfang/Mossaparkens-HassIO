@@ -1,7 +1,7 @@
   - alias: power house
     initial_state: 'on'
     trigger:
-      - platform: time
+      - platform: time_pattern
         seconds: '/30'
     action:
       - service: mqtt.publish
