@@ -1,4 +1,3 @@
-secrets: /config/secrets.yaml
 log:
   logfile: STDOUT
   errorfile: STDERR
@@ -11,10 +10,10 @@ appdaemon:
     HASS:
       type: hass
       ha_url: http://hassio/homeassistant
-      token: 39a432a3ac2e77d5e33d90d7d01dcb56270c6ea9e1add5433713fcf720a53ab6
+      token: f5ea07caea8dd95b34ca6b7c27d4a65042611d1abb0c48f61fc07319ca8f5cc0
 hadashboard:
   dash_url: http://mossaio.duckdns.org:5050
   dash_dir: /config/appdaemon/dashboards
   dash_ssl_certificate: /ssl/fullchain.pem
   dash_ssl_key: /ssl/privkey.pem
-  dash_password: ha_dash_pw
+  dash_password: mossaparken18

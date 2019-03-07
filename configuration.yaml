@@ -204,3 +204,9 @@ history_graph:
       - sensor.fas_2
       - sensor.fas_3
     hours_to_show: 48
+  gr6:
+    name: Julgranen
+    entities:
+      - sensor.julgran
+    hours_to_show: 168
+    

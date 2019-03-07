@@ -1,5 +1,5 @@
 # Weather prediction
-  - platform: yr
+#  - platform: yr
 
   - platform: mqtt
     name: "SPA"
