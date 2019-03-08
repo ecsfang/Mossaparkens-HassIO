@@ -103,6 +103,9 @@ light.aeotec_zw111_nano_dimmer_level:
   friendly_name: Takspot kök
   icon: mdi:lightbulb
 
+sensor.aeotec_zw111_nano_dimmer_switch:
+  friendly_name: Kökstaket (spot)
+
 sensor.aeotec_zw111_nano_dimmer_energy:
   friendly_name: Takspot kök (kWh)
   icon: mdi:flash
