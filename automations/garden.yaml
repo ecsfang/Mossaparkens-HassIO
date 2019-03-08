@@ -132,8 +132,8 @@
   - alias: 'Någon i garaget? Tänd lampan'
     trigger:
       - platform: state
-        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
-        to: '8'
+        entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+        to: 'on'
     action:
       service: light.turn_on
       data:
@@ -144,8 +144,9 @@
   - alias: 'Ingen i garaget - släck efter några minuter'
     trigger:
       - platform: state
-        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
-        to: '0'
+        entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+        from: 'on'
+        to: 'off'
         for:
           minutes: 2
     action:
@@ -157,7 +158,7 @@
   - alias: 'Alarm från garaget!'
     trigger:
       - platform: state
-        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+        entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
         to: 'on'
     action:
       service: notify.pushover

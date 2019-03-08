@@ -41,9 +41,9 @@
   power_sensors:
     name: Förbrukning huset
     entities:
-      - sensor.phase_1
-      - sensor.phase_2
-      - sensor.phase_3
+      - sensor.fas_1
+      - sensor.fas_2
+      - sensor.fas_3
       - sensor.effekt_1
       - sensor.effekt_2
       - sensor.effekt_3
