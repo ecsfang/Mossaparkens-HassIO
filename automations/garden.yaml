@@ -134,6 +134,9 @@
       - platform: state
         entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
         to: 'on'
+      - platform: state
+        entity_id: binary_sensor.aeotec_zw100_multisensor_6_sensor_3
+        to: 'on'
     action:
       - service: light.turn_on
         data:
@@ -153,6 +156,12 @@
         to: 'off'
         for:
           minutes: 2
+      - platform: state
+        entity_id: binary_sensor.aeotec_zw100_multisensor_6_sensor_3
+        from: 'on'
+        to: 'off'
+        for:
+          minutes: 2
     action:
       - service: light.turn_off
         data:
@@ -162,6 +171,22 @@
         data_template:
           title: "Faran över!"
           message: "Släcker lampan ..."
+
+  - alias: 'Någon i annexet?'
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.aeotec_zw100_multisensor_6_sensor_4
+        to: 'on'
+    action:
+#      - service: light.turn_on
+#        data:
+#          entity_id:  light.fibaro_system_fgd212_dimmer_2_level_2
+#          transition: 10
+#          brightness_pct: 100
+      - service: notify.pushover
+        data_template:
+          title: "Annexetlarm!"
+          message: "Någon rör sig i annexet!!"
 
 #  - alias: 'Alarm från garaget!'
 #    trigger:
