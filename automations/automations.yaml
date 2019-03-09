@@ -71,7 +71,7 @@
       offset: "-00:45:00"
     action:
       service: light.turn_on
-      entity_id: light.fonsterlampa_vrum
+      entity_id: light.fonsterlampa_v_rum
 
   - alias: 'Vardagsrumslampan av'
     trigger:
@@ -79,7 +79,7 @@
       at: '23:40:00'
     action:
       service: light.turn_off
-      entity_id: light.fonsterlampa_vrum
+      entity_id: light.fonsterlampa_v_rum
 
 ## Vitrinskåpet
   - alias: 'Vitrinskåpet på'

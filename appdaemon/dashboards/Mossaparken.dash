@@ -46,7 +46,7 @@ forecast_6:
 layout:
    - sensor.ute_temp, sensor.annex_temp, sensor.aeotec_zw100_multisensor_6_temperature_3
    - sensor.vinkallaren, sensor.vinkylen, sensor.spa
-   - light.koksfonstret, light.fonsterlampa_vrum, light.vitrinskapet
+   - light.koksfonstret, light.fonsterlampa_v_rum, light.vitrinskapet
    - light.staketbelysning, light.dammbelysning, light.fibaro_system_fgd212_dimmer_2_level_2
    - forecast_0, forecast_1, forecast_2
    - forecast_3, forecast_4, forecast_5
