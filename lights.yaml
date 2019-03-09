@@ -8,9 +8,18 @@
     retain: true
 
   - platform: mqtt
-    name: "Fönsterlampa V-rum"
+    name: "Fönsterlampa S V-rum"
     command_topic: "cmnd/sonoff2/power"
     state_topic: "stat/sonoff2/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Fönsterlampa N V-rum"
+    command_topic: "cmnd/vitrin/power2"
+    state_topic: "stat/vitrin/POWER2"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -25,6 +34,12 @@
     payload_off: "OFF"
     retain: true
 
+  - platform: group
+    name: Fönsterlampor V-rum
+    entities:
+      - light.fonsterlampa_s_v_rum
+      - light.fonsterlampa_n_v_rum
+  
   - platform: mqtt
     name: "Staketbelysning"
     command_topic: "cmnd/garden/power1"
@@ -42,7 +57,6 @@
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
-
 
   - platform: mqtt
     name: "Vitrinskåpet"

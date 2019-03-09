@@ -26,15 +26,6 @@
     retain: true
 
   - platform: mqtt
-    name: "Vitrinskåpet (extra)"
-    command_topic: "cmnd/vitrin/power2"
-    state_topic: "stat/vitrin/POWER2"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true
-
-  - platform: mqtt
     name: "Citruselementet"
     command_topic: "cmnd/annexet/power"
     state_topic: "stat/annexet/POWER"
