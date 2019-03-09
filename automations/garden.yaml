@@ -135,11 +135,15 @@
         entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
         to: 'on'
     action:
-      service: light.turn_on
-      data:
-        entity_id:  light.fibaro_system_fgd212_dimmer_2_level_2
-        transition: 10
-        brightness_pct: 100
+      - service: light.turn_on
+        data:
+          entity_id:  light.fibaro_system_fgd212_dimmer_2_level_2
+          transition: 10
+          brightness_pct: 100
+      - service: notify.pushover
+        data_template:
+          title: "Garagealarm!"
+          message: "Någon rör sig i garaget!!"
 
   - alias: 'Ingen i garaget - släck efter några minuter'
     trigger:
@@ -150,21 +154,25 @@
         for:
           minutes: 2
     action:
-      service: light.turn_off
-      data:
-        entity_id:  light.fibaro_system_fgd212_dimmer_2_level_2
-        transition: 10
+      - service: light.turn_off
+        data:
+          entity_id:  light.fibaro_system_fgd212_dimmer_2_level_2
+          transition: 10
+      - service: notify.pushover
+        data_template:
+          title: "Faran över!"
+          message: "Släcker lampan ..."
 
-  - alias: 'Alarm från garaget!'
-    trigger:
-      - platform: state
-        entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
-        to: 'on'
-    action:
-      service: notify.pushover
-      data_template:
-        title: "Garagealarm!"
-        message: "Någon rör sig i garaget!!"
+#  - alias: 'Alarm från garaget!'
+#    trigger:
+#      - platform: state
+#        entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+#        to: 'on'
+#    action:
+#      service: notify.pushover
+#      data_template:
+#        title: "Garagealarm!"
+#        message: "Någon rör sig i garaget!!"
 
   - alias: 'Alarm från garaget!'
     trigger:
