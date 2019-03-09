@@ -135,8 +135,8 @@ sensor.aeotec_zw111_nano_dimmer_sourcenodeid:
   hidden: yes
 sensor.aeotec_zw111_nano_dimmer_voltage:
   hidden: yes
-sensor.aeotec_zw111_nano_dimmer_switch:
-  hidden: yes
+#sensor.aeotec_zw111_nano_dimmer_switch:
+#  hidden: yes
 
 #-------------------------------------------
 # Node 8: Multisensor - Garden
