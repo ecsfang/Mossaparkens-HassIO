@@ -44,21 +44,23 @@ custom_updater:
     - https://raw.githubusercontent.com/danobot/entity-controller/master/tracker.json
 
 entity_controller:
-  motion_light_garage:
-    sensor:
-      - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
-      - binary_sensor.aeotec_zw100_multisensor_6_sensor_3
-    entity:  light.fibaro_system_fgd212_dimmer_2_level_2
-    service_data:
-      transition: 10
-      brightness_pct: 100
-    start_time: sunset - 00:30:00                # required
-    end_time: sunrise + 00:30:00                 # required
+    motion_light_garage:
+      friendly_name: "Rörelse Garaget"
+      sensor:
+        - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+        - binary_sensor.aeotec_zw100_multisensor_6_sensor_3
+      entity:  light.fibaro_system_fgd212_dimmer_2_level_2
+      service_data:
+        transition: 10
+        brightness_pct: 100
+      start_time: sunset - 00:30:00                # required
+      end_time: sunrise + 00:30:00                 # required
 
-  motion_light_annexet:
-    sensor:
-      - binary_sensor.aeotec_zw100_multisensor_6_sensor_4
-    entity:  light.citrusbelysning
+    motion_light_annexet:
+      friendly_name: "Rörelse Annexet"
+      sensor:
+        - binary_sensor.aeotec_zw100_multisensor_6_sensor_4
+      entity:  light.citrusbelysning
 
 #python_script:
 
