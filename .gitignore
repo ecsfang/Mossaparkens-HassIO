@@ -11,6 +11,8 @@
 !/appdaemon/dashboards
 !/appdaemon/custom_widgets
 !/appdaemon/custom_widgets/base_day_forecast
+!/custom_components
+!/custom_components/entity_controller
 !/packages
 !/python_scripts
 !.gitignore

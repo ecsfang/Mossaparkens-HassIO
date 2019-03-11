@@ -129,7 +129,7 @@
         title: "Rörelse i garaget?"
         message: "Någon detekterades - {{ states.sensor.fibaro_system_fgms001zw5_motion_sensor_general.state }}!"
 
-  - alias: 'Någon i garaget? Tänd lampan'
+  - alias: 'Någon i garaget?'
     trigger:
       - platform: state
         entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
@@ -138,11 +138,11 @@
         entity_id: binary_sensor.aeotec_zw100_multisensor_6_sensor_3
         to: 'on'
     action:
-      - service: light.turn_on
-        data:
-          entity_id:  light.fibaro_system_fgd212_dimmer_2_level_2
-          transition: 10
-          brightness_pct: 100
+#      - service: light.turn_on
+#        data:
+#          entity_id:  light.fibaro_system_fgd212_dimmer_2_level_2
+#          transition: 10
+#          brightness_pct: 100
       - service: notify.pushover
         data_template:
           title: "Garagealarm!"
@@ -163,10 +163,10 @@
         for:
           minutes: 2
     action:
-      - service: light.turn_off
-        data:
-          entity_id:  light.fibaro_system_fgd212_dimmer_2_level_2
-          transition: 10
+#      - service: light.turn_off
+#        data:
+#          entity_id:  light.fibaro_system_fgd212_dimmer_2_level_2
+#          transition: 10
       - service: notify.pushover
         data_template:
           title: "Faran över!"
