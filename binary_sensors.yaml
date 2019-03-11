@@ -28,6 +28,10 @@
     host: 192.168.1.80
     name: TigerWolf
 
+  - platform: ping
+    host: 192.168.1.126
+    name: UniFy
+
   - platform: mqtt
     name: "Väderstation"
     state_topic: "weather/tick"
