@@ -49,7 +49,7 @@ entity_controller:
       sensor:
         - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
         - binary_sensor.aeotec_zw100_multisensor_6_sensor_3
-      entity_on:  light.fibaro_system_fgd212_dimmer_2_level_2
+      entity:  light.fibaro_system_fgd212_dimmer_2_level_2
       sensor_type: duration
       delay: 300
       service_data:
@@ -69,7 +69,7 @@ entity_controller:
       friendly_name: "Rörelse i Annexet"
       sensor:
         - binary_sensor.aeotec_zw100_multisensor_6_sensor_4
-      entity_on:  light.citrusbelysning
+      entity:  light.citrusbelysning
       sensor_type: duration
       delay: 300
 
