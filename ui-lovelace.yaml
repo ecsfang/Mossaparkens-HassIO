@@ -5,6 +5,8 @@ resources:
     type: js
   - url: /local/my-webfont.css
     type: css
+  - url: /customcards/github/custom-cards/tracker-card.js?track=true
+    type: module
 
 # Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
 background: center / cover no-repeat url("/background.png") fixed
