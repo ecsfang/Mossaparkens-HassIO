@@ -187,9 +187,11 @@ sensor.moon:
 sensor.season:
   icon: theme-light-dark
 
-sensor.dark_sky_moon:
+sensor.sun:
+  friendly_name: Solen
+sensor.moon:
   friendly_name: Månfas
-sensor.dark_sky_season:
+sensor.season:
   friendly_name: Årstid
 sensor.dark_sky_precip:
   friendly_name: Nederbörd
@@ -209,9 +211,6 @@ sensor.dark_sky_humidity:
   friendly_name: Ute humid (prognos)
 sensor.dark_sky_summary:
   friendly_name: Väderprognos
-
-sensor.spaoffset:
-  hidden: yes
 
 sensor.dark_sky_cloud_coverage:
   hidden: yes

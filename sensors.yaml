@@ -5,19 +5,7 @@
     name: "SPA"
     state_topic: "tele/garden/SENSOR"
     value_template: "{{ ((value_json.DS18x20.DS1.Temperature | float + 1.6)) | round(1) }}"
-#    state_topic: "temp/spa"
-#    value_template: "{{  value | round(1) }}"
     unit_of_measurement: "°C"
-
-
-#  - platform: template
-#    sensors:
-#      spa_offset:
-#      entity_id:
-#      - sensor.spa
-#      unit_of_measurement: '°C'
-#      value_template: >
-#        {{ ((float(states(‘sensor.spa’)) - 30) * 2) | round(1) }}
 
   - platform: mqtt
     name: "Julgran"
@@ -121,22 +109,22 @@
 
   - platform: mqtt  
     state_topic: "powerconsumption/house/today"
-    name: 'idag kwh'  
+    name: 'Förbrukning idag'  
     value_template: "{{  value | round(0) }}"
     unit_of_measurement: 'kwh'
   - platform: mqtt  
     state_topic: "powerconsumption/house/wtd"
-    name: 'vecka kwh'  
+    name: 'Veckoförbrukning'  
     value_template: "{{  value | round(0) }}"
     unit_of_measurement: 'kwh'
   - platform: mqtt  
     state_topic: "powerconsumption/house/mtd"
-    name: 'månad kwh'  
+    name: 'Månadsförbrukning'  
     value_template: "{{  value | round(0) }}"
     unit_of_measurement: 'kwh'
   - platform: mqtt  
     state_topic: "powerconsumption/house/ytd"
-    name: 'år kwh'  
+    name: 'Årsförbrukning'  
     value_template: "{{  value | round(0) }}"
     unit_of_measurement: 'kwh'
 
