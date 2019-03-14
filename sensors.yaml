@@ -348,3 +348,6 @@
             mdi:garage
           {% endif %}
         friendly_name: 'Garageport'
+
+  - platform: rflink
+    automatic_add: true

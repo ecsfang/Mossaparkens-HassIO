@@ -75,4 +75,6 @@
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
-    
+
+  - platform: rflink
+    automatic_add: true
