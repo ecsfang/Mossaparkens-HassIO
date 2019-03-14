@@ -187,8 +187,24 @@ sensor.moon:
 sensor.season:
   icon: theme-light-dark
 
+sensor.dark_sky_moon:
+  friendly_name: Månfas
+sensor.dark_sky_season:
+  friendly_name: Årstid
+sensor.dark_sky_precip:
+  friendly_name: Nederbörd
+sensor.dark_sky_precip_intensity:
+  friendly_name: Nederbörd (mängd)
+sensor.dark_sky_precip_probability:
+  friendly_name: Nederbörd (sannolikhet)
 sensor.dark_sky_temperature:
   friendly_name: Ute temp (prognos)
+sensor.dark_sky_apparent_temperature:
+  friendly_name: Ute temp (skenbar)
+sensor.dark_sky_wind_speed:
+  friendly_name: Vind
+sensor.dark_sky_wind_bearing:
+  friendly_name: Vindriktning
 sensor.dark_sky_humidity:
   friendly_name: Ute humid (prognos)
 sensor.dark_sky_summary:

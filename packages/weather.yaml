@@ -303,14 +303,12 @@ group:
       - sensor.season
       - sensor.dark_sky_summary
       - sensor.dark_sky_precip
-#      - sensor.dark_sky_precip_type
       - sensor.dark_sky_precip_intensity
       - sensor.dark_sky_precip_probability
       - sensor.dark_sky_temperature
       - sensor.dark_sky_apparent_temperature
       - sensor.dark_sky_wind_speed
       - sensor.dark_sky_wind_bearing
-#      - sensor.dark_sky_cloud_cover
       - sensor.dark_sky_humidity
   weather_forecast:
     name: Prognos
