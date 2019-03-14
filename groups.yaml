@@ -47,7 +47,7 @@
       - sensor.effekt_1
       - sensor.effekt_2
       - sensor.effekt_3
-      - sensor.idag_kwh
-      - sensor.vecka_kwh
-      - sensor.manad_kwh
-      - sensor.ar_kwh
+      - sensor.forbrukning_idag
+      - sensor.veckoforbrukning
+      - sensor.manadsforbrukning
+      - sensor.arsforbrukning
