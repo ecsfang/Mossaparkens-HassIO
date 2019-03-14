@@ -81,6 +81,7 @@
     devices:
       newkaku_0009db9a_1:
         name: "Uterummet"
-        type: hybrid
+        type: switchable
       newkaku_0009db9a_2:
         name: "Kökslampa matbord"    
+        type: hybrid
