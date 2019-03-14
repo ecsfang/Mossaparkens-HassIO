@@ -46,6 +46,7 @@
   - platform: template
     sensors:
       dishw_status:
+        name: "Diskmaskin"
         value_template: >-
           {%if states("sensor.diskmaskin_strom") | float > 2 %}
               Warming
@@ -57,6 +58,7 @@
               Ready
           {%- endif %}
       spa_temp:
+        name: "SPA temp"
         value_template: >-
           {%if states("sensor.spa") | float >= 30 and states("sensor.spa") | float <= 40 %}
               OK
@@ -66,6 +68,7 @@
               Too Hot
           {%- endif %}
       fas_1_status:
+        name: "Fas 1 status"
         value_template: >-
           {%if states("sensor.fas_1") | float >= 0 and states("sensor.fas_1") | float <= 10 %}
               OK
@@ -73,10 +76,11 @@
               Too High
           {%elif states("sensor.fas_1") | float > 10 %}
               High
-          {%elif states("sensor.fas_1") | float < 0 %}
+          {%else %}
               ERROR
           {%- endif %}
       fas_2_status:
+        name: "Fas 2 status"
         value_template: >-
           {%if states("sensor.fas_2") | float >= 0 and states("sensor.fas_2") | float <= 10 %}
               OK
@@ -84,10 +88,11 @@
               Too High
           {%elif states("sensor.fas_2") | float > 10 %}
               High
-          {%elif states("sensor.fas_2") | float < 0 %}
+          {%else %}
               ERROR
           {%- endif %}
       fas_3_status:
+        name: "Fas 3 status"
         value_template: >-
           {%if states("sensor.fas_3") | float >= 0 and states("sensor.fas_3") | float <= 10 %}
               OK
@@ -95,7 +100,7 @@
               Too High
           {%elif states("sensor.fas_3") | float > 10 %}
               High
-          {%elif states("sensor.fas_3") | float < 0 %}
+          {%else %}
               ERROR
           {%- endif %}
 
@@ -117,18 +122,22 @@
   - platform: mqtt  
     state_topic: "powerconsumption/house/today"
     name: 'idag kwh'  
+    value_template: "{{  value | round(0) }}"
     unit_of_measurement: 'kwh'
   - platform: mqtt  
     state_topic: "powerconsumption/house/wtd"
     name: 'vecka kwh'  
+    value_template: "{{  value | round(0) }}"
     unit_of_measurement: 'kwh'
   - platform: mqtt  
     state_topic: "powerconsumption/house/mtd"
     name: 'månad kwh'  
+    value_template: "{{  value | round(0) }}"
     unit_of_measurement: 'kwh'
   - platform: mqtt  
     state_topic: "powerconsumption/house/ytd"
     name: 'år kwh'  
+    value_template: "{{  value | round(0) }}"
     unit_of_measurement: 'kwh'
 
   - platform: mqtt
@@ -272,7 +281,7 @@
   - platform: mqtt
     name: "Diskmaskin totalt"
     state_topic: "tele/dishwasher/SENSOR"
-    value_template: '{{ value_json.ENERGY.Total }}'
+    value_template: '{{ value_json.ENERGY.Total | round(1) }}'
     unit_of_measurement: "kWh"
 
   - platform: mqtt
@@ -313,7 +322,7 @@
   - platform: mqtt
     name: "Effekt totalt"
     state_topic: "tele/annexet/SENSOR"
-    value_template: '{{ value_json.ENERGY.Total }}'
+    value_template: '{{ value_json.ENERGY.Total | round(1) }}'
     unit_of_measurement: "kWh"
 
   - platform: mqtt
