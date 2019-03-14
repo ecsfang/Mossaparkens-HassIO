@@ -46,7 +46,7 @@
   - platform: template
     sensors:
       dishw_status:
-        name: "Diskmaskin"
+        friendly_name: "Diskmaskin"
         value_template: >-
           {%if states("sensor.diskmaskin_strom") | float > 2 %}
               Warming
@@ -58,7 +58,7 @@
               Ready
           {%- endif %}
       spa_temp:
-        name: "SPA temp"
+        friendly_name: "SPA temp"
         value_template: >-
           {%if states("sensor.spa") | float >= 30 and states("sensor.spa") | float <= 40 %}
               OK
@@ -68,7 +68,7 @@
               Too Hot
           {%- endif %}
       fas_1_status:
-        name: "Fas 1 status"
+        friendly_name: "Fas 1 status"
         value_template: >-
           {%if states("sensor.fas_1") | float >= 0 and states("sensor.fas_1") | float <= 10 %}
               OK
@@ -80,7 +80,7 @@
               ERROR
           {%- endif %}
       fas_2_status:
-        name: "Fas 2 status"
+        friendly_name: "Fas 2 status"
         value_template: >-
           {%if states("sensor.fas_2") | float >= 0 and states("sensor.fas_2") | float <= 10 %}
               OK
@@ -92,7 +92,7 @@
               ERROR
           {%- endif %}
       fas_3_status:
-        name: "Fas 3 status"
+        friendly_name: "Fas 3 status"
         value_template: >-
           {%if states("sensor.fas_3") | float >= 0 and states("sensor.fas_3") | float <= 10 %}
               OK
