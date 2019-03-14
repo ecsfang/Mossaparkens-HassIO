@@ -182,17 +182,15 @@ sensor.annex_humid:
   icon: mdi:water-percent
 
 sensor.moon:
+  friendly_name: Månfas
   icon: mdi:weather-night
 
 sensor.season:
+  friendly_name: Årstid
   icon: theme-light-dark
 
 sensor.sun:
   friendly_name: Solen
-sensor.moon:
-  friendly_name: Månfas
-sensor.season:
-  friendly_name: Årstid
 sensor.dark_sky_precip:
   friendly_name: Nederbörd
 sensor.dark_sky_precip_intensity:

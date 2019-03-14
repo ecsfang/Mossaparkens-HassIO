@@ -78,3 +78,9 @@
 
   - platform: rflink
     automatic_add: true
+    devices:
+      newkaku_0009db9a_1:
+        name: "Uterummet"
+        type: hybrid
+      newkaku_0009db9a_2:
+        name: "Kökslampa matbord"    
