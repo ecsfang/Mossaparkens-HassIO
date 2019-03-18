@@ -109,22 +109,22 @@
 
   - platform: mqtt  
     state_topic: "powerconsumption/house/today"
-    name: 'Förbrukning idag'  
+    name: 'Förbrukning idag'
     value_template: "{{  value | round(0) }}"
     unit_of_measurement: 'kwh'
   - platform: mqtt  
     state_topic: "powerconsumption/house/wtd"
-    name: 'Veckoförbrukning'  
+    name: 'Veckoförbrukning'
     value_template: "{{  value | round(0) }}"
     unit_of_measurement: 'kwh'
   - platform: mqtt  
     state_topic: "powerconsumption/house/mtd"
-    name: 'Månadsförbrukning'  
+    name: 'Månadsförbrukning'
     value_template: "{{  value | round(0) }}"
     unit_of_measurement: 'kwh'
   - platform: mqtt  
     state_topic: "powerconsumption/house/ytd"
-    name: 'Årsförbrukning'  
+    name: 'Årsförbrukning'
     value_template: "{{  value | round(0) }}"
     unit_of_measurement: 'kwh'
 
