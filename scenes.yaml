@@ -1,0 +1,15 @@
+  - name: Romantic
+    entities:
+      light.takspot_kok:
+        state: true
+        brightness: 25
+  - name: Night
+    entities:
+      light.takspot_kok:
+        state: true
+        brightness: 25
+  - name: Work
+    entities:
+      light.takspot_kok:
+        state: true
+        brightness: 100

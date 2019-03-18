@@ -193,6 +193,7 @@ zone: !include zones.yaml
 
 group: !include groups.yaml
 script: !include scripts.yaml
+scene: !include scenes.yaml
 
 input_select:
   dishwasher_status:
