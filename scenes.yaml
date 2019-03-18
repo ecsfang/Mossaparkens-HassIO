@@ -1,15 +1,15 @@
   - name: Romantic
     entities:
-      light.takspot_kok:
+      light.aeotec_zw111_nano_dimmer_level:
         state: true
         brightness: 25
   - name: Night
     entities:
-      light.takspot_kok:
+      light.aeotec_zw111_nano_dimmer_level:
         state: true
         brightness: 25
   - name: Work
     entities:
-      light.takspot_kok:
+      light.aeotec_zw111_nano_dimmer_level:
         state: true
         brightness: 100
