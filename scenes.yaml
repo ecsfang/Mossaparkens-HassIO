@@ -1,4 +1,4 @@
-  - name: Romantic
+  - name: Dinner
     entities:
       light.aeotec_zw111_nano_dimmer_level:
         state: true
@@ -6,8 +6,7 @@
   - name: Night
     entities:
       light.aeotec_zw111_nano_dimmer_level:
-        state: true
-        brightness: 25
+        state: false
   - name: Work
     entities:
       light.aeotec_zw111_nano_dimmer_level:
