@@ -23,6 +23,33 @@ binary_sensor.aeotec_zw100_multisensor_6_sensor_4:
   icon: mdi:run
   device_class: motion
 
+climate.badrum_ovanvan_radiator_thermostat_1:
+  friendly_name: Badrum Öv
+
+climate.badrum_van_1_radiator_thermostat_1:
+  friendly_name: Badrum
+
+climate.gillestugan_radiator_thermostat_1:
+  friendly_name: Gille
+
+climate.hallen_radiator_thermostat_1:
+  friendly_name: Hallen
+
+climate.koket_radiator_thermostat_1:
+  friendly_name: Köket
+
+climate.sovrummet_radiator_thermostat_1:
+  friendly_name: Sovrum
+
+climate.vardagsrummet_radiator_norr:
+  friendly_name: V-rum N
+
+climate.vardagsrummet_radiator_soder:
+  friendly_name: V-rum S
+
+climate.vardagsrummet_vaggtermostat:
+  friendly_name: V-rum
+
 # Hidden devices ...
 sensor.aeotec_zw100_multisensor_6_alarm_level_4:
   hidden: yes
