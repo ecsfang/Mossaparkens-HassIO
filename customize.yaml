@@ -27,10 +27,10 @@ climate.badrum_ovanvan_radiator_thermostat_1:
   friendly_name: Badrum Öv
 
 climate.badrum_van_1_radiator_thermostat_1:
-  friendly_name: Badrum
+  friendly_name: Badrum Bv
 
 climate.gillestugan_radiator_thermostat_1:
-  friendly_name: Gille
+  friendly_name: Källaren
 
 climate.hallen_radiator_thermostat_1:
   friendly_name: Hallen
@@ -42,13 +42,13 @@ climate.sovrummet_radiator_thermostat_1:
   friendly_name: Sovrum
 
 climate.vardagsrummet_radiator_norr:
-  friendly_name: V-rum N
+  friendly_name: V-rum Norr
 
 climate.vardagsrummet_radiator_soder:
-  friendly_name: V-rum S
+  friendly_name: V-rum Söder
 
 climate.vardagsrummet_vaggtermostat:
-  friendly_name: V-rum
+  friendly_name: Vardagsrum
 
 # Hidden devices ...
 sensor.aeotec_zw100_multisensor_6_alarm_level_4:
