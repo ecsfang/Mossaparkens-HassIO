@@ -1,94 +1,380 @@
-title: My Awesome Home
-# Include external resources
+title: Mossaparken Avsome Home
 resources:
-  - url: /local/my-custom-card.js
-    type: js
-  - url: /local/my-webfont.css
-    type: css
-  - url: /customcards/github/custom-cards/tracker-card.js?track=true
-    type: module
-
-# Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
-background: center / cover no-repeat url("/background.png") fixed
-# Exclude entities from "Unused entities" view
-excluded_entities:
-  - weblink.router
+  - type: module
+    url: /customcards/github/custom-cards/tracker-card.js?track=true
+title: Home Assistant
 views:
-    # View tab title.
-  - title: Example
-    # Optional unique id for direct access /lovelace/${id}
-    id: example
-    # Optional background (overwrites the global background).
-    background: radial-gradient(crimson, skyblue)
-    # Each view can have a different theme applied. Theme should be defined in the frontend.
-    theme: dark-mode
-    # The cards to show on this view.
+  - badges: []
     cards:
-        # The filter card will filter entities for their state
-      - type: entity-filter
-        entities:
-          - device_tracker.bh9000mba2
-        state_filter:
-          - 'home'
-        card:
-          type: glance
-          title: People that are home
-
-        # The picture entity card will represent an entity with a picture
-      - type: picture-entity
-        image: https://www.home-assistant.io/images/default-social.png
-        entity: light.staketbelysning
-
-    # Specify a tab icon if you want the view tab to be an icon.
-  - icon: mdi:home-assistant
-    # Title of the view. Will be used as the tooltip for tab icon
-    title: Second view
-    cards:
-        # Entities card will take a list of entities and show their state.
-      - type: entities
-        # Title of the entities card
-        title: Example
-        # The entities here will be shown in the same order as specified.
-        # Each entry is an entity ID or a map with extra options.
-        entities:
+      - entities:
+          - light.staketbelysning
+          - light.dammbelysning
+          - light.citrusbelysning
+        hours_to_show: 96
+        refresh_interval: 60
+        title: Yttre belysning
+        type: history-graph
+      - entities:
+          - light.fonsterlampor_v_rum
+          - light.fonsterlampa_s_v_rum
+          - light.fonsterlampa_n_v_rum
+          - light.vitrinskapet
+          - light.fonsterlampa_trappan
           - light.koksfonstret
+          - light.fibaro_system_fgd212_dimmer_2_level_2
+          - light.aeotec_zw111_nano_dimmer_level
+          - light.uterummet
+          - light.kokslampa_matbord
+          - light.staketbelysning
+          - light.dammbelysning
+          - light.citrusbelysning
+        title: Lampor
+        type: entities
+    path: lights_view
+    title: Lampor
+  - badges:
+      - binary_sensor.workday_today
+      - binary_sensor.workday_tomorrow
+      - binary_sensor.vaderstation
+      - binary_sensor.cisco
+      - binary_sensor.d_link
+      - binary_sensor.tigerwolf
+      - binary_sensor.unify
+      - binary_sensor.eddieserver
+      - binary_sensor.telia
+      - binary_sensor.entre
+      - binary_sensor.altandorr
+      - binary_sensor.terass
+      - binary_sensor.kallardorr
+      - binary_sensor.aeotec_zw100_multisensor_6_sensor_3
+      - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+      - binary_sensor.aeotec_zw100_multisensor_6_sensor_4
+      - device_tracker.bh9000mba2
+      - device_tracker.android4f3fd99304357839lan
+      - device_tracker.androidb03b56dedfc413e5lan
+      - device_tracker.androide39fdb334674e99blan
+      - device_tracker.84c7ea8b5250
+      - sensor.online
+      - sensor.phone_battery
+      - sensor.phone_altitude
+      - sensor.dishw_status
+      - sensor.fas_1_status
+      - sensor.fas_2_status
+      - sensor.fas_3_status
+      - sensor.citrus_belysningen
+      - sensor.garaget
+      - sensor.vinkallaren
+      - sensor.vinkylen
+      - sensor.garageport_norr
+      - sensor.temp1
+      - sensor.temp2
+      - sensor.temp3
+      - sensor.temp4
+      - sensor.spa_temp
+      - sensor.spa
+      - sensor.nodeit_temp
+      - sensor.julgran
+      - sensor.annex_ljus
+      - sensor.kok_temperature
+      - sensor.custom_component_tracker
+      - sensor.aeotec_zw100_multisensor_6_temperature_3
+      - sensor.aeotec_zw100_multisensor_6_luminance_3
+      - sensor.aeotec_zw100_multisensor_6_relative_humidity_3
+      - sensor.aeotec_zw100_multisensor_6_ultraviolet_3
+      - sensor.aeotec_zw100_multisensor_6_burglar_3
+      - sensor.fibaro_system_fgd212_dimmer_2_power_2
+      - sensor.fibaro_system_fgd212_dimmer_2_energy
+      - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+      - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+      - sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity
+      - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+      - sensor.fibaro_system_fgms001zw5_motion_sensor_general
+      - sensor.aeotec_zw111_nano_dimmer_energy
+      - sensor.aeotec_zw111_nano_dimmer_power
+      - sensor.aeotec_zw100_multisensor_6_temperature_4
+      - sensor.aeotec_zw100_multisensor_6_luminance_4
+      - sensor.aeotec_zw100_multisensor_6_relative_humidity_4
+      - sensor.aeotec_zw100_multisensor_6_ultraviolet_4
+      - sensor.aeotec_zw100_multisensor_6_burglar_4
+    cards:
+      - entities:
+          - sensor.dishwasher_status
+          - sensor.diskmaskin_idag
+          - sensor.diskmaskin_igar
+          - sensor.diskmaskin_totalt
+          - sensor.diskmaskin_effekt
+          - sensor.diskmaskin_spanning
+          - sensor.diskmaskin_strom
+        show_header_toggle: false
+        title: Diskmaskinen
+        type: entities
+      - entities:
+          - sensor.effekt_idag
+          - sensor.effekt_igar
+          - sensor.effekt_totalt
+          - sensor.effekt_nu
+          - sensor.element_spanning
+          - sensor.element_strom
+        show_header_toggle: false
+        title: Citruselementen
+        type: entities
+      - entities:
+          - sensor.garage_door_state
+        show_header_toggle: true
+        title: Garaget
+        type: entities
+      - entities:
+          - sensor.dark_sky_summary
+          - sensor.ute_temp
+          - sensor.dark_sky_temperature
+          - sensor.annex_temp
+          - sensor.uterum_temp
+          - sensor.ute_tryck
+          - sensor.annex_humid
+          - sensor.dark_sky_humidity
+        show_header_toggle: true
+        title: Väder
+        type: entities
+      - entities:
+          - sensor.fas_1
+          - sensor.fas_2
+          - sensor.fas_3
+          - sensor.effekt_1
+          - sensor.effekt_2
+          - sensor.effekt_3
+          - sensor.forbrukning_idag
+          - sensor.veckoforbrukning
+          - sensor.manadsforbrukning
+          - sensor.arsforbrukning
+        show_header_toggle: true
+        title: Förbrukning huset
+        type: entities
+      - entities:
+          - sun.sun
+          - sensor.moon
+          - sensor.season
+          - sensor.dark_sky_summary
+          - sensor.dark_sky_precip
+          - sensor.dark_sky_precip_intensity
+          - sensor.dark_sky_precip_probability
+          - sensor.dark_sky_temperature
+          - sensor.dark_sky_apparent_temperature
+          - sensor.dark_sky_wind_speed
+          - sensor.dark_sky_wind_bearing
+          - sensor.dark_sky_humidity
+        show_header_toggle: true
+        title: Vädret nu
+        type: entities
+      - entities:
+          - sensor.forecast_0
+          - sensor.forecast_1
+          - sensor.forecast_2
+          - sensor.forecast_3
+          - sensor.forecast_4
+          - sensor.forecast_5
+          - sensor.forecast_6
+          - sensor.forecast_7
+        show_header_toggle: true
+        title: Prognos
+        type: entities
+      - entity: alarm_control_panel.hemma_alarm
+        type: alarm-panel
+      - entities:
+          - automation.phase2high
+          - automation.phase3high
+          - automation.vinkallaretemp
+          - automation.vinkyltemp
+          - automation.lag_temp_i_annexet
+          - automation.power_house
+          - automation.lag_temp_i_garaget
+          - automation.house_kwh_new_month
+          - automation.notify_if_ha_device_offline
+          - automation.kokslampan_pa_morgon
+          - automation.citrusbelysning_pa
+          - automation.kokslampan_av_morgon
+          - automation.citrusbelysning_av
+          - automation.kokslampan_pa_kvall
+          - automation.citruselement_pa
+          - automation.kokslampan_av_kvall
+          - automation.citruselement_av
+          - automation.vardagsrumslampan_pa
+          - automation.tradgardsbelysningen_pa_vid_solnedgang
+          - automation.vardagsrumslampan_av
+          - automation.tradgardsbelysningen_av_vardag
+          - automation.vitrinskapet_pa
+          - automation.tradgardsbelysningen_av_helgen
+          - automation.vitrinskapet_av_vardag
+          - automation.dammbelysningen_pa_morgon
+          - automation.vitrinskapet_av_helg
+          - automation.dammbelysningen_av_morgon
+          - automation.trapplampan_pa_morgon
+          - automation.dammbelysningen_pa_vid_solnedgang
+          - automation.trapplampan_av_morgon
+          - automation.dammbelysningen_av_kvall
+          - automation.trapplampan_pa_kvall
+          - automation.dammpumpen_pa_kvall
+          - automation.trapplampan_av_kvall
+          - automation.dammpumpen_av_kvall
+          - automation.set_dishwasher_active_when_power_detected
+          - automation.rorelse_i_garaget
+          - automation.set_dishwasher_drying_when_power_drops
+          - automation.nagon_i_garaget
+          - automation.set_dishwasher_clean
+          - automation.ingen_i_garaget_slack_efter_nagra_minuter
+          - automation.set_dishwasher_dirty_when_power_off
+          - automation.nagon_i_annexet
+          - automation.send_alert_when_dishwasher_is_clean
+          - automation.alarm_fran_garaget
+          - automation.notify_if_ha_device_offline_2
+          - automation.spatemplow
+          - automation.spatemphigh
+          - automation.phase1high
+        title: Automation
+        type: entities
+      - entity: camera.o_van
+        type: picture-entity
+      - entity: climate.gillestugan_radiator_thermostat_1
+        type: thermostat
+      - entity: climate.vardagsrummet_radiator_norr
+        type: thermostat
+      - entity: climate.koket_radiator_thermostat_1
+        type: thermostat
+      - entity: climate.badrum_ovanvan_radiator_thermostat_1
+        type: thermostat
+      - entity: climate.badrum_van_1_radiator_thermostat_1
+        type: thermostat
+      - entity: climate.hallen_radiator_thermostat_1
+        type: thermostat
+      - entity: climate.vardagsrummet_radiator_soder
+        type: thermostat
+      - entity: climate.sovrummet_radiator_thermostat_1
+        type: thermostat
+      - entity: climate.vardagsrummet_vaggtermostat
+        type: thermostat
+      - entities:
+          - entity_controller.rorelse_i_garaget
+          - entity_controller.rorelse_i_annexet
+        title: ''
+        type: entities
+      - entities:
+          - sensor.vinkallaren
+          - sensor.vinkylen
+        hours_to_show: 168
+        refresh_interval: 0
+        title: Temperatur inne
+        type: history-graph
+      - entities:
+          - sensor.julgran
+        hours_to_show: 168
+        refresh_interval: 0
+        title: Julgranen
+        type: history-graph
+      - entities:
+          - sensor.ute_temp
+          - sensor.uterum_temp
+          - sensor.annex_temp
+          - sensor.garaget
+        hours_to_show: 168
+        refresh_interval: 0
+        title: Temperatur ute
+        type: history-graph
+      - entities:
+          - sensor.fas_1
+          - sensor.fas_2
+          - sensor.fas_3
+        hours_to_show: 48
+        refresh_interval: 0
+        title: Strömförbrukning
+        type: history-graph
+      - entities:
+          - light.staketbelysning
+          - light.dammbelysning
+          - light.citrusbelysning
+        hours_to_show: 96
+        refresh_interval: 60
+        title: Lampor
+        type: history-graph
+      - entities:
+          - sensor.temp1
+          - sensor.temp2
+          - sensor.temp3
+          - sensor.temp4
+          - sensor.ute_temp
+        hours_to_show: 48
+        refresh_interval: 0
+        title: Vatten temp
+        type: history-graph
+      - entities:
+          - input_select.dishwasher_status
+        title: Välj
+        type: entities
+      - entities:
+          - light.fonsterlampor_v_rum
+          - light.fonsterlampa_s_v_rum
+          - light.fonsterlampa_n_v_rum
+          - light.vitrinskapet
+          - light.fonsterlampa_trappan
+          - light.koksfonstret
+          - light.fibaro_system_fgd212_dimmer_2_level_2
+          - light.aeotec_zw111_nano_dimmer_level
+          - light.uterummet
+          - light.kokslampa_matbord
+          - light.staketbelysning
+          - light.dammbelysning
+          - light.citrusbelysning
+        title: Lampor
+        type: entities
+      - entity: media_player.volumio_mossamusic_local
+        type: media-control
+      - entities:
+          - switch.spa_over
+          - switch.spa_under
           - switch.dammpump
-          - entity: light.vitrinskapet
-            # Override the name to use
-            name: Vitrinskåpet
-
-      - type: gauge
-        title: Fas 1
-        unit_of_measurement: 'A'
-        entity: sensor.fas_1
-        max: 30
-        severity:
-          green: 0
-          yellow: 10
-          red: 20
-
-      - type: gauge
-        title: Fas 2
-        unit_of_measurement: 'A'
-        entity: sensor.fas_2
-        max: 30
-        severity:
-          green: 0
-          yellow: 10
-          red: 20
-
-      - type: gauge
-        title: Fas 3
-        unit_of_measurement: 'A'
-        entity: sensor.fas_3
-        max: 30
-        severity:
-          green: 0
-          yellow: 10
-          red: 20
-
-        # The markdown card will render markdown text.
-      - type: markdown
-        title: Lovelace
-        content: >
-          Welcome to your **Lovelace UI**.
+          - switch.citruselementet
+          - switch.aeotec_zw111_nano_dimmer_switch
+        title: Kontakt
+        type: entities
+      - entities:
+          - zwave.zwaveme_zme_uzb1_usb_stick
+          - zwave.fibaro_system_fgms001zw5_motion_sensor
+          - zwave.aeotec_zw111_nano_dimmer
+        title: Z-Wave
+        type: entities
+      - type: 'custom:tracker-card'
+    path: default_view
+    title: Home
+  - badges: []
+    cards:
+      - entities:
+          - sun.sun
+          - sensor.moon
+          - sensor.season
+          - sensor.dark_sky_summary
+          - sensor.dark_sky_precip
+          - sensor.dark_sky_precip_type
+          - sensor.dark_sky_precip_intensity
+          - sensor.dark_sky_precip_probability
+          - sensor.dark_sky_temperature
+          - sensor.dark_sky_apparent_temperature
+          - sensor.dark_sky_wind_speed
+          - sensor.dark_sky_wind_bearing
+          - sensor.dark_sky_cloud_cover
+          - sensor.dark_sky_humidity
+        show_header_toggle: true
+        title: Vädret nu
+        type: entities
+      - entities:
+          - sensor.forecast_0
+          - sensor.forecast_1
+          - sensor.forecast_2
+          - sensor.forecast_3
+          - sensor.forecast_4
+          - sensor.forecast_5
+          - sensor.forecast_6
+          - sensor.forecast_7
+        show_header_toggle: true
+        title: Prognos
+        type: entities
+    icon: 'mdi:weather-sunset'
+    path: weather_tab
+    title: Weather

@@ -37,6 +37,10 @@ frontend:
 # Enable System Health
 system_health:
 
+# Use local Lovelace yaml-file
+lovelace:
+  mode: yaml
+
 rflink:
   host: 192.168.1.72
   port: 1234
