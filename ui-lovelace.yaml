@@ -10,9 +10,11 @@ views:
           - light.staketbelysning
           - light.dammbelysning
           - light.citrusbelysning
+          - light.tradgardsbelysning
+          - light.takspot_kok
         hours_to_show: 96
         refresh_interval: 60
-        title: Yttre belysning
+        title: Belysning
         type: history-graph
       - entities:
           - light.fonsterlampor_v_rum
@@ -21,14 +23,22 @@ views:
           - light.vitrinskapet
           - light.fonsterlampa_trappan
           - light.koksfonstret
-          - light.fibaro_system_fgd212_dimmer_2_level_2
-          - light.aeotec_zw111_nano_dimmer_level
+          - light.tradgardsbelysning
+          - light.takspot_kok
           - light.uterummet
           - light.kokslampa_matbord
           - light.staketbelysning
           - light.dammbelysning
           - light.citrusbelysning
+        show_header_toggle: false
         title: Lampor
+        type: entities
+      - entities:
+          - scene.dinner
+          - scene.night
+          - scene.work
+        show_header_toggle: false
+        title: Scener
         type: entities
     path: lights_view
     title: Lampor
