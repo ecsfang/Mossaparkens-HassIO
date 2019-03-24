@@ -10,8 +10,8 @@ views:
           - light.staketbelysning
           - light.dammbelysning
           - light.citrusbelysning
-          - light.tradgardsbelysning
-          - light.takspot_kok
+          - light.fibaro_system_fgd212_dimmer_2_level_2
+          - light.aeotec_zw111_nano_dimmer_level
         hours_to_show: 96
         refresh_interval: 60
         title: Belysning
@@ -23,8 +23,8 @@ views:
           - light.vitrinskapet
           - light.fonsterlampa_trappan
           - light.koksfonstret
-          - light.tradgardsbelysning
-          - light.takspot_kok
+          - light.fibaro_system_fgd212_dimmer_2_level_2
+          - light.aeotec_zw111_nano_dimmer_level
           - light.uterummet
           - light.kokslampa_matbord
           - light.staketbelysning
@@ -42,6 +42,45 @@ views:
         type: entities
     path: lights_view
     title: Lampor
+  - badges:
+    cards:
+      - entities:
+          - sensor.dishwasher_status
+          - sensor.diskmaskin_idag
+          - sensor.diskmaskin_igar
+          - sensor.diskmaskin_totalt
+          - sensor.diskmaskin_effekt
+          - sensor.diskmaskin_spanning
+          - sensor.diskmaskin_strom
+        show_header_toggle: false
+        title: Diskmaskinen
+        type: entities
+      - entities:
+          - sensor.effekt_idag
+          - sensor.effekt_igar
+          - sensor.effekt_totalt
+          - sensor.effekt_nu
+          - sensor.element_spanning
+          - sensor.element_strom
+        show_header_toggle: false
+        title: Citruselementen
+        type: entities
+      - entities:
+          - sensor.fas_1
+          - sensor.fas_2
+          - sensor.fas_3
+          - sensor.effekt_1
+          - sensor.effekt_2
+          - sensor.effekt_3
+          - sensor.forbrukning_idag
+          - sensor.veckoforbrukning
+          - sensor.manadsforbrukning
+          - sensor.arsforbrukning
+        show_header_toggle: true
+        title: Förbrukning huset
+        type: entities
+    path: devices_view
+    title: Apparater
   - badges:
       - binary_sensor.workday_today
       - binary_sensor.workday_tomorrow
