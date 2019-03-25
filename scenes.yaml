@@ -1,14 +1,15 @@
   - name: Dinner
     entities:
       light.aeotec_zw111_nano_dimmer_level:
-        state: true
+        state: on
         brightness: 25
+        transition: 10
   - name: Night
     entities:
-      light.aeotec_zw111_nano_dimmer_level:
-        state: false
+      light.aeotec_zw111_nano_dimmer_level: off
   - name: Work
     entities:
       light.aeotec_zw111_nano_dimmer_level:
-        state: true
+        state: on
         brightness: 100
+        transition: 2
