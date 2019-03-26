@@ -6,7 +6,10 @@ title: Home Assistant
 views:
   - badges: []
     cards:
-      - entities:
+      - type: history-graph
+        title: Belysning
+        show_header_toggle: false
+        entities:
           - light.staketbelysning
           - light.dammbelysning
           - light.citrusbelysning
@@ -14,32 +17,42 @@ views:
           - light.aeotec_zw111_nano_dimmer_level
         hours_to_show: 96
         refresh_interval: 60
-        title: Belysning
-        type: history-graph
-      - entities:
+      - type: entities
+        title: Lampor
+        show_header_toggle: false
+        entities:
+          - type: section
+            label: Vardagsrum
           - light.fonsterlampor_v_rum
           - light.fonsterlampa_s_v_rum
           - light.fonsterlampa_n_v_rum
           - light.vitrinskapet
-          - light.fonsterlampa_trappan
+          - type: section
+            label: Köket
           - light.koksfonstret
-          - light.fibaro_system_fgd212_dimmer_2_level_2
-          - light.aeotec_zw111_nano_dimmer_level
-          - light.uterummet
           - light.kokslampa_matbord
+          - type: custom:slider-entity-row
+            entity: light.aeotec_zw111_nano_dimmer_level
+            toggle: true
+          - type: section
+            label: Övriga
+          - light.fonsterlampa_trappan
+          - type: section
+            label: Ute
+          - type: custom:slider-entity-row
+            entity: light.fibaro_system_fgd212_dimmer_2_level_2
+            toggle: true
+          - light.uterummet
           - light.staketbelysning
           - light.dammbelysning
           - light.citrusbelysning
+      - type: entities
+        title: Scener
         show_header_toggle: false
-        title: Lampor
-        type: entities
-      - entities:
+        entities:
           - scene.dinner
           - scene.night
           - scene.work
-        show_header_toggle: false
-        title: Scener
-        type: entities
     path: lights_view
     title: Lampor
   - badges:
