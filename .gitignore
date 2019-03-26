@@ -15,6 +15,7 @@
 !/custom_components/entity_controller
 !/packages
 !/python_scripts
+!/www
 !.gitignore
 secrets.yaml
 known_devices.yaml

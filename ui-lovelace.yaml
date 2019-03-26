@@ -1,9 +1,11 @@
 title: Mossaparken Avsome Home
 resources:
-  - type: module
-    url: /customcards/github/custom-cards/tracker-card.js?track=true
-  - type: js
-    url: /local/slider-entity-row.js
+  - url: /customcards/github/custom-cards/tracker-card.js?track=true
+    type: module
+  - url: /local/slider-entity-row.js
+    type: js
+  - url: /local/canvas-gauge-card.js
+    type: module
 title: Home Assistant
 views:
   - badges: []
@@ -96,6 +98,70 @@ views:
         type: entities
     path: devices_view
     title: Apparater
+  - badges:
+    cards:
+      - type: custom:canvas-gauge-card
+        entity: sensor.fas_1
+        name: Fas 1 (A)
+        card_height: 145
+        shadow_height: 15%
+        font_size: 1em
+        gauge:
+          type: "radial-gauge"
+          width: 220
+          height: 220
+          minValue: 0
+          maxValue: 30
+          startAngle: 90
+          ticksAngle: 180
+          valueBox: false
+          majorTicks: ["0", "5", "10", "15", "20", "25", "30"]
+          minorTicks: 2
+          strokeTicks: true
+          highlights: [{"from": 20, "to": 30,"color": "rgba(200, 50, 50, .75)"}]
+          borders: false
+      - type: custom:canvas-gauge-card
+        entity: sensor.fas_2
+        name: Fas 2 (A)
+        card_height: 145
+        shadow_height: 15%
+        font_size: 1em
+        gauge:
+          type: "radial-gauge"
+          width: 220
+          height: 220
+          minValue: 0
+          maxValue: 30
+          startAngle: 90
+          ticksAngle: 180
+          valueBox: false
+          majorTicks: ["0", "5", "10", "15", "20", "25", "30"]
+          minorTicks: 2
+          strokeTicks: true
+          highlights: [{"from": 20, "to": 30,"color": "rgba(200, 50, 50, .75)"}]
+          borders: false
+      - type: custom:canvas-gauge-card
+        entity: sensor.fas_3
+        name: Fas 3 (A)
+        card_height: 145
+        shadow_height: 15%
+        font_size: 1em
+        gauge:
+          type: "radial-gauge"
+          width: 220
+          height: 220
+          minValue: 0
+          maxValue: 30
+          startAngle: 90
+          ticksAngle: 180
+          valueBox: false
+          majorTicks: ["0", "5", "10", "15", "20", "25", "30"]
+          minorTicks: 2
+          strokeTicks: true
+          highlights: [{"from": 20, "to": 30,"color": "rgba(200, 50, 50, .75)"}]
+          borders: false
+    path: current_view
+    title: Ström
   - badges:
       - binary_sensor.workday_today
       - binary_sensor.workday_tomorrow
