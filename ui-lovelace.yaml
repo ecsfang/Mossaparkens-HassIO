@@ -2,6 +2,8 @@ title: Mossaparken Avsome Home
 resources:
   - type: module
     url: /customcards/github/custom-cards/tracker-card.js?track=true
+  - type: js
+    url: /local/slideshow-card.js
 title: Home Assistant
 views:
   - badges: []
