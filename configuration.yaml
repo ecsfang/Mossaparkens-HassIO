@@ -84,9 +84,10 @@ entity_controller:
         - light.citrusbelysning
       sensor_type: duration
       delay: 300
-      service_data:
-        transition: 2
-        brightness_pct: 100
+
+#      service_data:
+#        transition: 2
+#        brightness_pct: 100
 
 #python_script:
 
