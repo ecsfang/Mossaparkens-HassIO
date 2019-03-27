@@ -36,6 +36,7 @@ views:
           - type: section
             label: Köket
           - light.koksfonstret
+          - light.koksfonster
           - light.kokslampa_matbord
           - type: custom:slider-entity-row
             entity: light.aeotec_zw111_nano_dimmer_level
