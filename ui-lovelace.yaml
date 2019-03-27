@@ -6,7 +6,9 @@ resources:
     type: js
   - url: /local/canvas-gauge-card.js
     type: module
-title: Home Assistant
+  - url: /local/mini-graph-card-bundle.js?v=0.3.2
+    type: module
+#title: Home Assistant
 views:
   - badges: []
     cards:
@@ -100,6 +102,13 @@ views:
     title: Apparater
   - badges:
     cards:
+      - type: custom:mini-graph-card
+        name: Ström
+        icon: mdi:server
+        entities:
+          - sensor.fas_1
+          - sensor.fas_2
+          - sensor.fas_3
       - type: custom:canvas-gauge-card
         entity: sensor.fas_1
         name: Fas 1 (A)

@@ -2,13 +2,13 @@
     entities:
       light.aeotec_zw111_nano_dimmer_level:
         state: on
-        transition: 5
+        transition: 2
         brightness_pct: 25
   - name: Night
     entities:
       light.aeotec_zw111_nano_dimmer_level:
         state: off
-        transition: 5
+        transition: 2
   - name: Work
     entities:
       light.aeotec_zw111_nano_dimmer_level:

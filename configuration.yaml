@@ -51,6 +51,8 @@ custom_updater:
     - cards
   component_urls:
     - https://raw.githubusercontent.com/danobot/entity-controller/master/tracker.json
+  card_urls:
+    - https://raw.githubusercontent.com/kalkih/mini-graph-card/master/tracker.json
 
 entity_controller:
     motion_light_garage:
