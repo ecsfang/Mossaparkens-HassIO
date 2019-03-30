@@ -388,3 +388,9 @@
     state_topic: "rflink/Xiron-3702"
     value_template: "{{ value_json.BAT}}"
 
+  - platform: mqtt
+    name: "Uterum tempt"
+    state_topic: "rflink/Renkforce_E_TA-0135"
+    value_template: "{{ value_json.TEMP}}"
+    unit_of_measurement: "°C"
+    
