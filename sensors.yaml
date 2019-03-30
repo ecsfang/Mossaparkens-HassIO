@@ -371,3 +371,20 @@
       xiron_2e02_hum:
         sensor_type: humidity
 
+  - platform: mqtt
+    name: "Matk temp"
+    state_topic: "rflink/Xiron_2E02"
+    value_template: "{{ value_json.TEMP}}"
+    unit_of_measurement: "°C"
+
+  - platform: mqtt
+    name: "Matk hum"
+    state_topic: "rflink/Xiron_2E02"
+    value_template: "{{ value_json.HUM}}"
+    unit_of_measurement: "%"
+
+  - platform: mqtt
+    name: "Matk bat"
+    state_topic: "rflink/Xiron_2E02"
+    value_template: "{{ value_json.BAT}}"
+
