@@ -8,6 +8,7 @@ homeassistant:
   auth_providers:
    - type: homeassistant
    - type: legacy_api_password
+     api_password: !secret ha_dash_pw
 
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 80
