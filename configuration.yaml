@@ -42,10 +42,6 @@ system_health:
 lovelace:
   mode: yaml
 
-rflink:
-  host: 192.168.1.72
-  port: 1234
-
 custom_updater:
   track:
     - components
