@@ -373,19 +373,19 @@
 
   - platform: mqtt
     name: "Matk temp"
-    state_topic: "rflink/Xiron-3702"
+    state_topic: "rflink/Renkforce_E_TA-01b7"
     value_template: "{{ value_json.TEMP}}"
     unit_of_measurement: "°C"
 
   - platform: mqtt
     name: "Matk hum"
-    state_topic: "rflink/Xiron-3702"
+    state_topic: "rflink/Renkforce_E_TA-01b7"
     value_template: "{{ value_json.HUM}}"
     unit_of_measurement: "%"
 
   - platform: mqtt
     name: "Matk bat"
-    state_topic: "rflink/Xiron-3702"
+    state_topic: "rflink/Renkforce_E_TA-01b7"
     value_template: "{{ value_json.BAT}}"
 
   - platform: mqtt
