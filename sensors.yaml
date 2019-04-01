@@ -389,10 +389,21 @@
     value_template: "{{ value_json.BAT}}"
 
   - platform: mqtt
-    name: "Uterum tempt"
-    state_topic: "rflink/Renkforce_E_TA-0135"
+    name: "Uter temp"
+    state_topic: "rflink/Xiron-7202"
     value_template: "{{ value_json.TEMP}}"
     unit_of_measurement: "°C"
+
+  - platform: mqtt
+    name: "Uter hum"
+    state_topic: "rflink/Xiron-7202"
+    value_template: "{{ value_json.HUM}}"
+    unit_of_measurement: "%"
+
+  - platform: mqtt
+    name: "Ute bat"
+    state_topic: "rflink/Xiron-7202"
+    value_template: "{{ value_json.BAT}}"
 
   - platform: mqtt
     name: "Ute fram temp"
@@ -410,5 +421,3 @@
     name: "Ute fram bat"
     state_topic: "rflink/Tunex-E901"
     value_template: "{{ value_json.BAT}}"
-
-    
