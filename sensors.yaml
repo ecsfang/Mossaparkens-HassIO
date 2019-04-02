@@ -219,6 +219,11 @@
     name: Online
     unit_of_measurement: hours
 
+  - platform: mqtt
+    name: "RF-link"
+    state_topic: "rflink/uptime"
+    unit_of_measurement: hours
+
   - platform: history_stats
     name: Citrus belysningen
     entity_id: light.citrusbelysning
@@ -371,53 +376,49 @@
 #      xiron_2e02_hum:
 #        sensor_type: humidity
 
+#
+# Tempsensorn i matkällaren
+#
   - platform: mqtt
-    name: "Matk temp"
+    name: "Matkällaren"
     state_topic: "rflink/Xiron-3702"
     value_template: "{{ value_json.TEMP}}"
     unit_of_measurement: "°C"
 
   - platform: mqtt
-    name: "Matk hum"
+    name: "Matkällaren hum"
     state_topic: "rflink/Xiron-3702"
     value_template: "{{ value_json.HUM}}"
     unit_of_measurement: "%"
 
+#
+# Tempsensorn i uterummet
+#
   - platform: mqtt
-    name: "Matk bat"
-    state_topic: "rflink/Xiron-3702"
-    value_template: "{{ value_json.BAT}}"
-
-  - platform: mqtt
-    name: "Uter temp"
+    name: "Uterum"
     state_topic: "rflink/Xiron-7202"
     value_template: "{{ value_json.TEMP}}"
     unit_of_measurement: "°C"
 
   - platform: mqtt
-    name: "Uter hum"
+    name: "Uterum hum"
     state_topic: "rflink/Xiron-7202"
     value_template: "{{ value_json.HUM}}"
     unit_of_measurement: "%"
 
-  - platform: mqtt
-    name: "Ute bat"
-    state_topic: "rflink/Xiron-7202"
-    value_template: "{{ value_json.BAT}}"
 
+#
+# Tempsensorn utanför entré-dörren
+#
   - platform: mqtt
-    name: "Ute fram temp"
+    name: "Entrédörr"
     state_topic: "rflink/Tunex-E901"
     value_template: "{{ value_json.TEMP}}"
     unit_of_measurement: "°C"
 
   - platform: mqtt
-    name: "Ute fram hum"
+    name: "Entrédörr hum"
     state_topic: "rflink/Tunex-E901"
     value_template: "{{ value_json.HUM}}"
     unit_of_measurement: "%"
 
-  - platform: mqtt
-    name: "Ute fram bat"
-    state_topic: "rflink/Tunex-E901"
-    value_template: "{{ value_json.BAT}}"

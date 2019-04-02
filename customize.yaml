@@ -1,292 +1,301 @@
-#-------------------------------------------
-# Node 4: Multisensor - Annexet
-#-------------------------------------------
-sensor.aeotec_zw100_multisensor_6_luminance_4:
-  friendly_name: Annexet Lux
+    #-------------------------------------------
+    # Node 4: Multisensor - Annexet
+    #-------------------------------------------
+    sensor.aeotec_zw100_multisensor_6_luminance_4:
+      friendly_name: Annexet Lux
 
-sensor.aeotec_zw100_multisensor_6_burglar_4:
-  friendly_name: Annexet Alarm
+    sensor.aeotec_zw100_multisensor_6_burglar_4:
+      friendly_name: Annexet Alarm
 
-sensor.aeotec_zw100_multisensor_6_relative_humidity_4:
-  friendly_name: Annexet Humidity
-  icon: mdi:water-percent
+    sensor.aeotec_zw100_multisensor_6_relative_humidity_4:
+      friendly_name: Annexet Humidity
+      icon: mdi:water-percent
 
-sensor.aeotec_zw100_multisensor_6_temperature_4:
-  friendly_name: Annexet Temp
+    sensor.aeotec_zw100_multisensor_6_temperature_4:
+      friendly_name: Annexet Temp
 
-sensor.aeotec_zw100_multisensor_6_ultraviolet_4:
-  friendly_name: Annexet UV
-  icon: mdi:white-balance-sunny
+    sensor.aeotec_zw100_multisensor_6_ultraviolet_4:
+      friendly_name: Annexet UV
+      icon: mdi:white-balance-sunny
 
-binary_sensor.aeotec_zw100_multisensor_6_sensor_4:
-  friendly_name: Annexet Sensor
-  icon: mdi:run
-  device_class: motion
+    binary_sensor.aeotec_zw100_multisensor_6_sensor_4:
+      friendly_name: Annexet Sensor
+      icon: mdi:run
+      device_class: motion
 
-climate.badrum_ovanvan_radiator_thermostat_1:
-  friendly_name: Badrum Öv
+    climate.badrum_ovanvan_radiator_thermostat_1:
+      friendly_name: Badrum Öv
 
-climate.badrum_van_1_radiator_thermostat_1:
-  friendly_name: Badrum Bv
+    climate.badrum_van_1_radiator_thermostat_1:
+      friendly_name: Badrum Bv
 
-climate.gillestugan_radiator_thermostat_1:
-  friendly_name: Källaren
+    climate.gillestugan_radiator_thermostat_1:
+      friendly_name: Källaren
 
-climate.hallen_radiator_thermostat_1:
-  friendly_name: Hallen
+    climate.hallen_radiator_thermostat_1:
+      friendly_name: Hallen
 
-climate.koket_radiator_thermostat_1:
-  friendly_name: Köket
+    climate.koket_radiator_thermostat_1:
+      friendly_name: Köket
 
-climate.sovrummet_radiator_thermostat_1:
-  friendly_name: Sovrum
+    climate.sovrummet_radiator_thermostat_1:
+      friendly_name: Sovrum
 
-climate.vardagsrummet_radiator_norr:
-  friendly_name: V-rum Norr
+    climate.vardagsrummet_radiator_norr:
+      friendly_name: V-rum Norr
 
-climate.vardagsrummet_radiator_soder:
-  friendly_name: V-rum Söder
+    climate.vardagsrummet_radiator_soder:
+      friendly_name: V-rum Söder
 
-climate.vardagsrummet_vaggtermostat:
-  friendly_name: Vardagsrum
+    climate.vardagsrummet_vaggtermostat:
+      friendly_name: Vardagsrum
 
-# Hidden devices ...
-sensor.aeotec_zw100_multisensor_6_alarm_level_4:
-  hidden: yes
-sensor.aeotec_zw100_multisensor_6_alarm_type_4:
-  hidden: yes
-sensor.aeotec_zw100_multisensor_6_sourcenodeid_4:
-  hidden: yes
-zwave.aeotec_zw100_multisensor_6_4:
-  hidden: yes
+    # Hidden devices ...
+    sensor.aeotec_zw100_multisensor_6_alarm_level_4:
+      hidden: yes
+    sensor.aeotec_zw100_multisensor_6_alarm_type_4:
+      hidden: yes
+    sensor.aeotec_zw100_multisensor_6_sourcenodeid_4:
+      hidden: yes
+    zwave.aeotec_zw100_multisensor_6_4:
+      hidden: yes
 
-#-------------------------------------------
-# NODE 5, Fibaro - Dimmer 2 - Trädgårdsbelysningen
-#-------------------------------------------
-light.fibaro_system_fgd212_dimmer_2_level_2:
-  friendly_name: Trädgårdsbelysning
-  icon: mdi:lightbulb
+    #-------------------------------------------
+    # NODE 5, Fibaro - Dimmer 2 - Trädgårdsbelysningen
+    #-------------------------------------------
+    light.fibaro_system_fgd212_dimmer_2_level_2:
+      friendly_name: Trädgårdsbelysning
+      icon: mdi:lightbulb
 
-sensor.fibaro_system_fgd212_dimmer_2_energy:
-  friendly_name: Trädgårdsbelysning (kWh)
-  icon: mdi:flash
+    sensor.fibaro_system_fgd212_dimmer_2_energy:
+      friendly_name: Trädgårdsbelysning (kWh)
+      icon: mdi:flash
 
-sensor.fibaro_system_fgd212_dimmer_2_power_2:
-  friendly_name: Trädgårdsbelysning (W)
-  icon: mdi:flash
+    sensor.fibaro_system_fgd212_dimmer_2_power_2:
+      friendly_name: Trädgårdsbelysning (W)
+      icon: mdi:flash
 
-# Hidden devices ...
-light.fibaro_system_fgd212_dimmer_2_level:
-  hidden: yes
-sensor.fibaro_system_fgd212_dimmer_2_alarm_level:
-  hidden: yes
-sensor.fibaro_system_fgd212_dimmer_2_alarm_type:
-  hidden: yes
-sensor.fibaro_system_fgd212_dimmer_2_exporting:
-  hidden: yes
-sensor.fibaro_system_fgd212_dimmer_2_heat:
-  hidden: yes
-sensor.fibaro_system_fgd212_dimmer_2_power:
-  hidden: yes
-sensor.fibaro_system_fgd212_dimmer_2_power_management:
-  hidden: yes
-sensor.fibaro_system_fgd212_dimmer_2_sourcenodeid:
-  hidden: yes
-sensor.fibaro_system_fgd212_dimmer_2_system:
-  hidden: yes
-zwave.fibaro_system_fgd212_dimmer_2:
-  hidden: yes
+    # Hidden devices ...
+    light.fibaro_system_fgd212_dimmer_2_level:
+      hidden: yes
+    sensor.fibaro_system_fgd212_dimmer_2_alarm_level:
+      hidden: yes
+    sensor.fibaro_system_fgd212_dimmer_2_alarm_type:
+      hidden: yes
+    sensor.fibaro_system_fgd212_dimmer_2_exporting:
+      hidden: yes
+    sensor.fibaro_system_fgd212_dimmer_2_heat:
+      hidden: yes
+    sensor.fibaro_system_fgd212_dimmer_2_power:
+      hidden: yes
+    sensor.fibaro_system_fgd212_dimmer_2_power_management:
+      hidden: yes
+    sensor.fibaro_system_fgd212_dimmer_2_sourcenodeid:
+      hidden: yes
+    sensor.fibaro_system_fgd212_dimmer_2_system:
+      hidden: yes
+    zwave.fibaro_system_fgd212_dimmer_2:
+      hidden: yes
 
-#-------------------------------------------
-# Node 6: Motionsensor ZW5, Garaget (Ögat)
-#-------------------------------------------
-sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
-  friendly_name: Garage Alarm
-sensor.fibaro_system_fgms001zw5_motion_sensor_general:
-  friendly_name: Garage Rörelse
-sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
-  friendly_name: Garage Lux
-sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity:
-  friendly_name: Garage Seismic
-sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
-  friendly_name: Garage Temp
-binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor:
-  friendly_name: Garage Sensor
-  icon: mdi:run
-  device_class: motion
+    #-------------------------------------------
+    # Node 6: Motionsensor ZW5, Garaget (Ögat)
+    #-------------------------------------------
+    sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
+      friendly_name: Garage Alarm
+    sensor.fibaro_system_fgms001zw5_motion_sensor_general:
+      friendly_name: Garage Rörelse
+    sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
+      friendly_name: Garage Lux
+    sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity:
+      friendly_name: Garage Seismic
+    sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
+      friendly_name: Garage Temp
+    binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor:
+      friendly_name: Garage Sensor
+      icon: mdi:run
+      device_class: motion
 
-# Hidden devices ...
-sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_level:
-  hidden: yes
-sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_type:
-  hidden: yes
-sensor.fibaro_system_fgms001zw5_motion_sensor_sourcenodeid:
-  hidden: yes
+    # Hidden devices ...
+    sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_level:
+      hidden: yes
+    sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_type:
+      hidden: yes
+    sensor.fibaro_system_fgms001zw5_motion_sensor_sourcenodeid:
+      hidden: yes
+    sensor.fibaro_system_fgms001_zw5_motion_sensor_general:
+      hidden: yes
 
-#-------------------------------------------
-# Node 7: Aeotec - Dimmer Köksspottar
-#-------------------------------------------
-light.aeotec_zw111_nano_dimmer_level:
-  friendly_name: Takspot kök
-  icon: mdi:lightbulb
+    #-------------------------------------------
+    # Node 7: Aeotec - Dimmer Köksspottar
+    #-------------------------------------------
+    light.aeotec_zw111_nano_dimmer_level:
+      friendly_name: Takspot kök
+      icon: mdi:lightbulb
 
-sensor.aeotec_zw111_nano_dimmer_switch:
-  friendly_name: Kökstaket (spot)
+    sensor.aeotec_zw111_nano_dimmer_switch:
+      friendly_name: Kökstaket (spot)
 
-sensor.aeotec_zw111_nano_dimmer_energy:
-  friendly_name: Takspot kök (kWh)
-  icon: mdi:flash
+    sensor.aeotec_zw111_nano_dimmer_energy:
+      friendly_name: Takspot kök (kWh)
+      icon: mdi:flash
 
-sensor.aeotec_zw111_nano_dimmer_power:
-  friendly_name: Takspot kök (W)
-  icon: mdi:flash
+    sensor.aeotec_zw111_nano_dimmer_power:
+      friendly_name: Takspot kök (W)
+      icon: mdi:flash
 
-# Hidden devices ...
-sensor.aeotec_zw111_nano_dimmer_alarm_level:
-  hidden: yes
-sensor.aeotec_zw111_nano_dimmer_alarm_type:
-  hidden: yes
-sensor.aeotec_zw111_nano_dimmer_current:
-  hidden: yes
-sensor.aeotec_zw111_nano_dimmer_exporting:
-  hidden: yes
-sensor.aeotec_zw111_nano_dimmer_heat:
-  hidden: yes
-sensor.aeotec_zw111_nano_dimmer_interval:
-  hidden: yes
-sensor.aeotec_zw111_nano_dimmer_power_management:
-  hidden: yes
-sensor.aeotec_zw111_nano_dimmer_previous_reading:
-  hidden: yes
-sensor.aeotec_zw111_nano_dimmer_sourcenodeid:
-  hidden: yes
-sensor.aeotec_zw111_nano_dimmer_voltage:
-  hidden: yes
-#sensor.aeotec_zw111_nano_dimmer_switch:
-#  hidden: yes
+    # Hidden devices ...
+    sensor.aeotec_zw111_nano_dimmer_alarm_level:
+      hidden: yes
+    sensor.aeotec_zw111_nano_dimmer_alarm_type:
+      hidden: yes
+    sensor.aeotec_zw111_nano_dimmer_current:
+      hidden: yes
+    sensor.aeotec_zw111_nano_dimmer_exporting:
+      hidden: yes
+    sensor.aeotec_zw111_nano_dimmer_heat:
+      hidden: yes
+    sensor.aeotec_zw111_nano_dimmer_interval:
+      hidden: yes
+    sensor.aeotec_zw111_nano_dimmer_power_management:
+      hidden: yes
+    sensor.aeotec_zw111_nano_dimmer_previous_reading:
+      hidden: yes
+    sensor.aeotec_zw111_nano_dimmer_sourcenodeid:
+      hidden: yes
+    sensor.aeotec_zw111_nano_dimmer_voltage:
+      hidden: yes
+    #sensor.aeotec_zw111_nano_dimmer_switch:
+    #  hidden: yes
 
-#-------------------------------------------
-# Node 8: Multisensor - Garden
-#-------------------------------------------
-sensor.aeotec_zw100_multisensor_6_luminance_3:
-  friendly_name: Garden Lux
+    #-------------------------------------------
+    # Node 8: Multisensor - Garden
+    #-------------------------------------------
+    sensor.aeotec_zw100_multisensor_6_luminance_3:
+      friendly_name: Garden Lux
 
-sensor.aeotec_zw100_multisensor_6_burglar_3:
-  friendly_name: Garden Alarm
+    sensor.aeotec_zw100_multisensor_6_burglar_3:
+      friendly_name: Garden Alarm
 
-sensor.aeotec_zw100_multisensor_6_relative_humidity_3:
-  friendly_name: Garden Humidity
-  icon: mdi:water-percent
+    sensor.aeotec_zw100_multisensor_6_relative_humidity_3:
+      friendly_name: Garden Humidity
+      icon: mdi:water-percent
 
-sensor.aeotec_zw100_multisensor_6_temperature_3:
-  friendly_name: Garden Temp
+    sensor.aeotec_zw100_multisensor_6_temperature_3:
+      friendly_name: Garden Temp
 
-sensor.aeotec_zw100_multisensor_6_ultraviolet_3:
-  friendly_name: Garden UV
-  icon: mdi:white-balance-sunny
+    sensor.aeotec_zw100_multisensor_6_ultraviolet_3:
+      friendly_name: Garden UV
+      icon: mdi:white-balance-sunny
 
-binary_sensor.aeotec_zw100_multisensor_6_sensor_3:
-  friendly_name: Garden Sensor
-  icon: mdi:run
-  device_class: motion
+    binary_sensor.aeotec_zw100_multisensor_6_sensor_3:
+      friendly_name: Garden Sensor
+      icon: mdi:run
+      device_class: motion
 
-# Hidden devices ...
-sensor.aeotec_zw100_multisensor_6_alarm_level_3:
-  hidden: yes
-sensor.aeotec_zw100_multisensor_6_alarm_type_3:
-  hidden: yes
-sensor.aeotec_zw100_multisensor_6_sourcenodeid_3:
-  hidden: yes
-zwave.aeotec_zw100_multisensor_6_3:
-  hidden: yes
+    # Hidden devices ...
+    sensor.aeotec_zw100_multisensor_6_alarm_level_3:
+      hidden: yes
+    sensor.aeotec_zw100_multisensor_6_alarm_type_3:
+      hidden: yes
+    sensor.aeotec_zw100_multisensor_6_sourcenodeid_3:
+      hidden: yes
+    zwave.aeotec_zw100_multisensor_6_3:
+      hidden: yes
 
-#####################################################
+    #####################################################
 
-binary_sensor.eddieserver:
-  icon: mdi:desktop-tower
+    binary_sensor.eddieserver:
+      icon: mdi:desktop-tower
 
-sensor.annex_humid:
-  icon: mdi:water-percent
+    sensor.annex_humid:
+      icon: mdi:water-percent
 
-sensor.moon:
-  friendly_name: Månfas
-  icon: mdi:weather-night
+    sensor.moon:
+      friendly_name: Månfas
+      icon: mdi:weather-night
 
-sensor.season:
-  friendly_name: Årstid
-  icon: theme-light-dark
+    sensor.season:
+      friendly_name: Årstid
+      icon: theme-light-dark
 
-sensor.sun:
-  friendly_name: Solen
-sensor.dark_sky_precip:
-  friendly_name: Nederbörd
-sensor.dark_sky_precip_intensity:
-  friendly_name: Nederbörd (mängd)
-sensor.dark_sky_precip_probability:
-  friendly_name: Nederbörd (sannolikhet)
-sensor.dark_sky_temperature:
-  friendly_name: Ute temp (prognos)
-sensor.dark_sky_apparent_temperature:
-  friendly_name: Ute temp (skenbar)
-sensor.dark_sky_wind_speed:
-  friendly_name: Vind
-sensor.dark_sky_wind_bearing:
-  friendly_name: Vindriktning
-sensor.dark_sky_humidity:
-  friendly_name: Ute humid (prognos)
-sensor.dark_sky_summary:
-  friendly_name: Väderprognos
+    sensor.sun:
+      friendly_name: Solen
+    sensor.dark_sky_precip:
+      friendly_name: Nederbörd
+    sensor.dark_sky_precip_intensity:
+      friendly_name: Nederbörd (mängd)
+    sensor.dark_sky_precip_probability:
+      friendly_name: Nederbörd (sannolikhet)
+    sensor.dark_sky_temperature:
+      friendly_name: Ute temp (prognos)
+    sensor.dark_sky_apparent_temperature:
+      friendly_name: Ute temp (skenbar)
+    sensor.dark_sky_wind_speed:
+      friendly_name: Vind
+    sensor.dark_sky_wind_bearing:
+      friendly_name: Vindriktning
+    sensor.dark_sky_humidity:
+      friendly_name: Ute humid (prognos)
+    sensor.dark_sky_summary:
+      friendly_name: Väderprognos
 
-sensor.dark_sky_cloud_coverage:
-  hidden: yes
-sensor.dark_sky_cloud_coverage_1:
-  hidden: yes
-sensor.dark_sky_cloud_coverage_2:
-  hidden: yes
-sensor.dark_sky_cloud_coverage_3:
-  hidden: yes
-sensor.dark_sky_cloud_coverage_4:
-  hidden: yes
-sensor.dark_sky_cloud_coverage_5:
-  hidden: yes
-sensor.dark_sky_cloud_coverage_6:
-  hidden: yes
-sensor.dark_sky_cloud_coverage_7:
-  hidden: yes
+    sensor.dark_sky_cloud_coverage:
+      hidden: yes
+    sensor.dark_sky_cloud_coverage_1:
+      hidden: yes
+    sensor.dark_sky_cloud_coverage_2:
+      hidden: yes
+    sensor.dark_sky_cloud_coverage_3:
+      hidden: yes
+    sensor.dark_sky_cloud_coverage_4:
+      hidden: yes
+    sensor.dark_sky_cloud_coverage_5:
+      hidden: yes
+    sensor.dark_sky_cloud_coverage_6:
+      hidden: yes
+    sensor.dark_sky_cloud_coverage_7:
+      hidden: yes
 
-sensor.dark_sky_daytime_high_temperature:
-  hidden: yes
-sensor.dark_sky_daytime_high_temperature_1:
-  hidden: yes
-sensor.dark_sky_daytime_high_temperature_2:
-  hidden: yes
-sensor.dark_sky_daytime_high_temperature_3:
-  hidden: yes
-sensor.dark_sky_daytime_high_temperature_4:
-  hidden: yes
-sensor.dark_sky_daytime_high_temperature_5:
-  hidden: yes
-sensor.dark_sky_daytime_high_temperature_6:
-  hidden: yes
-sensor.dark_sky_daytime_high_temperature_7:
-  hidden: yes
+    sensor.dark_sky_daytime_high_temperature:
+      hidden: yes
+    sensor.dark_sky_daytime_high_temperature_1:
+      hidden: yes
+    sensor.dark_sky_daytime_high_temperature_2:
+      hidden: yes
+    sensor.dark_sky_daytime_high_temperature_3:
+      hidden: yes
+    sensor.dark_sky_daytime_high_temperature_4:
+      hidden: yes
+    sensor.dark_sky_daytime_high_temperature_5:
+      hidden: yes
+    sensor.dark_sky_daytime_high_temperature_6:
+      hidden: yes
+    sensor.dark_sky_daytime_high_temperature_7:
+      hidden: yes
 
-sensor.dark_sky_daytime_humidity:
-  hidden: yes
-sensor.dark_sky_daytime_humidity_1:
-  hidden: yes
-sensor.dark_sky_daytime_humidity_2:
-  hidden: yes
-sensor.dark_sky_daytime_humidity_3:
-  hidden: yes
-sensor.dark_sky_daytime_humidity_4:
-  hidden: yes
-sensor.dark_sky_daytime_humidity_5:
-  hidden: yes
-sensor.dark_sky_daytime_humidity_6:
-  hidden: yes
-sensor.dark_sky_daytime_humidity_7:
-  hidden: yes
+    sensor.dark_sky_daytime_humidity:
+      hidden: yes
+    sensor.dark_sky_daytime_humidity_1:
+      hidden: yes
+    sensor.dark_sky_daytime_humidity_2:
+      hidden: yes
+    sensor.dark_sky_daytime_humidity_3:
+      hidden: yes
+    sensor.dark_sky_daytime_humidity_4:
+      hidden: yes
+    sensor.dark_sky_daytime_humidity_5:
+      hidden: yes
+    sensor.dark_sky_daytime_humidity_6:
+      hidden: yes
+    sensor.dark_sky_daytime_humidity_7:
+      hidden: yes
 
-sensor.diskmaskin_status:
-  icon: mdi:washing-machine
+    sensor.diskmaskin_status:
+      icon: mdi:washing-machine
+
+    sensor.matkallaren_bat:
+      icon: mdi:battery
+    sensor.uterum_bat:
+      icon: mdi:battery
+    sensor.entredorr_bat:
+      icon: mdi:battery

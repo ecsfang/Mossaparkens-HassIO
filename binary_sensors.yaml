@@ -58,3 +58,30 @@
 #    name: "Fas 3 status"
 #    entity_id: sensor.fas_3
 #    upper: 20
+
+  - platform: mqtt
+    name: "RF-link online"
+    state_topic: "rflink/online"
+    payload_on: "1"
+    payload_off: "0"
+
+  - platform: mqtt
+    name: "Matkällaren bat"
+    state_topic: "rflink/Xiron-3702"
+    value_template: "{{ value_json.BAT }}"
+    payload_on: "LOW"
+    payload_off: "OK"
+
+  - platform: mqtt
+    name: "Uterum bat"
+    state_topic: "rflink/Xiron-7202"
+    value_template: "{{ value_json.BAT }}"
+    payload_on: "LOW"
+    payload_off: "OK"
+
+  - platform: mqtt
+    name: "Entrédörr bat"
+    state_topic: "rflink/Tunex-E901"
+    value_template: "{{ value_json.BAT }}"
+    payload_on: "LOW"
+    payload_off: "OK"
