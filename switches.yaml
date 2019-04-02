@@ -34,3 +34,14 @@
     payload_off: "OFF"
     retain: true
 
+  - platform: mqtt
+    state_topic: 'rflink/cmd'
+    name: 'Uterummet'
+    payload_on: "10;NewKaku;ID=0009db9a;SWITCH=1;CMD=ON;"
+    payload_off: "10;NewKaku;ID=0009db9a;SWITCH=1;CMD=OFF;"
+
+  - platform: mqtt
+    state_topic: 'rflink/cmd'
+    name: 'Kökslampa matbord'
+    payload_on: "10;NewKaku;ID=0009db9a;SWITCH=2;CMD=ON;"
+    payload_off: "10;NewKaku;ID=0009db9a;SWITCH=2;CMD=OFF;"

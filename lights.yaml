@@ -94,3 +94,13 @@
 #      newkaku_0009db9a_2:
 #        name: "Kökslampa matbord"    
 #        type: hybrid
+
+  - platform: mqtt
+    state_topic: 'rflink/NewKaku-0009db9a'
+    name: 'Kök 1'
+    value_template: '{{ value_json.SWITCH1 }}'
+
+  - platform: mqtt
+    state_topic: 'rflink/NewKaku-0009db9a'
+    name: 'Kök 2'
+    value_template: '{{ value_json.SWITCH2 }}'
