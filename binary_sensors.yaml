@@ -89,13 +89,13 @@
   - platform: mqtt
     name: 'Uterummet'
     state_topic: 'rflink/cmd'
-    payload_on: "10;NewKaku;ID=0009db9a;SWITCH=1;CMD=ON;"
-    payload_off: "10;NewKaku;ID=0009db9a;SWITCH=1;CMD=OFF;"
+    payload_on: "10;NewKaku;0009db9a;1;ON;"
+    payload_off: "10;NewKaku;0009db9a;1;OFF;"
     qos: 1
 
   - platform: mqtt
     name: 'Kökslampa matbord'
     state_topic: 'rflink/cmd'
-    payload_on: "10;NewKaku;ID=0009db9a;SWITCH=2;CMD=ON;"
-    payload_off: "10;NewKaku;ID=0009db9a;SWITCH=2;CMD=OFF;"
+    payload_on: "10;NewKaku;0009db9a;2;ON;"
+    payload_off: "10;NewKaku;0009db9a;2;OFF;"
     qos: 1
