@@ -91,9 +91,10 @@
       newkaku_0009db9a_1:
         name: "Uterummet"
         type: switchable
+        signal_repetitions: 3
       newkaku_0009db9a_2:
         name: "Kökslampa matbord"    
-        type: hybrid
+        type: dimmable
 
 #  - platform: mqtt
 #    command_topic: 'rflink/cmd'
