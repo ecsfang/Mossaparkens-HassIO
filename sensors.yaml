@@ -209,20 +209,8 @@
     value_template: "{{ value_json.DS18x20.DS2.Temperature }}"
     unit_of_measurement: "°C"
 
-#  - platform: mqtt     ## Sensor doesn't work! :(
-#    name: "Uterum humid"
-#    state_topic: "tele/outroom/SENSOR"
-#    value_template: "{{ value_json.AM2301.Humidity }}"
-#    unit_of_measurement: '%'
-
   - platform: uptime
     name: Online
-    unit_of_measurement: hours
-
-  - platform: mqtt
-    name: "RF-link"
-    state_topic: "rflink/uptime" # Time in minutes
-    value_template: "{{ value | float / 60 | round(0) }}"
     unit_of_measurement: hours
 
   - platform: history_stats
@@ -358,23 +346,23 @@
   - platform: rflink
     automatic_add: true
     devices:
-      tunex_2903_temp:
+      tunex_e901_temp:
         sensor_type: temperature
-      tunex_2903_bat:
+      tunex_e901_bat:
         sensor_type: battery
-      tunex_2903_hum:
+      tunex_e901_hum:
         sensor_type: humidity
-      tunex_3502_temp:
+      tunex_b702_temp:
         sensor_type: temperature
-      tunex_3502_bat:
+      tunex_b702_bat:
         sensor_type: battery
-      tunex_3502_hum:
+      tunex_b702_hum:
         sensor_type: humidity
-      xiron_2e02_temp:
+      xiron_7202_temp:
         sensor_type: temperature
-      xiron_2e02_bat:
+      xiron_7202_bat:
         sensor_type: battery
-      xiron_2e02_hum:
+      xiron_7202_hum:
         sensor_type: humidity
 
 #
