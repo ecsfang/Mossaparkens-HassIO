@@ -112,8 +112,8 @@
 #    payload_off: "10;NewKaku;ID=0009db9a;SWITCH=2;CMD=OFF;"
 
   - platform: template
-    switches:
-      testswitch1:
+    lights:
+      testlight1:
         name: 'Kök 1'
         value_template: "{{ is_state('binary_sensor.uterummet', 'on') }}"
         turn_on:
@@ -126,7 +126,7 @@
           data:
             topic: "rflink/cmd"
             payload: “10;NewKaku;ID=0009db9a;SWITCH=1;CMD=OFF;”
-      testswitch2:
+      testlight2:
         name: 'Kök 2'
         value_template: "{{ is_state('binary_sensor.kokslampa_matbord', 'on') }}"
         turn_on:
