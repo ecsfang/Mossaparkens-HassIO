@@ -111,34 +111,34 @@
 #    payload_on: "10;NewKaku;ID=0009db9a;SWITCH=2;CMD=ON;"
 #    payload_off: "10;NewKaku;ID=0009db9a;SWITCH=2;CMD=OFF;"
 
-  - platform: template
-    lights:
-      testlight1:
-        friendly_name: 'Kök 1'
-        value_template: "{{ is_state('binary_sensor.uterummet', 'on') }}"
-        turn_on:
-          service: mqtt.publish
-          data:
-            topic: "rflink/cmd"
-            payload: "10;NewKaku;0009db9a;1;ON;"
-        turn_off:
-          service: mqtt.publish
-          data:
-            topic: "rflink/cmd"
-            payload: “10;NewKaku;0009db9a;1;OFF;”
-      testlight2:
-        friendly_name: 'Kök 2'
-        value_template: "{{ is_state('binary_sensor.kokslampa_matbord', 'on') }}"
-        turn_on:
-          service: mqtt.publish
-          data:
-            topic: "rflink/cmd"
-            payload: "10;NewKaku;0009db9a;2;ON;"
-        turn_off:
-          service: mqtt.publish
-          data:
-            topic: "rflink/cmd"
-            payload: “10;NewKaku;0009db9a;2;OFF;”
+#  - platform: template
+#    lights:
+#      testlight1:
+#        friendly_name: 'Kök 1'
+#        value_template: "{{ is_state('binary_sensor.uterummet', 'on') }}"
+#        turn_on:
+#          service: mqtt.publish
+#          data:
+#            topic: "rflink/cmd"
+#            payload: "10;NewKaku;0009db9a;1;ON;"
+#        turn_off:
+#          service: mqtt.publish
+#          data:
+#            topic: "rflink/cmd"
+#            payload: “10;NewKaku;0009db9a;1;OFF;”
+#      testlight2:
+#        friendly_name: 'Kök 2'
+#        value_template: "{{ is_state('binary_sensor.kokslampa_matbord', 'on') }}"
+#        turn_on:
+#          service: mqtt.publish
+#          data:
+#            topic: "rflink/cmd"
+#            payload: "10;NewKaku;0009db9a;2;ON;"
+#        turn_off:
+#          service: mqtt.publish
+#          data:
+#            topic: "rflink/cmd"
+#            payload: “10;NewKaku;0009db9a;2;OFF;”
 
 #    command_on_template: >
 #      10;NewKaku;ID=0009db9a;SWITCH=2;
