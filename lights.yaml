@@ -139,3 +139,11 @@
           data:
             topic: "rflink/cmd"
             payload: “10;NewKaku;ID=0009db9a;SWITCH=2;CMD=OFF;”
+
+#    command_on_template: >
+#      10;NewKaku;ID=0009db9a;SWITCH=2;
+#      {%- if brightness is defined -%}
+#      CMD=SET_LEVEL={{ brightness }};
+#      {%- else -%}
+#      CMD=ON;
+#      {%- endif -%}
