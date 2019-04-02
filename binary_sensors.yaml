@@ -85,3 +85,17 @@
     value_template: "{{ value_json.BAT }}"
     payload_on: "LOW"
     payload_off: "OK"
+
+  - platform: mqtt
+    name: 'Uterummet'
+    state_topic: 'rflink/cmd'
+    payload_on: "10;NewKaku;ID=0009db9a;SWITCH=1;CMD=ON;"
+    payload_off: "10;NewKaku;ID=0009db9a;SWITCH=1;CMD=OFF;"
+    qos: 1
+
+  - platform: mqtt
+    name: 'Kökslampa matbord'
+    state_topic: 'rflink/cmd'
+    payload_on: "10;NewKaku;ID=0009db9a;SWITCH=2;CMD=ON;"
+    payload_off: "10;NewKaku;ID=0009db9a;SWITCH=2;CMD=OFF;"
+    qos: 1

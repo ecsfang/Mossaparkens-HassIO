@@ -95,12 +95,18 @@
 #        name: "Kökslampa matbord"    
 #        type: hybrid
 
-  - platform: mqtt
-    state_topic: 'rflink/NewKaku-0009db9a'
-    name: 'Kök 1'
-    value_template: '{{ value_json.SWITCH1 }}'
-
-  - platform: mqtt
-    state_topic: 'rflink/NewKaku-0009db9a'
-    name: 'Kök 2'
-    value_template: '{{ value_json.SWITCH2 }}'
+#  - platform: mqtt
+#    command_topic: 'rflink/cmd'
+#    state_topic: 'rflink/NewKaku-0009db9a'
+#    name: 'Kök 1'
+#    value_template: '{{ value_json.SWITCH1 }}'
+#    payload_on: "10;NewKaku;ID=0009db9a;SWITCH=1;CMD=ON;"
+#    payload_off: "10;NewKaku;ID=0009db9a;SWITCH=1;CMD=OFF;"
+#
+#  - platform: mqtt
+#    command_topic: 'rflink/cmd'
+#    state_topic: 'rflink/NewKaku-0009db9a'
+#    name: 'Kök 2'
+#    value_template: '{{ value_json.SWITCH2 }}'
+#    payload_on: "10;NewKaku;ID=0009db9a;SWITCH=2;CMD=ON;"
+#    payload_off: "10;NewKaku;ID=0009db9a;SWITCH=2;CMD=OFF;"
