@@ -120,12 +120,12 @@
           service: mqtt.publish
           data:
             topic: "rflink/cmd"
-            payload: "10;NewKaku;ID=0009db9a;SWITCH=1;CMD=ON;"
+            payload: "10;NewKaku;0009db9a;1;ON;"
         turn_off:
           service: mqtt.publish
           data:
             topic: "rflink/cmd"
-            payload: “10;NewKaku;ID=0009db9a;SWITCH=1;CMD=OFF;”
+            payload: “10;NewKaku;0009db9a;1;OFF;”
       testlight2:
         friendly_name: 'Kök 2'
         value_template: "{{ is_state('binary_sensor.kokslampa_matbord', 'on') }}"
@@ -133,12 +133,12 @@
           service: mqtt.publish
           data:
             topic: "rflink/cmd"
-            payload: "10;NewKaku;ID=0009db9a;SWITCH=2;CMD=ON;"
+            payload: "10;NewKaku;0009db9a;2;ON;"
         turn_off:
           service: mqtt.publish
           data:
             topic: "rflink/cmd"
-            payload: “10;NewKaku;ID=0009db9a;SWITCH=2;CMD=OFF;”
+            payload: “10;NewKaku;0009db9a;2;OFF;”
 
 #    command_on_template: >
 #      10;NewKaku;ID=0009db9a;SWITCH=2;
