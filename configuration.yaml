@@ -148,6 +148,16 @@ device_tracker:
   - platform: gpslogger
     password: !secret ha_dash_pw
 
+rflink:
+  host: 192.168.0.72
+  port: 1234
+
+logger:
+  default: error
+  logs:
+    rflink: debug
+    homeassistant.components.rflink: debug
+
 #  - platform: nmap_tracker
 #    hosts: 192.168.1.0/24
     
