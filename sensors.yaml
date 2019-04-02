@@ -355,27 +355,27 @@
           {% endif %}
         friendly_name: 'Garageport'
 
-#  - platform: rflink
-#    automatic_add: true
-#    devices:
-#      tunex_2903_temp:
-#        sensor_type: temperature
-#      tunex_2903_bat:
-#        sensor_type: battery
-#      tunex_2903_hum:
-#        sensor_type: humidity
-#      tunex_3502_temp:
-#        sensor_type: temperature
-#      tunex_3502_bat:
-#        sensor_type: battery
-#      tunex_3502_hum:
-#        sensor_type: humidity
-#      xiron_2e02_temp:
-#        sensor_type: temperature
-#      xiron_2e02_bat:
-#        sensor_type: battery
-#      xiron_2e02_hum:
-#        sensor_type: humidity
+  - platform: rflink
+    automatic_add: true
+    devices:
+      tunex_2903_temp:
+        sensor_type: temperature
+      tunex_2903_bat:
+        sensor_type: battery
+      tunex_2903_hum:
+        sensor_type: humidity
+      tunex_3502_temp:
+        sensor_type: temperature
+      tunex_3502_bat:
+        sensor_type: battery
+      tunex_3502_hum:
+        sensor_type: humidity
+      xiron_2e02_temp:
+        sensor_type: temperature
+      xiron_2e02_bat:
+        sensor_type: battery
+      xiron_2e02_hum:
+        sensor_type: humidity
 
 #
 # Tempsensorn i matkällaren
