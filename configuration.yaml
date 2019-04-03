@@ -151,6 +151,7 @@ device_tracker:
 rflink:
   host: 192.168.1.72
   port: 1234
+  wait_for_ack: false
 
 logger:
   default: error
