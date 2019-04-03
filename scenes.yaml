@@ -16,7 +16,6 @@
       light.kokslampa_matbord:
         state: off
         transition: 2
-        brightness_pct: 25
   - name: Work
     entities:
       light.aeotec_zw111_nano_dimmer_level:
