@@ -93,7 +93,13 @@
         type: switchable
         signal_repetitions: 3
       newkaku_0009db9a_2:
-        name: "Kökslampa matbord"    
+        name: "Kökslampa matbord"
+        type: dimmable
+      newkaku_0009db9a_7:
+        name: "Kökslampa köksö"
+        type: dimmable
+      newkaku_0009db9a_8:
+        name: "Köksbänk"
         type: dimmable
 
 #  - platform: mqtt

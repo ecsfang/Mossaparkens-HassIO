@@ -152,6 +152,28 @@ rflink:
   host: 192.168.1.72
   port: 1234
   wait_for_ack: false
+  ignore_devices:
+    - newkaku_0009db9a_3
+    - newkaku_0009db9a_4
+    - newkaku_0009db9a_5
+    - newkaku_0009db9a_6
+    - newkaku_0009db9a_9
+    - newkaku_0009db9a_b
+    - newkaku_0009db9a_c
+    - newkaku_0009db9a_d
+    - newkaku_0009db9a_e
+    - newkaku_0009db9a_f
+#    - tristate_0a882a_3
+#    - tristate_0a882a_4
+#    - tristate_0a882a_5
+#    - tristate_0a882a_6
+#    - tristate_0a882a_9
+#    - tristate_0a882a_a
+#    - tristate_0a882a_b
+#    - tristate_0a882a_c
+#    - tristate_0a882a_d
+#    - tristate_0a882a_e
+#    - tristate_0a882a_f
 
 logger:
   default: error
