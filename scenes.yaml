@@ -8,12 +8,24 @@
         state: on
         transition: 2
         brightness_pct: 25
+      light.kokslampa_kokso:
+        state: off
+        transition: 2
+      light.koksbank:
+        state: off
+        transition: 2
   - name: Night
     entities:
       light.aeotec_zw111_nano_dimmer_level:
         state: off
         transition: 2
       light.kokslampa_matbord:
+        state: off
+        transition: 2
+      light.kokslampa_kokso:
+        state: off
+        transition: 2
+      light.koksbank:
         state: off
         transition: 2
   - name: Work
@@ -23,6 +35,14 @@
         transition: 5
         brightness_pct: 100
       light.kokslampa_matbord:
+        state: on
+        transition: 2
+        brightness_pct: 100
+      light.kokslampa_kokso:
+        state: on
+        transition: 2
+        brightness_pct: 100
+      light.koksbank:
         state: on
         transition: 2
         brightness_pct: 100
