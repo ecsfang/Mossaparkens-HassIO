@@ -346,11 +346,20 @@
   - platform: rflink
     automatic_add: true
     devices:
+      oregontemp_3821_temp:
+        name: "Weber"
+        sensor_type: temperature
+      oregontemp_3821_bat:
+        name: "Weber batt"
+        sensor_type: battery
       tunex_e901_temp:
+        name: "Entré"
         sensor_type: temperature
       tunex_e901_bat:
+        name: "Entré batt"
         sensor_type: battery
       tunex_e901_hum:
+        name: "Entré fukt"
         sensor_type: humidity
       tunex_b702_temp:
         sensor_type: temperature
@@ -363,6 +372,15 @@
       xiron_7202_bat:
         sensor_type: battery
       xiron_7202_hum:
+        sensor_type: humidity
+      xiron_3202_temp:
+        name: "Matkällaren"
+        sensor_type: temperature
+      xiron_3202_bat:
+        name: "Matkällaren batt"
+        sensor_type: battery
+      xiron_3202_hum:
+        name: "Matkällaren fukt"
         sensor_type: humidity
 
 #
