@@ -300,9 +300,6 @@
     sensor.entredorr_bat:
       icon: mdi:battery
 
-    binary_sensor.terass:
-      device_class: door
-
     binary_sensor.entre:
       device_class: door
     binary_sensor.altandorr:
