@@ -15,19 +15,19 @@
 
   - platform: mqtt
     name: "Fas 1"
-    state_topic: "powermeter/phase1"
+    state_topic: "powermeter2/phase_1"
     value_template: "{{  value | round(1) }}"
     unit_of_measurement: 'A'
 
   - platform: mqtt
     name: "Fas 2"
-    state_topic: "powermeter/phase2"
+    state_topic: "powermeter2/phase_2"
     value_template: "{{  value | round(1) }}"
     unit_of_measurement: 'A'
 
   - platform: mqtt
     name: "Fas 3"
-    state_topic: "powermeter/phase3"
+    state_topic: "powermeter2/phase_3"
     value_template: "{{  value | round(1) }}"
     unit_of_measurement: 'A'
 
@@ -107,26 +107,32 @@
     state_topic: "powermeter/power3"
     unit_of_measurement: 'W'
 
-  - platform: mqtt  
-    state_topic: "powerconsumption/house/today"
-    name: 'Förbrukning idag'
-    value_template: "{{  value | round(0) }}"
-    unit_of_measurement: 'kwh'
-  - platform: mqtt  
-    state_topic: "powerconsumption/house/wtd"
-    name: 'Veckoförbrukning'
-    value_template: "{{  value | round(0) }}"
-    unit_of_measurement: 'kwh'
-  - platform: mqtt  
-    state_topic: "powerconsumption/house/mtd"
-    name: 'Månadsförbrukning'
-    value_template: "{{  value | round(0) }}"
-    unit_of_measurement: 'kwh'
-  - platform: mqtt  
-    state_topic: "powerconsumption/house/ytd"
-    name: 'Årsförbrukning'
-    value_template: "{{  value | round(0) }}"
-    unit_of_measurement: 'kwh'
+  - platform: mqtt
+    name: "Förbrukning idag"
+    state_topic: "powermeter2/status"
+    value_template: "{{ value_json.ENERGY.Total }}"
+    unit_of_measurement: "Wh"
+
+#  - platform: mqtt  
+#    state_topic: "powerconsumption/house/today"
+#    name: 'Förbrukning idag'
+#    value_template: "{{  value | round(0) }}"
+#    unit_of_measurement: 'kwh'
+#  - platform: mqtt  
+#    state_topic: "powerconsumption/house/wtd"
+#    name: 'Veckoförbrukning'
+#    value_template: "{{  value | round(0) }}"
+#    unit_of_measurement: 'kwh'
+#  - platform: mqtt  
+#    state_topic: "powerconsumption/house/mtd"
+#    name: 'Månadsförbrukning'
+#    value_template: "{{  value | round(0) }}"
+#    unit_of_measurement: 'kwh'
+#  - platform: mqtt  
+#    state_topic: "powerconsumption/house/ytd"
+#    name: 'Årsförbrukning'
+#    value_template: "{{  value | round(0) }}"
+#    unit_of_measurement: 'kwh'
 
   - platform: mqtt
     name: "NodeIT temp"
@@ -346,20 +352,11 @@
   - platform: rflink
     automatic_add: true
     devices:
-      oregontemp_3821_temp:
-        name: "Weber"
-        sensor_type: temperature
-      oregontemp_3821_bat:
-        name: "Weber batt"
-        sensor_type: battery
       tunex_e901_temp:
-        name: "Entré"
         sensor_type: temperature
       tunex_e901_bat:
-        name: "Entré batt"
         sensor_type: battery
       tunex_e901_hum:
-        name: "Entré fukt"
         sensor_type: humidity
       tunex_b702_temp:
         sensor_type: temperature
@@ -373,15 +370,10 @@
         sensor_type: battery
       xiron_7202_hum:
         sensor_type: humidity
-      xiron_3202_temp:
-        name: "Matkällaren"
+      oregontemp_3821_temp:
         sensor_type: temperature
-      xiron_3202_bat:
-        name: "Matkällaren batt"
+      oregontemp_3821_bat:
         sensor_type: battery
-      xiron_3202_hum:
-        name: "Matkällaren fukt"
-        sensor_type: humidity
 
 #
 # Tempsensorn i matkällaren
