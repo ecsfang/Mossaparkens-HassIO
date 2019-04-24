@@ -1,7 +1,7 @@
 """
 Entity controller component for Home Assistant.
 Maintainer:       Daniel Mason
-Version:          v3.3.1
+Version:          v3.3.3
 Documentation:    https://github.com/danobot/entity-controller
 Issues Tracker:   Report issues on Github. Ensure you have the latest version. Include:
                     * YAML configuration (for the misbehaving entity)
@@ -31,7 +31,7 @@ DOMAIN = 'entity_controller'
 CONSTRAIN_START = 1
 CONSTRAIN_END = 2
 
-VERSION = '3.3.1'
+VERSION = '3.3.3'
 SENSOR_TYPE_DURATION = 'duration'
 SENSOR_TYPE_EVENT = 'event'
 MODE_DAY = 'day'
@@ -683,7 +683,7 @@ class Model():
     def config_normal_mode(self, config):
         self.log.info("Service data set up")
         params = {}
-        params[CONF_DELAY] = config.get(CONF_DELAY)
+        params[CONF_DELAY] = config.get(CONF_DELAY, DEFAULT_DELAY)
         params[CONF_SERVICE_DATA] = config.get(CONF_SERVICE_DATA, None)
         params[CONF_SERVICE_DATA_OFF] = config.get(CONF_SERVICE_DATA_OFF, None)
         self.light_params_day = params
@@ -706,15 +706,12 @@ class Model():
             # FOR OPTIONAL DEBUGGING: for initial setup use the raw input value
             self._start_time_private = config.get(CONF_START_TIME)
             self._end_time_private = config.get(CONF_END_TIME)
-            # self.log.debug("Debugging start ==========================================")
-
             start_time_parsed = self.parse_time(self.start_time)
             self.log.debug("start_time_parsed: %s",
                            start_time_parsed)
 
             self.log.debug("futurize outputs %s", self.futurize(start_time_parsed))
 
-            # self.log.debug("Debugging end ==========================================")
             parsed_start = self.parse_time(self.start_time, aware=False)
             parsed_end = self.parse_time(self.end_time, aware=False)
             # parsed_start = datetime.now() + timedelta(seconds=5)
@@ -731,9 +728,6 @@ class Model():
 
             self.update(start=self.start_time)
             self.update(end=self.end_time)
-
-            # parsed_start, parsed_end = self.adjust_times(parsed_start,
-                        #                                              parsed_end)
 
             parsed_start = self.futurize(parsed_start)
             parsed_end = self.futurize(parsed_end)
@@ -847,7 +841,12 @@ class Model():
             self.hass, self.start_time_callback, parsed_start)
 
         self.update(start_time=parsed_start)
-        self.enable()
+
+        if self.is_state_entities_on():
+            self.blocked()
+        else:
+            self.enable()
+            
     # =====================================================
     #    H E L P E R   F U N C T I O N S        ( N E W )
     # =====================================================
