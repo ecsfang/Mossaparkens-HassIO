@@ -35,11 +35,17 @@ views:
           - light.vitrinskapet
           - type: section
             label: Köket
-          - light.koksfonstret
-          - light.koksfonster
-          - light.kokslampa_matbord
-          - light.kokslampa_kokso
-          - light.koksbank
+#          - light.koksfonstret
+#          - light.koksfonster
+          - type: custom:slider-entity-row
+            entity: light.kokslampa_matbord
+            toggle: true
+          - type: custom:slider-entity-row
+            entity: light.kokslampa_kokso
+            toggle: true
+          - type: custom:slider-entity-row
+            entity: light.koksbank
+            toggle: true
           - type: custom:slider-entity-row
             entity: light.aeotec_zw111_nano_dimmer_level
             toggle: true
@@ -59,9 +65,10 @@ views:
         title: Scener
         show_header_toggle: false
         entities:
+          - scene.work
+          - scene.breakfast
           - scene.dinner
           - scene.night
-          - scene.work
     path: lights_view
     title: Lampor
   - badges:

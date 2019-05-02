@@ -12,6 +12,24 @@
         state: off
         transition: 2
       light.koksbank:
+        state: on
+        transition: 2
+        brightness_pct: 25
+  - name: Breakfast
+    entities:
+      light.aeotec_zw111_nano_dimmer_level:
+        state: on
+        transition: 2
+        brightness_pct: 50
+      light.kokslampa_matbord:
+        state: on
+        transition: 2
+        brightness_pct: 100
+      light.kokslampa_kokso:
+        state: on
+        transition: 2
+        brightness_pct: 100
+      light.koksbank:
         state: off
         transition: 2
   - name: Night
