@@ -308,3 +308,5 @@
       device_class: door
     binary_sensor.kallardorr:
       device_class: door
+    binary_sensor.garageport_norr:
+      device_class: garage_door

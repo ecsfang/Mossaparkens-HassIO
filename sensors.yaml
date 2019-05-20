@@ -181,9 +181,9 @@
     value_template: "{{ value_json.DS18x20.DS1.Temperature }}"
     unit_of_measurement: "°C"
 
-  - platform: mqtt
-    name: "Garageport norr"
-    state_topic: "fromGarage/status"
+#  - platform: mqtt
+#    name: "Garageport norr"
+#    state_topic: "fromGarage/status"
 
   - platform: mqtt
     name: "Uterum temp"
@@ -336,13 +336,13 @@
     sensors:
       garage_door_state:
         value_template: >- 
-          {% if is_state('sensor.garageport_norr', 'open') %}
+          {% if is_state('binary_sensor.garageport_norr', 'open') %}
             Öppen
           {% else %}
             Stängd
           {% endif %}
         icon_template: >-
-          {% if is_state('sensor.garageport_norr', 'open') %}
+          {% if is_state('binary_sensor.garageport_norr', 'open') %}
             mdi:garage-open
           {% else %}
             mdi:garage
