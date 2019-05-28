@@ -1,0 +1,15 @@
+##
+## Automationer för larmet
+##
+
+  - alias: Alarm status changed
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.hemma_alarm
+    action:
+      - service: notify.pushover
+        data_template:
+          message: >
+            Alarm changed from {{ trigger.from_state.state }}
+            to {{ trigger.to_state.state }}
+            by {{ trigger.to_state.attributes.changed_by }}
