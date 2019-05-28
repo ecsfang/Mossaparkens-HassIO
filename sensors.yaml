@@ -181,9 +181,9 @@
     value_template: "{{ value_json.DS18x20.DS1.Temperature }}"
     unit_of_measurement: "°C"
 
-#  - platform: mqtt
-#    name: "Garageport norr"
-#    state_topic: "fromGarage/status"
+  - platform: mqtt
+    name: "Garageport norr"
+    state_topic: "fromGarage/status"
 
   - platform: mqtt
     name: "Uterum temp"

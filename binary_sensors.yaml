@@ -38,6 +38,6 @@
     payload_on: "on"
     payload_off: "off"
 
-  - platform: mqtt
-    name: "Garageport norr"
-    state_topic: "fromGarage/status"
+#  - platform: mqtt
+#    name: "Garageport norr"
+#    state_topic: "fromGarage/status"
