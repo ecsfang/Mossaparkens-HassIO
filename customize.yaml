@@ -311,6 +311,6 @@
     binary_sensor.garageport_norr:
       device_class: garage_door
 
-binary_sensor.sonoff_update_available:
-  friendly_name: Update Available Sonoff
-  device_class: problem
+    binary_sensor.sonoff_update_available:
+      friendly_name: Update Available Sonoff
+      device_class: problem
