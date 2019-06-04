@@ -273,7 +273,7 @@ views:
         title: Garaget
         type: entities
       - entities:
-          - sensor.dark_sky_daily_summary
+          - sensor.dark_sky_summary
           - sensor.ute_temp
           - sensor.dark_sky_temperature
           - sensor.annex_temp
@@ -304,7 +304,7 @@ views:
           - sensor.dark_sky_sunset
           - sensor.moon
           - sensor.season
-          - sensor.dark_sky_daily_summary
+          - sensor.dark_sky_summary
           - sensor.dark_sky_precip
           - sensor.dark_sky_precip_intensity
           - sensor.dark_sky_precip_probability
@@ -500,16 +500,16 @@ views:
           - sun.sun
           - sensor.moon
           - sensor.season
-          - sensor.dark_sky_daily_summary
+          - sensor.dark_sky_summary
           - sensor.dark_sky_precip
-          - sensor.dark_sky_precip_type
+#          - sensor.dark_sky_precip_type
           - sensor.dark_sky_precip_intensity
           - sensor.dark_sky_precip_probability
           - sensor.dark_sky_temperature
           - sensor.dark_sky_apparent_temperature
           - sensor.dark_sky_wind_speed
           - sensor.dark_sky_wind_bearing
-          - sensor.dark_sky_cloud_cover
+          - sensor.dark_sky_cloud_coverage
           - sensor.dark_sky_humidity
         show_header_toggle: true
         title: Vädret nu
