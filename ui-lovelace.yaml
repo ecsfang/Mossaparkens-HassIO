@@ -273,7 +273,7 @@ views:
         title: Garaget
         type: entities
       - entities:
-          - sensor.dark_sky_summary
+          - sensor.dark_sky_daily_summary
           - sensor.ute_temp
           - sensor.dark_sky_temperature
           - sensor.annex_temp
@@ -300,9 +300,11 @@ views:
         type: entities
       - entities:
           - sun.sun
+          - sensor.dark_sky_sunrise
+          - sensor.dark_sky_sunset
           - sensor.moon
           - sensor.season
-          - sensor.dark_sky_summary
+          - sensor.dark_sky_daily_summary
           - sensor.dark_sky_precip
           - sensor.dark_sky_precip_intensity
           - sensor.dark_sky_precip_probability
@@ -498,7 +500,7 @@ views:
           - sun.sun
           - sensor.moon
           - sensor.season
-          - sensor.dark_sky_summary
+          - sensor.dark_sky_daily_summary
           - sensor.dark_sky_precip
           - sensor.dark_sky_precip_type
           - sensor.dark_sky_precip_intensity

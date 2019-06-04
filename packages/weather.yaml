@@ -11,6 +11,7 @@ sensor:
       - 7
     monitored_conditions:
       - summary
+      - cloud_cover
       - precip_type
       - precip_intensity
       - precip_probability
