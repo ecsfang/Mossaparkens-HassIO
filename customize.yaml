@@ -275,19 +275,19 @@
 
     sensor.dark_sky_daytime_humidity:
       hidden: yes
-    sensor.dark_sky_daytime_humidity_1:
+    sensor.dark_sky_daytime_humidity_1d:
       hidden: yes
-    sensor.dark_sky_daytime_humidity_2:
+    sensor.dark_sky_daytime_humidity_2d:
       hidden: yes
-    sensor.dark_sky_daytime_humidity_3:
+    sensor.dark_sky_daytime_humidity_3d:
       hidden: yes
-    sensor.dark_sky_daytime_humidity_4:
+    sensor.dark_sky_daytime_humidity_4d:
       hidden: yes
-    sensor.dark_sky_daytime_humidity_5:
+    sensor.dark_sky_daytime_humidity_5d:
       hidden: yes
-    sensor.dark_sky_daytime_humidity_6:
+    sensor.dark_sky_daytime_humidity_6d:
       hidden: yes
-    sensor.dark_sky_daytime_humidity_7:
+    sensor.dark_sky_daytime_humidity_7d:
       hidden: yes
 
     sensor.diskmaskin_status:
