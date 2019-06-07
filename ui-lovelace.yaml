@@ -102,10 +102,10 @@ views:
           - sensor.effekt_2
           - sensor.effekt_3
           - sensor.forbrukning_idag
-          - sensor.veckoforbrukning
-          - sensor.manadsforbrukning
-          - sensor.arsforbrukning
-        show_header_toggle: true
+#          - sensor.veckoforbrukning
+#          - sensor.manadsforbrukning
+#          - sensor.arsforbrukning
+        show_header_toggle: false
         title: Förbrukning huset
         type: entities
     path: devices_view
@@ -269,7 +269,7 @@ views:
         type: entities
       - entities:
           - sensor.garage_door_state
-        show_header_toggle: true
+        show_header_toggle: false
         title: Garaget
         type: entities
       - entities:
@@ -281,7 +281,7 @@ views:
           - sensor.ute_tryck
           - sensor.annex_humid
           - sensor.dark_sky_humidity
-        show_header_toggle: true
+        show_header_toggle: false
         title: Väder
         type: entities
       - entities:
@@ -295,13 +295,13 @@ views:
           - sensor.veckoforbrukning
           - sensor.manadsforbrukning
           - sensor.arsforbrukning
-        show_header_toggle: true
+        show_header_toggle: false
         title: Förbrukning huset
         type: entities
       - entities:
           - sun.sun
-          - sensor.dark_sky_sunrise_time
-          - sensor.dark_sky_sunset_time
+          - sensor.dark_sky_sunrise_0d
+          - sensor.dark_sky_sunset_0d
           - sensor.moon
           - sensor.season
           - sensor.dark_sky_summary
@@ -313,7 +313,7 @@ views:
           - sensor.dark_sky_wind_speed
           - sensor.dark_sky_wind_bearing
           - sensor.dark_sky_humidity
-        show_header_toggle: true
+        show_header_toggle: false
         title: Vädret nu
         type: entities
       - entities:
@@ -325,7 +325,7 @@ views:
           - sensor.forecast_5
           - sensor.forecast_6
           - sensor.forecast_7
-        show_header_toggle: true
+        show_header_toggle: false
         title: Prognos
         type: entities
       - entity: alarm_control_panel.hemma_alarm
@@ -511,7 +511,7 @@ views:
           - sensor.dark_sky_wind_bearing
           - sensor.dark_sky_cloud_coverage
           - sensor.dark_sky_humidity
-        show_header_toggle: true
+        show_header_toggle: false
         title: Vädret nu
         type: entities
       - entities:
@@ -523,7 +523,7 @@ views:
           - sensor.forecast_5
           - sensor.forecast_6
           - sensor.forecast_7
-        show_header_toggle: true
+        show_header_toggle: false
         title: Prognos
         type: entities
     icon: 'mdi:weather-sunset'
