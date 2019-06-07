@@ -292,9 +292,9 @@ views:
           - sensor.effekt_2
           - sensor.effekt_3
           - sensor.forbrukning_idag
-          - sensor.veckoforbrukning
-          - sensor.manadsforbrukning
-          - sensor.arsforbrukning
+#          - sensor.veckoforbrukning
+#          - sensor.manadsforbrukning
+#          - sensor.arsforbrukning
         show_header_toggle: false
         title: Förbrukning huset
         type: entities

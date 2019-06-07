@@ -238,10 +238,6 @@
       friendly_name: Ute humid (prognos)
     sensor.dark_sky_summary:
       friendly_name: Väderprognos
-    sensor.dark_sky_sunrise_0d:
-      friendly_name: Soluppgång
-    sensor.dark_sky_sunset_0d:
-      friendly_name: Solnedgång
 
     sensor.dark_sky_cloud_coverage:
       hidden: yes
