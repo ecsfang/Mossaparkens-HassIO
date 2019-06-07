@@ -1,6 +1,7 @@
 sensor:
   - platform: darksky
     api_key: !secret darksky_api
+    language: sv
     forecast:
       - 0
       - 1
@@ -43,8 +44,7 @@ sensor:
 #        friendly_name: 'Weekday'
 #        value_template: '{{ now().strftime("%A") }}'
       forecast_0:
-#        friendly_name: "Idag"
-        friendly_name_template: '{{ as_timestamp(now()) | timestamp_custom("%A", True) }}'
+        friendly_name: "Idag"
         value_template: >
           {{states.sensor.dark_sky_daytime_high_temperature_0d.state|round(0)}}°/{{states.sensor.dark_sky_overnight_low_temperature_0d.state|round(0)}}°
  #         {{states.sensor.dark_sky_daily_high_temperature.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability.state|round(0)}}%
