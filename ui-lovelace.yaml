@@ -300,8 +300,8 @@ views:
         type: entities
       - entities:
           - sun.sun
-          - sensor.dark_sky_sunrise_0d
-          - sensor.dark_sky_sunset_0d
+          - sensor.sunrise #dark_sky_sunrise_0d
+          - sensor.sunset #dark_sky_sunset_0d
           - sensor.moon
           - sensor.season
           - sensor.dark_sky_summary

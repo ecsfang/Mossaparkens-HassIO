@@ -33,6 +33,15 @@
 
   - platform: template
     sensors:
+      sunrise:
+        friendly_name: "Soluppgång"
+        value_template: "{{ sensor.dark_sky_sunrise_0d | timestamp_local }}"
+      sunset:
+        friendly_name: "Solnedgång"
+        value_template: "{{ sensor.dark_sky_sunset_0d | timestamp_local }}"
+
+  - platform: template
+    sensors:
       dishw_status:
         friendly_name: "Diskmaskin"
         value_template: >-
