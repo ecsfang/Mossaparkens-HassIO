@@ -2,6 +2,7 @@ sensor:
   - platform: darksky
     api_key: !secret darksky_api
     forecast:
+      - 0
       - 1
       - 2
       - 3
@@ -32,38 +33,41 @@ sensor:
 #    api_key: !secret airvisual_api_key
 #    monitored_conditions:
 #      - us
+
   - platform: season
   - platform: moon
+
   - platform: template
     sensors:
 #      weekday:
 #        friendly_name: 'Weekday'
 #        value_template: '{{ now().strftime("%A") }}'
       forecast_0:
-        friendly_name: "Idag"
+#        friendly_name: "Idag"
+        friendly_name_template: '{{ as_timestamp(now()) | timestamp_custom("%A", True) }}'
         value_template: >
-          {{states.sensor.dark_sky_daytime_high_temperature.state|round(0)}}°/{{states.sensor.dark_sky_overnight_low_temperature.state|round(0)}}°
+          {{states.sensor.dark_sky_daytime_high_temperature_0d.state|round(0)}}°/{{states.sensor.dark_sky_overnight_low_temperature_0d.state|round(0)}}°
  #         {{states.sensor.dark_sky_daily_high_temperature.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability.state|round(0)}}%
         icon_template: >-
-          {% if is_state("sensor.dark_sky_icon", "clear-day") %}
+          {% if is_state("sensor.dark_sky_icon_0d", "clear-day") %}
             mdi:weather-sunny
-          {% elif is_state("sensor.dark_sky_icon", "clear-night") %}
+          {% elif is_state("sensor.dark_sky_icon_0d", "clear-night") %}
             mdi:weather-night
-          {% elif is_state("sensor.dark_sky_icon", "cloudy") %}
+          {% elif is_state("sensor.dark_sky_icon_0d", "cloudy") %}
             mdi:weather-cloudy   
-          {% elif is_state("sensor.dark_sky_icon", "rain") %}
+          {% elif is_state("sensor.dark_sky_icon_0d", "rain") %}
             mdi:weather-pouring        
-          {% elif is_state("sensor.dark_sky_icon", "sleet") %}
+          {% elif is_state("sensor.dark_sky_icon_0d", "sleet") %}
             mdi:weather-snowy-rain
-          {% elif is_state("sensor.dark_sky_icon", "snow") %}
+          {% elif is_state("sensor.dark_sky_icon_0d", "snow") %}
             mdi:weather-snowy
-          {% elif is_state("sensor.dark_sky_icon", "wind") %}
+          {% elif is_state("sensor.dark_sky_icon_0d", "wind") %}
             mdi:weather-windy
-          {% elif is_state("sensor.dark_sky_icon", "fog") %}
+          {% elif is_state("sensor.dark_sky_icon_0d", "fog") %}
             mdi:weather-fog
-          {% elif is_state("sensor.dark_sky_icon", "partly-cloudy-day") %}
+          {% elif is_state("sensor.dark_sky_icon_0d", "partly-cloudy-day") %}
             mdi:weather-partlycloudy
-          {% elif is_state("sensor.dark_sky_icon", "partly-cloudy-night") %}
+          {% elif is_state("sensor.dark_sky_icon_0d", "partly-cloudy-night") %}
             mdi:weather-partlycloudy            
           {% else %}
             error
@@ -101,7 +105,7 @@ sensor:
 #        value_template: "{{states.sensor.dark_sky_icon_1.state}}"
     
       forecast_2:
-        friendly_name_template: '{{ (as_timestamp(now()) + (86400) *2) | timestamp_custom("%A", True) }}'
+        friendly_name_template: '{{ (as_timestamp(now()) + (86400*2)) | timestamp_custom("%A", True) }}'
         value_template: >          
           {{states.sensor.dark_sky_daytime_high_temperature_2d.state|round(0)}}°/{{states.sensor.dark_sky_overnight_low_temperature_2d.state|round(0)}}°
         icon_template: >-
@@ -132,7 +136,7 @@ sensor:
 #        value_template: "{{states.sensor.dark_sky_icon_2.state}}"
                  
       forecast_3:
-        friendly_name_template: '{{ (as_timestamp(now()) + (86400) *3) | timestamp_custom("%A", True) }}'
+        friendly_name_template: '{{ (as_timestamp(now()) + (86400*3)) | timestamp_custom("%A", True) }}'
         value_template: >          
           {{states.sensor.dark_sky_daytime_high_temperature_3d.state|round(0)}}°/{{states.sensor.dark_sky_overnight_low_temperature_3d.state|round(0)}}°
         icon_template: >-
