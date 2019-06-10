@@ -247,6 +247,16 @@ views:
       - sensor.aeotec_zw100_multisensor_6_burglar_4
     cards:
       - entities:
+        - sensor.time
+        - sensor.date
+        - sensor.date_time
+        - sensor.time_date
+        - sensor.time_utc
+        - sensor.beat      
+        show_header_toggle: false
+        title: Tid och datum
+        type: entities
+      - entities:
           - sensor.dishwasher_status
           - sensor.diskmaskin_idag
           - sensor.diskmaskin_igar
