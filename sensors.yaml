@@ -35,11 +35,11 @@
     sensors:
       sunrise:
         friendly_name: "Soluppgång"
-        value_template: "{{as_timestamp(states.sensor.dark_sky_sunrise_0d.state) | timestamp_custom('%X')}}"
+        value_template: "{{as_timestamp(states.sensor.dark_sky_sunset_0d.state) | timestamp_custom('%X')}}"
 #        value_template: "{{strptime(states.sensor.dark_sky_sunrise_0d.state,'%Y-%m-%d %H:%M:%S') | timestamp_custom('%X')}}"
       sunset:
         friendly_name: "Solnedgång"
-        value_template: "{{as_timestamp(states.sensor.dark_sky_sunset_0d.state) | timestamp_custom('%X')}}"
+        value_template: "{{as_timestamp(states.sensor.dark_sky_sunset_0d.state) | timestamp_local('%X')}}"
 
   - platform: template
     sensors:
