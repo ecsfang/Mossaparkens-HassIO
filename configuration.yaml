@@ -95,6 +95,10 @@ panel_iframe:
     title: Configurator
     icon: mdi:wrench
     url: !secret conf_url
+  tasmoadmin:
+    title: TasmoAdmin
+    icon: mdi:lightbulb-on
+    url: !secret tasmo_url
 
 mqtt:
   broker: core-mosquitto
